@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BSE Notes (PREVIEW)</title>
+  <meta name="description" content="Building Services Engineering learning notes hub." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <p class="preview-banner" role="status">PREVIEW — empty scaffold. Design after Celine brief; not final live.</p>
+  <header class="site-header">
+    <h1>BSE Notes</h1>
+    <p class="meta">Learning notes hub · sorted by created date (newest first)</p>
+  </header>
+  <main>
+    <ul class="note-list" id="note-list" aria-label="Notes">
+      <!-- Filled from notes/manifest.json -->
+    </ul>
+    <p id="load-error" class="meta" hidden>Could not load notes/manifest.json.</p>
+  </main>
+  <script>
+    (function () {
+      var list = document.getElementById("note-list");
+      var err = document.getElementById("load-error");
+      fetch("notes/manifest.json", { cache: "no-store" })
+        .then(function (r) {
+          if (!r.ok) throw new Error(String(r.status));
+          return r.json();
+        })
+        .then(function (data) {
+          var notes = (data.notes || []).slice().sort(function (a, b) {
+            return (b.created || "").localeCompare(a.created || "");
+          });
+          if (!notes.length) {
+            list.innerHTML = "<li><p class=\"summary\">No notes yet.</p></li>";
+            return;
+          }
+          list.innerHTML = notes
+            .map(function (n) {
+              var href = n.path || ("notes/" + n.slug + "/");
+              var zh = n.titleZh ? " · " + n.titleZh : "";
+              return (
+                '<li><a href="' +
+                href +
+                '"><div class="title">' +
+                (n.title || n.slug) +
+                zh +
+                '</div><p class="summary">' +
+                (n.summary || "") +
+                '</p><div class="meta-row"><span class="badge">' +
+                (n.status || "draft") +
+                "</span> · created " +
+                (n.created || "?") +
+                "</div></a></li>"
+              );
+            })
+            .join("");
+        })
+        .catch(function () {
+          err.hidden = false;
+        });
+    })();
+  </script>
+</body>
+</html>

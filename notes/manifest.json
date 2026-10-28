@@ -1,0 +1,14 @@
+{
+  "notes": [
+    {
+      "slug": "note-01",
+      "title": "Note 1",
+      "titleZh": "筆記 1",
+      "created": "2026-10-28",
+      "updated": "2026-10-28",
+      "status": "draft",
+      "summary": "Coming soon — substance and design pending.",
+      "path": "notes/note-01/"
+    }
+  ]
+}
