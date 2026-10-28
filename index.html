@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>BSE Notes (PREVIEW)</title>
-  <meta name="description" content="BSE learning notes index — learning notes hub (preview)." />
-  <meta name="robots" content="noindex,nofollow" />
+  <title>BSE Notes</title>
+  <meta name="description" content="BSE learning notes index — learning notes hub." />
   <style>
     /* Tokens + type kinship with BSE Tools / psychart — do not invent a separate palette */
     :root {
@@ -74,16 +73,9 @@
       line-height: 1.3;
       overflow-wrap: anywhere;
     }
-    .badge {
-      font-size: 11px;
-      font-weight: 700;
-      color: #8a4b12;
-      background: #fde8d4;
-      border: 1px solid #e8b078;
-      border-radius: 999px;
-      padding: 4px 8px;
-      white-space: nowrap;
-      flex: 0 0 auto;
+    .card:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
     }
 
     .intro {
@@ -260,7 +252,6 @@
         <h1>BSE Notes</h1>
         <div class="sub">BSE 學習筆記</div>
       </div>
-      <span class="badge">PREVIEW</span>
     </header>
     <p class="intro">Study notes index · 學習筆記一覽. Newest first. Not a Code checker · not official guidance.</p>
 
@@ -272,8 +263,7 @@
       </div>
 
       <div class="cards">
-        <!-- D1 Coming soon — Justin locked title A; hub preview -->
-        <div class="card soon" aria-label="OM-Knowledge building services O and M principles coming soon">
+        <a class="card" href="notes/om-knowledge/">
           <div class="card-top">
             <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -293,11 +283,11 @@
           <p class="purpose">
             MVAC 空氣／水側、CAV／VAV 同壓差、消防 pre-action、電力分層、醫用氣體同 CCMS 嘅 O&amp;M 原則同巡查思維——唔寫項目死數、唔標項目類型。
           </p>
-          <span class="cta soon">Coming soon · 即將推出</span>
-        </div>
+          <span class="cta">Open · 開啟</span>
+        </a>
       </div>
 
-      <p class="demo-note">Learning notes hub · creation date newest first. First note opens when published. Not a Code of Practice checker · not official guidance.</p>
+      <p class="demo-note">Learning notes hub · creation date newest first. Not a Code of Practice checker · not official guidance.</p>
     </section>
   </div>
 </body>
