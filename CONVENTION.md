@@ -26,29 +26,23 @@ notes/
 
 | Field | Rules |
 | --- | --- |
-| `slug` | Must match folder name; generic (e.g. `note-01`), not a site/project code |
-| `title` | Clear **public** English title for hub — bans-safe |
-| `titleZh` | Optional Chinese title — bans-safe |
+| `slug` | Must match folder name; a generic teaching slug (e.g. `note-01`) |
+| `title` | Clear public English title for the hub |
+| `titleZh` | Optional Chinese title |
 | `created` | ISO date `YYYY-MM-DD` — hub sorts by this **descending** (newest first) |
 | `updated` | ISO date when content last changed |
 | `status` | `draft` \| `preview` \| `published` |
-| `summary` | One line for the index card — bans-safe |
+| `summary` | One line for the index card |
 
 ## Hub
 
 `index.html` at repo root lists every note under `notes/*/note.json` (via `notes/manifest.json`), sorted by `created` descending. Titles must stay clear and scannable.
 
-## Public-name ban (Pages + public repo)
+## Public names (Pages + public repo)
 
-Do **not** put any of the following in README, hub/note HTML, meta, titles, blurbs, preview banners, commit messages, or other public chrome:
+Use generic teaching titles only. No site, client, workplace, or project identifiers in public chrome, docs, or commit messages.
 
-- Hospital / institution names
-- Operating theatre / 手術室 (or any wording that makes a **hospital OR project** obvious)
-- Block / floor / room / plant identifiers tied to a real site
-- Customer, project, or workplace names
-- Paths or labels that would identify a real job
-
-Internal working titles stay off public chrome until a bans-safe **public** title is set. Before share, `rg` for known banned strings.
+That covers README, hub and note HTML, meta, titles, blurbs, preview banners, and other public text. Internal working titles stay off public chrome until a generic public title is set.
 
 ## Do not
 

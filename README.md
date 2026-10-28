@@ -7,8 +7,8 @@ Learning notes hub for Building Services Engineering (Hong Kong).
 
 ## Public names
 
-Bans-safe titles only on public Pages. See `CONVENTION.md` and `briefs/brief-hub-v1.md` §7.
+Use generic teaching titles only. No site, client, workplace, or project identifiers in public chrome, docs, or commit messages. See [CONVENTION.md](./CONVENTION.md).
 
 ## Status
 
-Hub **preview** from Celine `briefs/brief-hub-v1.md`. Live only after Justin oks. Note `om-knowledge` (layout v3.1) is on this preview at `notes/om-knowledge/`; the hub card stays **Coming soon** and is not linked.
+Hub is on **preview**. Live only after Justin oks. Note `om-knowledge` (layout v3.1) is on this preview at `notes/om-knowledge/`; the hub card stays **Coming soon** and is not linked.
