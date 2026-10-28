@@ -12,8 +12,8 @@ See [CONVENTION.md](./CONVENTION.md).
 
 ## Public names
 
-Public Pages and this public repo use **generic titles only**. No hospital / OR（手術室）project cues, site, block, customer, or project names in README, hub, note pages, or commit messages. See CONVENTION.md.
+Use generic teaching titles only. No site, client, workplace, or project identifiers in public chrome, docs, or commit messages. See [CONVENTION.md](./CONVENTION.md).
 
 ## Status
 
-Scaffold only. Hub/note design awaits brief; first note substance pending. **PREVIEW** until live is ok’d.
+Scaffold only. Hub and note design await a brief; first note substance is pending. **PREVIEW** until live is ok’d.
