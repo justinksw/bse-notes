@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>OM-Knowledge｜屋宇裝備 O&amp;M 原則</title>
+  <meta name="description" content="MVAC 空氣／水側、CAV／VAV 同壓差、消防 pre-action、電力分層、醫用氣體同 CCMS 嘅 O&amp;M 原則同巡查思維——唔寫項目死數、唔標項目類型。" />
+  <meta name="theme-color" content="#EEF1F4" />
+  <style>
+:root {
+  --canvas: #EEF1F4;
+  --panel: #FFFFFF;
+  --ink: #1E2A50;
+  --muted: #5A6178;
+  --line: #C8CDD8;
+  --accent: #C45C26;
+  --focus: #174A7C;
+  --warn-bg: #FFF1F0;
+  --warn-bd: #D94A3D;
+  --warn-ink: #8B1E14;
+  --esc-bg: #FFF8E8;
+  --esc-bd: #C45C26;
+  --remember-bg: #FFF4E5;
+  --align-bg: #F0F5F8;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body {
+  margin: 0; padding: 0;
+  background: #D8DCE2;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Noto Sans TC", "PingFang TC", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+img, svg { max-width: 100%; height: auto; display: block; }
+a { color: var(--focus); }
+a:focus-visible, button:focus-visible, .toc a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.topbar {
+  position: sticky; top: 0; z-index: 40;
+  display: flex; align-items: center; gap: 10px;
+  padding: calc(8px + var(--safe-top)) 14px 8px;
+  background: rgba(238,241,244,0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar a.back {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; min-width: 44px; padding: 0 10px;
+  border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 14px;
+  color: var(--ink); background: var(--panel); border: 1px solid var(--line);
+}
+.topbar .brand { min-width: 0; flex: 1; }
+.topbar .brand .name { font-weight: 700; font-size: 15px; letter-spacing: -0.02em; }
+.topbar .brand .sub { font-size: 12px; color: var(--muted); }
+
+.wrap {
+  max-width: 430px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  background: var(--canvas);
+  min-height: 100dvh;
+  padding-bottom: calc(32px + var(--safe-bottom));
+}
+@media (min-width: 768px) {
+  .wrap { box-shadow: 0 0 0 1px var(--line), 0 12px 40px rgba(0,0,0,0.08); }
+}
+
+.hero { padding: 16px 16px 8px; }
+.eyebrow {
+  display: inline-block; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 6px;
+}
+.hero h1 {
+  margin: 0; font-size: 1.55rem; line-height: 1.25;
+  letter-spacing: -0.02em; font-weight: 800;
+}
+.hero .en {
+  margin: 6px 0 0; font-size: 0.95rem; color: var(--muted); font-weight: 500;
+}
+.hero .blurb {
+  margin: 12px 0 0; font-size: 0.95rem; color: var(--muted); line-height: 1.45;
+}
+.meta-row {
+  margin-top: 10px; font-size: 12px; color: var(--muted);
+  display: flex; flex-wrap: wrap; gap: 8px 14px;
+}
+
+.sheet {
+  margin: 8px 10px 0;
+  background: var(--panel);
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 14px 14px 18px;
+}
+.sheet + .sheet { margin-top: 14px; }
+
+h2 {
+  margin: 0 0 10px; font-size: 1.2rem; line-height: 1.3;
+  letter-spacing: -0.015em; font-weight: 800;
+  scroll-margin-top: 64px;
+}
+h3 {
+  margin: 18px 0 8px; font-size: 1.05rem; line-height: 1.35;
+  font-weight: 750; scroll-margin-top: 64px;
+}
+h3:first-child { margin-top: 0; }
+p { margin: 0 0 10px; overflow-wrap: anywhere; }
+ul, ol { margin: 0 0 10px; padding-left: 1.2em; }
+li { margin: 0.25em 0; overflow-wrap: anywhere; }
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.9375rem;
+  margin: 0 0 12px;
+}
+th, td {
+  border: 1px solid var(--line); padding: 8px 8px;
+  text-align: left; vertical-align: top; overflow-wrap: anywhere;
+}
+th { background: var(--canvas); font-weight: 700; }
+.checklist { list-style: none; padding-left: 0; }
+.checklist li {
+  position: relative; padding: 6px 8px 6px 28px;
+  border: 1px solid var(--line); border-radius: 8px;
+  margin: 6px 0; background: #FAFBFC;
+}
+.checklist li::before {
+  content: ""; position: absolute; left: 8px; top: 10px;
+  width: 14px; height: 14px; border: 2px solid var(--line); border-radius: 3px;
+}
+
+.toc {
+  display: flex; flex-direction: column; gap: 6px;
+  margin: 8px 0 0;
+}
+.toc a {
+  display: block; text-decoration: none; color: var(--ink);
+  padding: 10px 12px; border-radius: 10px;
+  background: var(--canvas); border: 1px solid var(--line);
+  font-size: 0.95rem; font-weight: 600;
+}
+.toc a span { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 500; margin-top: 2px; }
+
+.tier {
+  border: 1px solid var(--line); border-radius: 12px;
+  padding: 10px 12px; margin: 10px 0;
+  background: #FAFBFC;
+}
+.tier .label {
+  display: inline-block; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.03em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 4px;
+}
+.tier.remember { background: var(--remember-bg); border-color: #e8b078; }
+.tier.remember .label { color: #8a4b12; }
+.tier.remember p { font-weight: 650; margin-bottom: 0; }
+.tier.align { background: var(--align-bg); border-color: #b8c9d6; }
+.tier.align .label { color: var(--focus); }
+.tier ul { margin-bottom: 0; }
+
+.warn, .escalate {
+  border-radius: 12px; padding: 10px 12px; margin: 10px 0;
+  border: 1.5px solid;
+}
+.warn { background: var(--warn-bg); border-color: var(--warn-bd); color: var(--warn-ink); }
+.escalate { background: var(--esc-bg); border-color: var(--esc-bd); }
+.warn .label, .escalate .label {
+  font-size: 11px; font-weight: 800; letter-spacing: 0.04em;
+  text-transform: uppercase; display: block; margin-bottom: 4px;
+}
+.warn p, .escalate p { margin: 0; font-weight: 600; }
+
+.figure {
+  margin: 14px 0; padding: 10px;
+  background: #FAFBFC; border: 1px solid var(--line); border-radius: 12px;
+}
+.figure .fid {
+  font-size: 12px; font-weight: 800; color: var(--accent); margin-bottom: 6px;
+}
+.figure img {
+  width: 100%; background: #fff; border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.figure .cap {
+  margin: 8px 0 0; font-size: 0.9rem; color: var(--muted); line-height: 1.4;
+}
+
+.abbr-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.abbr-wrap table { min-width: 280px; font-size: 0.875rem; }
+
+.closing {
+  margin: 12px 10px 0; padding: 14px;
+  background: var(--panel); border-radius: 16px; border: 1px solid var(--line);
+  font-size: 0.95rem; color: var(--muted);
+}
+.closing strong { color: var(--ink); }
+
+.jump {
+  position: fixed; right: 12px; bottom: calc(12px + var(--safe-bottom));
+  z-index: 30;
+  min-height: 44px; min-width: 44px; padding: 0 12px;
+  border-radius: 999px; border: 1px solid var(--line);
+  background: var(--ink); color: #fff; font-weight: 700; font-size: 13px;
+  text-decoration: none; display: inline-flex; align-items: center;
+  box-shadow: 0 4px 16px rgba(30,42,80,0.25);
+}
+
+/* —— In-text abbr popovers (v3.1) —— */
+.abbr-term {
+  display: inline;
+  margin: 0; padding: 0 1px;
+  border: 0; background: transparent;
+  font: inherit; color: inherit;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+  border-radius: 3px;
+  -webkit-tap-highlight-color: transparent;
+}
+.abbr-term:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.abbr-term[aria-expanded="true"] {
+  background: rgba(196,92,38,0.12);
+  text-decoration-style: solid;
+}
+.abbr-pop {
+  position: absolute;
+  z-index: 50;
+  max-width: min(280px, calc(100vw - 24px));
+  padding: 10px 12px;
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(30,42,80,0.18);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  pointer-events: auto;
+}
+.abbr-pop[hidden] { display: none !important; }
+.abbr-pop .en { display: block; font-weight: 700; color: var(--ink); }
+.abbr-pop .zh { display: block; margin-top: 4px; color: var(--muted); font-size: 0.85rem; }
+.abbr-pop .key {
+  display: block; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 4px;
+}
+.abbr-live {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+  <header class="topbar">
+    <a class="back" href="../../" aria-label="返回 BSE Notes">← Hub</a>
+    <div class="brand">
+      <div class="name">BSE Notes</div>
+      <div class="sub">屋宇裝備學習筆記</div>
+    </div>
+  </header>
+
+  <header class="hero">
+    <div class="eyebrow">OM-Knowledge</div>
+    <h1>屋宇裝備 O&amp;M 原則</h1>
+    <p class="en">Building services O&amp;M principles</p>
+    <p class="blurb">MVAC 空氣／水側、CAV／VAV 同壓差、消防 pre-action、電力分層、醫用氣體同 CCMS 嘅 O&amp;M 原則同巡查思維——唔寫項目死數、唔標項目類型。</p>
+    <div class="meta-row"><span>建立 2026-10-28</span><span>slug · om-knowledge</span></div>
+  </header>
+
+
+  <section class="sheet" id="s0" aria-labelledby="h-s0">
+    <h2 id="h-s0">0. 點樣用呢本</h2>
+<div class="tier remember"><span class="label">記住呢句</span><p>先識「系統點運作＋壞咗會點樣」，再對獲批圖同 O&amp;M 手冊。</p></div>
+    <p><strong>點解：</strong>保養／巡查問答多數考<strong>推理</strong>：空氣由邊去邊、點解受控房用 CAV、點解 pre-action、Essential 同 UPS 分別護咩。背死數唔等於識巡查。</p>
+    <p><strong>保養／巡查睇咩：</strong>每章四層——記住呢句 → 點解 → 保養／巡查睇咩 → <strong>教學對位</strong>（常見配置對位）。Warn 見到就當紅線。</p>
+<div class="tier align"><span class="label">教學對位</span><p>以泛用受控／潔淨送風空間為對位：全日鮮風 AHU、CAV＋壓差穩定器、風冷冷水機、雙連鎖 pre-action、UPS 房氣體滅火、Normal／Essential／UPS、醫用氣體終端、CCMS。用嚟對位，唔用嚟代替獲批圖。</p></div>
+    <p>項目具體數字<strong>以獲批圖／O&amp;M 為準</strong>。</p>
+
+    <h3 id="abbr">縮寫（本筆記）</h3>
+    <div class="abbr-wrap">
+    <table>
+      <thead><tr><th>縮寫</th><th>全稱</th></tr></thead>
+      <tbody>
+        <tr><td>AHU</td><td>Air Handling Unit／空氣處理機組</td></tr>
+        <tr><td>CAV</td><td>Constant Air Volume／定風量</td></tr>
+        <tr><td>VAV</td><td>Variable Air Volume／變風量</td></tr>
+        <tr><td>HEPA</td><td>High-Efficiency Particulate Air／高效微粒空氣過濾</td></tr>
+        <tr><td>MPPS</td><td>Most Penetrating Particle Size／最易穿透粒徑</td></tr>
+        <tr><td>MVAC</td><td>Mechanical Ventilation and Air Conditioning／機械通風及空調</td></tr>
+        <tr><td>ACH</td><td>Air Changes per Hour／換氣次數（每小時）</td></tr>
+        <tr><td>ΔP／DP</td><td>Differential Pressure／壓差（差壓）</td></tr>
+        <tr><td>CHW</td><td>Chilled Water／冷凍水</td></tr>
+        <tr><td>MSFD</td><td>Motorised Smoke Fire Damper／電動防煙防火閘</td></tr>
+        <tr><td>UPS</td><td>Uninterruptible Power Supply／不間斷電源</td></tr>
+        <tr><td>ATS</td><td>Automatic Transfer Switch／自動轉換開關</td></tr>
+        <tr><td>STS</td><td>Static Transfer Switch／靜態轉換開關</td></tr>
+        <tr><td>AVSU</td><td>Area Valve Service Unit／區域隔離閥箱</td></tr>
+        <tr><td>CCMS</td><td>Central Control and Monitoring System／中央監控系統</td></tr>
+        <tr><td>PTW</td><td>Permit to Work／准工證／工作許可</td></tr>
+        <tr><td>DDC</td><td>Direct Digital Control／直接數位控制</td></tr>
+        <tr><td>FSD</td><td>Fire Services Department／消防處（規程語境）</td></tr>
+        <tr><td>EMSD</td><td>Electrical and Mechanical Services Department／機電工程署（規程語境）</td></tr>
+        <tr><td>HA</td><td>HA（規程語境縮寫；唔當項目客戶銘牌）</td></tr>
+        <tr><td>BSI</td><td>Building Services Inspector／屋宇裝備督察</td></tr>
+        <tr><td>O&amp;M</td><td>Operation and Maintenance／運作與保養</td></tr>
+        <tr><td>Novec</td><td>潔淨氣體滅火介質之常用品牌代稱（以獲批圖／產品為準）</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:0.9rem;color:var(--muted)">正文首見優先補括號；格式：縮寫（English／中文）。正文內英文縮寫可<strong>點／hover</strong>睇 EN＋中文全稱（來源＝本表）。</p>
+
+    <h3 id="toc">目錄</h3>
+    <nav class="toc" aria-label="章節目錄">
+      <a href="#s1">1. 系統地圖<span>D0 · D0a–D0f</span></a>
+      <a href="#s2">2. 空氣側（MVAC）<span>AHU · HEPA · CAV／VAV · 壓差 · D2 D3 D8</span></a>
+      <a href="#s3">3. 水側<span>冷水機 · 泵 · 盤管 · D4</span></a>
+      <a href="#s4">4. 消防<span>Pre-action · 雙連鎖 · 氣體滅火 · D5 D9</span></a>
+      <a href="#s5">5. 電力<span>Normal／Essential／UPS · D6</span></a>
+      <a href="#s6">6. 醫用氣體系統（通用）<span>D7</span></a>
+      <a href="#s7">7. 監控 CCMS<span>警報 · 趨勢 · 參數</span></a>
+      <a href="#s8">8. 保養巡查思維<span>每日／每週／每季</span></a>
+      <a href="#s9">9. 常見故障聯想<span>空氣 · 水側 · 警報</span></a>
+    </nav>
+  </section>
+
+
+  <section class="sheet" id="s1" aria-labelledby="h-s1">
+    <h2 id="h-s1">1. 系統地圖（你行場要有張腦圖）</h2>
+<div class="tier remember"><span class="label">記住呢句</span><p>受控／潔淨送風空間＝<strong>風（潔淨＋壓差）＋水（冷凍）＋火（滅火＋聯鎖）＋電（不停電分層）＋醫氣＋監控</strong>；任何一環壞都會拖第二環。</p></div>
+<div class="tier why"><span class="label">點解</span><p>氣流方向靠壓差同風量差；關鍵負荷靠電；滅火方式要配合房間用途同設備；醫用氣體係受規管生命支持；CCMS 係你最早收到警報嘅地方。一環異常會連鎖：例如過濾塞 → 風量跌 → 壓差掉；泵停 → 盤管唔冷 → 有人亂加風量 → 壓差再亂。</p></div>
+<figure class="figure" id="fig-d0">
+  <div class="fid">D0｜系統總圖（六塊）</div>
+  <img src="diagrams/D0.svg" alt="D0 系統總圖（六塊）" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">六塊一齊先成套；一環壞會拖第二環。</figcaption>
+</figure>
+
+    <h3 id="s1-1">1.1 六塊地圖（一口記住）</h3>
+    <div class="abbr-wrap">
+    <table>
+      <thead><tr><th>塊</th><th>腦圖</th><th>典型壞徵</th></tr></thead>
+      <tbody>
+        <tr><td><strong>空氣側 MVAC</strong></td><td>室外新鮮空氣 → AHU（過濾／冷卻／加熱／風機）→ 風管／風閘／CAV → 房間送風（常有 HEPA）→ 回／抽風 → 排走或處理</td><td>壓差掉、嘈、過濾壓差高、房溫離標</td></tr>
+        <tr><td><strong>水側</strong></td><td>冷水機 → 冷凍水供／回 → 水泵 → AHU 盤管 → 回水</td><td>冇冷、盤管結露／滴水、泵異響、水質差</td></tr>
+        <tr><td><strong>消防</strong></td><td>探測 → 控制 → 滅火介質（水或氣）→ 風機／防火閘聯鎖</td><td>誤報、閥位錯、臨時覆蓋缺口</td></tr>
+        <tr><td><strong>電力</strong></td><td>市電／發電機路徑 → Essential 分電 → UPS → 重要負載；STS／bypass</td><td>切換失敗、電池衰、接地／絕緣異常</td></tr>
+        <tr><td><strong>醫用氣體</strong></td><td>總管／riser → 分接 → AVSU → 房間終端；區警報</td><td>警報、壓力異常、錯接風險</td></tr>
+        <tr><td><strong>監控 CCMS</strong></td><td>感應器 → 控制器 → 畫面／趨勢／警報 → 人去現場確認</td><td>警報風暴、誤改參數、假正常</td></tr>
+      </tbody>
+    </table>
+    </div>
+<figure class="figure" id="fig-d0a">
+  <div class="fid">D0a｜空氣側 MVAC</div>
+  <img src="diagrams/D0a.svg" alt="D0a 空氣側 MVAC" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">鮮風入房，潔淨同壓差由風量路徑決定。</figcaption>
+</figure>
+<figure class="figure" id="fig-d0b">
+  <div class="fid">D0b｜水側</div>
+  <img src="diagrams/D0b.svg" alt="D0b 水側" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">冷量靠水運去盤管；泵停／閥關＝房熱。</figcaption>
+</figure>
+<figure class="figure" id="fig-d0c">
+  <div class="fid">D0c｜消防</div>
+  <img src="diagrams/D0c.svg" alt="D0c 消防" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">探測帶動滅火同聯鎖；聯鎖係一條鏈。</figcaption>
+</figure>
+<figure class="figure" id="fig-d0d">
+  <div class="fid">D0d｜電力（應急路徑）</div>
+  <img src="diagrams/D0d.svg" alt="D0d 電力（應急路徑）" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">UPS 撐空檔；Essential 之後持續。</figcaption>
+</figure>
+<figure class="figure" id="fig-d0e">
+  <div class="fid">D0e｜醫用氣體</div>
+  <img src="diagrams/D0e.svg" alt="D0e 醫用氣體" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">分接→隔離→終端；警報係早期警告。</figcaption>
+</figure>
+<figure class="figure" id="fig-d0f">
+  <div class="fid">D0f｜監控 CCMS</div>
+  <img src="diagrams/D0f.svg" alt="D0f 監控 CCMS" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">畫面係耳目；異常要現場確認。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>行場先問「呢間房靠邊套 AHU／邊條電／邊種滅火」；唔識對位就唔好亂調。</li></ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控空間常用全日鮮風 AHU；壓差靠 CAV＋穩定器；冷水嚟自風冷冷水機；高敏感區用雙連鎖 pre-action；UPS／電池房用 Novec 類氣體；有 Essential 同 UPS；醫氣由既有 riser 分接；風機切換同壓差有 CCMS 點。</p></div>
+  </section>
+
+
+  <section class="sheet" id="s2" aria-labelledby="h-s2">
+    <h2 id="h-s2">2. 空氣側（MVAC）</h2>
+
+    <h3 id="s2-1">2.1 AHU（Air Handling Unit／空氣處理機組）——全日鮮風嘅核心</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>受控／潔淨送風空間常用<strong>全日新鮮空氣</strong> AHU：過濾 → 冷卻／加熱 → 送風；唔靠大量循環風「慳冷」去換潔淨級。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li><strong>空氣處理順序：</strong>室外鮮風先經過濾；再經冷卻盤管——空氣被冷卻，同時相對濕度上升、多餘水汽可能凝結排出（去濕）；若房要定溫定濕，後面常有再熱／加濕步驟。全日鮮風＝幾乎唔混室內回風，所以每次都要重新冷卻／加熱，能耗同過濾負擔都高。</li>
+<li><strong>點解少用大量循環：</strong>工作區要控制微粒、氣味同廢氣方向；循環風會把房間內污染物再送返入工作區。潔淨／氣流方向優先於「慳冷」。</li>
+<li><strong>過濾差壓 vs 風機曲線（定性）：</strong>濾網髒 → 阻力↑ → 同一風機轉速下風量↓。差壓高唔等於「風機壞」，多數係濾阻；但風量跌會直接拖低房間送風，間接令壓差唔穩。</li>
+<li><strong>旁通縫風險：</strong>機組門、濾框墊片、旁通風門若關唔實，未過濾空氣會「偷入」送風側。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>機組門關好、密封條完整；冷凝水盤去水暢通、無積水發霉</li>
+<li>各級過濾差壓／更換紀錄；有無旁通縫</li>
+<li>盤管翅片髒唔髒、冷凍水閥動作、送風機軸承／皮帶／變頻狀態</li>
+<li>凍水／熱水管有無滲漏喺 AHU 房（地面水跡＝紅旗）</li>
+<li>O&amp;M：濾網規格、更換週期、清潔程序——跟手冊，唔估</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>服務受控區嘅 AHU 屬全日鮮風路線；AHU 房可能擴建／插入既有機組之間——施工同保養都要分清邊部機服務邊區。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>開機門做檢查要停機／上鎖掛牌（跟場規）；運轉中伸手入風機＝嚴重安全事故。</p></div>
+
+    <h3 id="s2-2">2.2 過濾同 HEPA</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>粗／中效保護盤管同風機；<strong>HEPA（High-Efficiency Particulate Air／高效微粒過濾）主要管潔淨</strong>，多數裝喺<strong>末端送／回風口</strong>；<strong>壓差唔係靠 HEPA「塞住」造出嚟</strong>。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li><strong>分層意圖：</strong>機組內粗／中效＝護盤管同風機葉輪；末端 HEPA＝護房間潔淨級。</li>
+<li><strong>MPPS（一句）：</strong>HEPA 最難攔嘅粒徑大約喺「最易穿透粒徑」（MPPS）附近。</li>
+<li><strong>完整性測試（概念）：</strong>換 HEPA 後要用規定方法查外殼／墊片有無洩漏旁通；唔係 DIY 拿手電照一下。</li>
+<li><strong>ΔP vs 潔淨意圖：</strong>設計意圖係「風量差造壓，過濾造潔淨」，唔係靠濾網當塞子造正壓。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>過濾級順序有冇裝錯、有冇漏裝墊片</li>
+<li>HEPA 有無旁通、外殼變形、更換同完整性測試程序</li>
+<li>差壓計／開關係咪合理；「差壓高」＝該換定係風量異常，要分開想</li>
+<li>更換時保護下游潔淨——跟潔淨規程同 O&amp;M，唔貪快</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控房末端送回風口路線常有 HEPA；巡查時分清「機組內過濾」同「末端 HEPA」兩層。教學以<strong>末端送風</strong> HEPA 為主；回風有無 HEPA 跟獲批圖。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>未做完整性測試就當「已經 HEPA 合格」——唔可以。</p></div>
+
+    <h3 id="s2-3">2.3 風管、風閘、MSFD（機械煙火閘）</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>風管係氣流嘅路；<strong>調風閘</strong>調風量，<strong>防火／防煙閘（含 MSFD：Motorised Smoke Fire Damper／電動防煙防火閘）</strong>喺火警時切斷蔓延——兩者用途唔好混。</p></div>
+<div class="tier why"><span class="label">點解</span><p>調風閘卡住→房間風量同壓差錯；防火閘誤關或未聯鎖→火災時煙火經風管走，或者日常無故斷風。氣體滅火放電時，風機停同 MSFD 關係一條<strong>時間序列</strong>：關得太慢＝氣體流失；亂試聯鎖＝可能誤停送風令受控區失壓。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>軟接有無破裂漏風；保溫完整（冷凝＝漏冷＋發霉風險）</li>
+<li>防火閘：釋放機構、位置指示、聯鎖測試紀錄</li>
+<li>施工後有無雜物留喺風管；天花開孔補回</li>
+<li>標籤：邊條管去邊間房——對唔到就唔好盲調</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控區風管改動多、同既有系統交接；氣體滅火放電時風機／防火閘要按序列關——識「存在」，唔好現場亂試。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>唔好手動卡住防火閘「方便送風」；火警時係責任問題。</p></div>
+
+    <h3 id="s2-4">2.4 CAV vs VAV</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>CAV（Constant Air Volume／定風量）</strong>＝送（或抽）風量大致<strong>定死</strong>；<strong>VAV（Variable Air Volume／變風量）</strong>＝風量隨負荷<strong>變</strong>。<strong>受控／潔淨壓差 cascade 多數用 CAV</strong>。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li><strong>CAV：</strong>控制器量測風量，驅動風閥／變頻貼近設定。溫度多用盤管水閥或再熱調焓，風量保持穩，壓差先穩得住。</li>
+<li><strong>VAV：</strong>溫感要求多冷／少冷 → 風閥開大／關細 → 風量變。每間房風量一變，相鄰房之間嘅壓差就跟住抖。</li>
+<li><strong>點解 ΔP cascade 偏愛定風量：</strong>壓差靠「每間房送−抽 ≈ 設計洩漏」。風量若隨負荷飄，洩漏同方向都會飄。</li>
+<li>唔係「VAV 高級、CAV 落伍」——係<strong>用途唔同</strong>。</li>
+</ul></div>
+<figure class="figure" id="fig-d3">
+  <div class="fid">D3｜CAV vs VAV</div>
+  <img src="diagrams/D3.svg" alt="D3 CAV vs VAV" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">受控 cascade 偏愛 CAV：風量定，先鎖氣流方向；溫度多用再熱／水閥。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>對圖確認箱體類型（CAV／VAV）、設定風量、執行器同位置反饋</li>
+<li>CAV：設定值被改過未？風閥有無卡死全開／全關？</li>
+<li>VAV（若周邊有）：最低風量設定夠唔夠維持通風同壓差意圖？</li>
+<li>Setback／夜間模式改嘅係邊幾個 box——對邏輯表</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控房壓差故事建喺 <strong>CAV＋壓差穩定器</strong>；你識 VAV 係為咗答「點解唔用」、同理解大樓其他區可能唔同。</p></div>
+
+    <h3 id="s2-5">2.5 房間壓差同 pressure stabiliser</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>送風多過離開房間嘅風 → 正壓</strong>；空氣由高壓（較乾淨）流向低壓（較污）。<strong>Pressure stabiliser（壓差穩定器）</strong>幫你喺<strong>門關</strong>時把壓差鎖近設計值。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li><strong>質量平衡：</strong>Qs − Qe ≈ Qleak。多出嚟嘅風經門縫、傳遞窗、穩定器等路徑離開。</li>
+<li><strong>開門暫態：</strong>門一開壓差會垮一截；量度同驗收多數以<strong>門關</strong>為準。</li>
+<li><strong>穩定器＝受控洩漏：</strong>設計好嘅洩壓路徑，唔係「門封膠條神話」。封住穩定器＝改咗設計洩漏。</li>
+<li><strong>Cascade 方向：</strong>高要求房（最高正壓）→ 緩衝／前室 → 走廊（較低）。具體 Pa 數見獲批圖。</li>
+</ul></div>
+<figure class="figure" id="fig-d2">
+  <div class="fid">D2｜壓差 cascade＋穩定器</div>
+  <img src="diagrams/D2.svg" alt="D2 壓差 cascade＋穩定器" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">送多過抽→正壓；空氣由高流向低；穩定器係受控洩漏，唔係膠條神話。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>門關測壓差；門底縫、傳遞窗、天花開口有無額外大漏</li>
+<li>穩定器裝向、有無堵塞、有無被人膠帶封住</li>
+<li>相鄰房同時開門會唔會互相拖壓差——觀察、記錄</li>
+<li>壓差錶／傳感器校正同安裝位置</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>典型 cascade 概念：高要求房最高正壓 → 緩衝／前室次之 → 走廊／dirty 側更低（具體 Pa 數見獲批圖）。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>高要求房門開會唔會拖低相鄰受控房——文件未寫死就要問清楚，唔好自己當冇事。</p></div>
+
+    <h3 id="s2-6">2.6 Normal vs Setback——ACH 同 ΔP 係兩件事</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>Setback＝慳風／慳能模式</strong>；通常仍要維持<strong>壓差方向同溫濕大致受控</strong>，但<strong>全速換氣次數（ACH）唔維持</strong>。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>ACH 講「一小時換幾多次氣」；ΔP 講「邊間高邊間低」。Setback 可以減 ACH，但仍應維持 cascade <strong>方向</strong>，唔可以反轉。</li>
+<li>唔好用 Normal 嘅 ACH 去判 setback 失敗——要查方向有冇反、溫濕有冇越限、邊個 box 被關錯。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>邊啲 CAV／風機喺 setback 關或減——對控制邏輯</li>
+<li>轉換 Normal↔Setback 有無警報、有無溫濕／壓差越限</li>
+<li>人手覆寫（manual override）有冇人忘記复回</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控區有 Normal／Setback 控制意圖；細節風量同邊個 box 關——對 AHU／CAV 附錄同獲批圖。</p></div>
+
+    <h3 id="s2-7">2.7 主備風機（Duty／Standby）切換</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>主機壞／跳脫 → 備機自動或按程序頂上；<strong>切換瞬間風量同壓差會抖</strong>——要識睇警報同恢復。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>受控區常要連續送風；單風機無備＝單點故障。</li>
+<li>常見故障：備機未真正起動；風閥互鎖卡中間；CCMS 顯示已切但現場仍係舊機；切換後未回穩就被當完成。</li>
+<li>切換瞬間風量短暫跌 → 壓差抖——屬預期暫態；要睇有冇喺時限內恢復。</li>
+</ul></div>
+<figure class="figure" id="fig-d8">
+  <div class="fid">D8｜Duty／Standby 切換</div>
+  <img src="diagrams/D8.svg" alt="D8 Duty／Standby 切換" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">備機頂上要連風閥互鎖一齊確認；轉咗未回穩唔算完成。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>Duty／Standby 狀態燈同 CCMS 一唔一致</li>
+<li>定期切換測試有無做、有無卡閥</li>
+<li>切換後過濾差壓、房壓、噪音有無異常</li>
+<li>手動強迫切換要有 PTW（Permit to Work／准工證）／場規</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>相關風機有主備同 CCMS 警報意圖——巡查先睇畫面再入場。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>運轉中亂切、或者關掉唯一運行風機「聽吓靜唔靜」——可以令受控區失壓。</p></div>
+  </section>
+
+
+  <section class="sheet" id="s3" aria-labelledby="h-s3">
+    <h2 id="h-s3">3. 水側（冷凍水／盤管／泵）</h2>
+
+    <h3 id="s3-1">3.1 風冷冷水機（Air-cooled chiller）</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>風冷機＝室外用風扇帶走冷凝熱，製造冷凍水畀 AHU 盤管；<strong>冇冷卻水塔</strong>，但室外盤管髒同氣流受阻一樣會冇冷。</p></div>
+<div class="tier why"><span class="label">點解</span><ol>
+<li><strong>壓縮機</strong>把低壓冷媒蒸氣壓成高溫高壓氣；</li>
+<li><strong>冷凝器（室外盤管）</strong>用室外風帶走熱，冷媒冷凝成液；</li>
+<li><strong>膨脹裝置</strong>降壓，液冷媒變低溫低壓；</li>
+<li><strong>蒸發器</strong>入面冷凍水把熱傳畀冷媒，水變凍——再入壓縮機。</li>
+</ol>
+<p><strong>氣流短路：</strong>室外排熱若被牆／鄰機擋返吸入冷凝器，等於「吸自己嘅熱風」——冷凝壓力升、效率跌、甚至高壓跳脫。</p></div>
+<figure class="figure" id="fig-d4">
+  <div class="fid">D4｜風冷冷水機蒸氣壓縮＋冷凍水</div>
+  <img src="diagrams/D4.svg" alt="D4 風冷冷水機蒸氣壓縮＋冷凍水" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">壓縮→冷凝散熱→膨脹→蒸發製冷水；水運冷去盤管；室外盤管要通風同乾淨。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>室外盤管清潔、風扇運轉、異響、結霜／結冰異常</li>
+<li>冷凍水供／回水溫差是否合理（跟設計意圖同當下負荷）</li>
+<li>制冷劑壓力／報警歷史（合資格人）；你主要識「有警報要升級」</li>
+<li>底座、減震、排水、電氣盤受潮</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>風冷冷水機服務本區冷凍需求；接既有冷凍水總管／header——施工期 tee-off 同日常洩漏都要盯。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>制冷劑操作屬受規管工種——唔識唔做。</p></div>
+
+    <h3 id="s3-2">3.2 冷凍水回路、水泵、AHU 盤管</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>冷量係「水運」去盤管；<strong>泵提供流量，閥調節</strong>，盤管先換到熱——有冷機但泵停／閥關＝房一樣熱。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>容量 ≈ 流量 × ΔT × 常數。流量不足或 ΔT 異常＝盤管換唔到設計冷量。</li>
+<li>常見故障鏈：Y-strainer 塞 → 流量↓ → 盤管唔冷 → 房溫高 → 有人狂開 CAV 風量「補救」→ 壓差亂。</li>
+<li>盤管氣阻：水系統入氣會佔住水路；要按程序排氣。</li>
+<li>閥同旁通：控制閥卡關／旁通常開 → 水唔經盤管或短路回流。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>泵：聲、震、軸封滲漏、壓力錶、变频器故障碼</li>
+<li>過濾器／Y-strainer 前後壓差；排污有無做</li>
+<li>盤管：進出水溫、水閥行程、盤管氣阻、冷凝水排水</li>
+<li>閥門標籤同開關狀態；旁通閥有無人常開</li>
+<li>保溫破損→結露滴水→天花霉同電氣風險</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>AHU 靠冷凍水盤管造冷；水側異常會直接反映喺受控房溫濕同「為咗追溫度亂調風」。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>帶壓系統排污／拆法蘭要跟程序；燙／凍水都可以傷人。</p></div>
+
+    <h3 id="s3-3">3.3 防凍、洩漏、水質</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>冬天盤管凍裂同日常滲漏一樣可以停晒受控區服務；<strong>水質差→結垢／腐蝕→流量同換熱雙輸</strong>。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>凍裂：盤管內水溫過低 → 水結冰體積脹 → 銅管／接頭裂。</li>
+<li>洩漏早期徵兆：補水頻率異常、盤面／接頭水跡、天花水漬。</li>
+<li>水質：結垢加熱阻、腐蝕出鏽渣再塞 strainer。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>低溫警報同防凍設定有無人亂改</li>
+<li>水系統補水頻率異常＝可能洩漏</li>
+<li>水質化驗／加藥紀錄（跟場內水務／O&amp;M）</li>
+<li>施工 tee-off／熱燙接後：焊口、法蘭、支架——特別係天花板上</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>有冷凍水接駁同可能嘅管道凍結保護措施意圖——對獲批圖同方法陳述，唔靠猜想。</p></div>
+  </section>
+
+
+  <section class="sheet" id="s4" aria-labelledby="h-s4">
+    <h2 id="h-s4">4. 消防</h2>
+
+    <h3 id="s4-1">4.1 濕式花灑 vs Pre-action</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>濕式</strong>＝管內長期有水，熱玻璃膽爆就出水；<strong>Pre-action</strong>＝平時管內多數係氣／乾，要滿足啟動條件先入水／出水——減少<strong>誤射水</strong>摧毀受控空間同設備。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>濕式＝水已喺管到噴頭底下，反應快但誤開／凍裂／撞擊都可能出水。</li>
+<li>Pre-action＝平時乾或監管氣壓，要探測／聯鎖先開閥入水——用「多一步」換誤射風險下降。</li>
+<li>代價：氣壓監管、電磁閥、探測、信號都要健康；低氣壓警報＝大事。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>閥組位置、鎖固、標牌、旁通狀態</li>
+<li>氣壓／監管信號正常；低氣壓警報要當大事</li>
+<li>探測器污染（裝修塵）→誤報風險</li>
+<li>週期測試同排水——跟消防規程／場內程序同合資格承辦</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>高敏感受控區走 pre-action 路線；支援區可能仍係濕式——分區唔好當全部一樣。</p></div>
+
+    <h3 id="s4-2">4.2 Double interlock（雙連鎖）</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>Double interlock</strong>＝要<strong>兩類獨立條件齊</strong>（例如探測＋另一聯鎖信號／釋放步驟，以獲批圖同產品說明為準）先進入出水序列——再減誤射。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>單連鎖已經比濕式嚴；雙連鎖要求<strong>兩條獨立腿</strong>都真——邏輯上係 AND，唔係 OR。</li>
+<li>風險：誤調／短接其中一條輸入 → 畫面可能仲顯示「有保護」，實際未成連鎖。</li>
+</ul></div>
+<figure class="figure" id="fig-d5">
+  <div class="fid">D5｜Pre-action／雙連鎖</div>
+  <img src="diagrams/D5.svg" alt="D5 Pre-action／雙連鎖" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">高敏感區用 pre-action＋雙連鎖：多一步確認，減誤射水；兩腿都要真。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>啟動序列寫喺邊、有無修訂</li>
+<li>測試時確認兩條腿都真係要；唔好為「方便」短接信號</li>
+<li>施工後恢復：臨時短接／inhibit 有冇清走</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>設計意圖常係雙連鎖 pre-action——常考「點解唔用普通花灑」。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>禁止為趕工期永久短接消防信號。</p></div>
+
+    <h3 id="s4-3">4.3 氣體滅火（Novec 類）</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>電氣房／UPS 房常用<strong>潔淨氣體</strong>滅火（例如 Novec 類）——<strong>唔靠浸水</strong>；放電前要走人、關風機／防火閘，避免氣體流失同人員危險。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>水會毀電池同電力電子；潔淨氣體靠降低氧／吸熱（視介質）滅火。</li>
+<li><strong>Hold time</strong>同圍封完整性：門縫大、風管未關、洩壓口錯 → 氣體走光＝滅火失敗。</li>
+<li>序列概念：警報 → 疏散延時 → 停相關送／排風 → 關防火閘 → 放氣。</li>
+</ul></div>
+<figure class="figure" id="fig-d9">
+  <div class="fid">D9｜氣體滅火聯鎖</div>
+  <img src="diagrams/D9.svg" alt="D9 氣體滅火聯鎖" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">放電前停風關閘，氣體先留得住；亂序＝hold time 唔夠。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>鋼瓶壓力／重量檢查紀錄、噴嘴無堵塞、管路完整</li>
+<li>手動／自動模式、inhibit／isolation 狀態要清晰</li>
+<li>門密封、洩壓口、聯鎖風機同 MSFD</li>
+<li>人員警報、延時、疏散路線——識程序，唔現場試放</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>UPS／電池房走氣體滅火意圖；同受控區花灑系分家——唔好當成同一套閥。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>任何「試放／洩放」只可以由授權人按程序做。</p></div>
+
+    <h3 id="s4-4">4.4 MSFD／煙感聯鎖同施工期臨時消防</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>火警時：<strong>停相關風機、關防火閘、放氣體或啟動水系統</strong>——聯鎖係一條鏈；施工期主系統暫停就要有<strong>臨時探測＋看守＋PTW</strong>。</p></div>
+<div class="tier why"><span class="label">點解</span><p>裝修塵觸發煙感、切斷消防幹管、封路——營運中場地最怕「空窗」。臨時措施唔係可有可無；恢復時若漏撤 inhibit，等於長期假保護。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>聯鎖矩陣：邊個探測觸發邊啲閘／風機</li>
+<li>臨時煙感電池、覆蓋範圍、值班紀錄</li>
+<li>恢復時：臨時措施撤銷清單、主系統复位測試</li>
+<li>通道、消火栓、滅火筒受阻？</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>營運中場地改建——噪音塵同消防暫停都要同設施管理協調；溫習時要識問「而家靠臨時定主系統」。</p></div>
+  </section>
+
+
+  <section class="sheet" id="s5" aria-labelledby="h-s5">
+    <h2 id="h-s5">5. 電力</h2>
+
+    <h3 id="s5-1">5.1 Normal／Essential／UPS 分層——Ride-through</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>Normal</strong>＝市電日常；<strong>Essential</strong>＝市電失電後由發電機等應急來源撐嘅重要負荷；<strong>UPS（Uninterruptible Power Supply／不間斷電源）</strong>＝切換空檔都唔俾斷嘅「唔間斷」段（電池＋逆變）。</p></div>
+<div class="tier why"><span class="label">點解</span><ol>
+<li>正常：負荷由市電（Normal）供；</li>
+<li>市電失電：ATS（Automatic Transfer Switch／自動轉換開關）／發電機起動需要時間——Essential 路徑可能仲未到；</li>
+<li>UPS 橋接：電池經逆變器即時頂住「唔可以斷」嘅負荷；</li>
+<li>之後：發電機／Essential 就緒後持續供電；UPS 電池再充電待命。</li>
+</ol>
+<p>電池自主時間：設計會訂「撐幾耐」——實際分鐘數跟獲批圖／O&amp;M，唔背假數。</p></div>
+<figure class="figure" id="fig-d6">
+  <div class="fid">D6｜電源分層同切換空檔</div>
+  <img src="diagrams/D6.svg" alt="D6 電源分層同切換空檔" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">UPS 撐切換空檔；Essential 之後持續；留喺 bypass＝可能無 UPS。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>單線圖：邊啲負荷掛 Normal／Essential／UPS——標籤同現實一致？</li>
+<li>電池：室溫、端子、警報、自主測試紀錄（合資格人）</li>
+<li>發電機測試同 ATS／轉換開關紀錄（場級）</li>
+<li>插座同回路有冇被人私自改掛「當 UPS」</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控區有 Essential 同 UPS 分層意圖；容量同斷路器額定以獲批圖同相關文件為準。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>營運中場地帶電操作要 PTW；唔好當「只係睇吓」就開電蓋。</p></div>
+
+    <h3 id="s5-2">5.2 STS／Bypass 概念</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>STS（Static Transfer Switch）</strong>＝兩路電源之間快速自動切；<strong>Bypass</strong>＝維修時讓負荷暫時繞過 UPS 電子路徑——方便維修，但期間保護等級可能下降。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>STS：兩路之間以靜態開關極快切換；要求兩邊電源質素／相位條件符合。</li>
+<li>Maintenance bypass 風險：若有人做完<strong>留喺 bypass「貪方便」</strong>＝以為有 UPS 其實冇。面板指示 Normal／Battery／Bypass／Fault 要當巡查必睇項。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>面板指示：Normal／Battery／Bypass／Fault</li>
+<li>維修後有冇退出 bypass</li>
+<li>雙電源相位／同步條件（概念上要知「唔係隨便兩插座」）</li>
+<li>警報有冇塞靜音後唔跟進</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>UPS 系統維修同切換要按 O&amp;M；溫習識名同風險，實作交合資格電工。</p></div>
+
+    <h3 id="s5-3">5.3 巡查與切換（PTW／營運中場地）</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>任何影響受控區電力嘅切換＝<strong>計劃工作</strong>：時段、通知、後備、回退、誰可以喊停。</p></div>
+<div class="tier why"><span class="label">點解</span><p>冇協調嘅「試跳」可以停關鍵服務。紙面 PTW 同真正溝通缺一不可。回退計劃＝「切唔成點返原狀」。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>工作前：負荷清單、受影響房、通訊方式</li>
+<li>工作中：有人盯關鍵警報同使用單位聯絡</li>
+<li>工作後：確認負荷回正確來源、bypass 清除、紀錄完整</li>
+</ul></div>
+  </section>
+
+
+  <section class="sheet" id="s6" aria-labelledby="h-s6">
+    <h2 id="h-s6">6. 醫用氣體系統（通用）</h2>
+<div class="tier remember"><span class="label">記住呢句</span><p>醫用氣體係<strong>受規管生命支持系統</strong>：總管分接 → <strong>AVSU（Area Valve Service Unit／區域隔離閥箱）</strong> → 房間終端；<strong>區警報</strong>係你嘅早期警告——<strong>唔教你親手焊／亂關閥</strong>。常見氣體品種包括氧氣（O2）、真空（Vacuum）、醫療空氣（如 MA4）等——以獲批圖為準。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li><strong>身份防錯接：</strong>終端用銷釘指數（pin index）／顏色／形狀編碼。</li>
+<li><strong>AVSU＝區域隔離：</strong>一區有事可以關該區閥，唔使即斷全棟。關錯服務中受控區嘅 AVSU＝緊急事態。</li>
+<li><strong>警報層級：</strong>區警報／總警報分層提示壓力異常；消音只係暫時靜音。</li>
+</ul></div>
+<figure class="figure" id="fig-d7">
+  <div class="fid">D7｜醫氣邊界：riser→AVSU→終端</div>
+  <img src="diagrams/D7.svg" alt="D7 醫氣邊界：riser→AVSU→終端" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">分接→AVSU 隔離→終端；警報係早期警告；操作屬合資格承辦。</figcaption>
+</figure>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>AVSU：標籤、開關狀態、通道唔阻塞、玻璃／鎖完好</li>
+<li>區警報：面板位置、消音後有冇跟進、測試紀錄</li>
+<li>終端：顏色／形狀防錯接、有無漏氣聲、保護膠蓋</li>
+<li>工程改動後：邊類測試要做（壓力、純度、交叉連接等）——概念上知有測試鏈</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>由既有 riser <strong>tee-off</strong> 入受控區；氣體品種同終端以獲批圖為準。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>唔准當普通壓縮空氣管路去「試噴」；唔准私下關閉服務中受控區嘅 AVSU。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>任何氣味／壓力驟降／警報 → 即時按場內應急同工程程序，唔自行診斷完先報。</p></div>
+  </section>
+
+
+  <section class="sheet" id="s7" aria-labelledby="h-s7">
+    <h2 id="h-s7">7. 監控 CCMS（Central Control and Monitoring System／中央監控系統）</h2>
+<div class="tier remember"><span class="label">記住呢句</span><p>CCMS 係<strong>耳目</strong>：警報、狀態、趨勢；<strong>唔係</strong>俾你隨便當遊戲改控制參數。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>鏈路：傳感器 → 控制器／DDC（Direct Digital Control／直接數位控制）→ 畫面＋警報 → 人去現場確認。</li>
+<li>趨勢 vs 即時快照：單一即時值容易被暫態騙；趨勢圖先睇得出「慢慢漂」定「突然垮」。</li>
+<li>改 set-point＝改設計意圖——要授權、紀錄、可回退。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>每日：優先級警報清唔清、有冇長期 acknowledg 未修</li>
+<li>趨勢：房溫／壓差／差壓——突變先於投訴</li>
+<li>點位名同現場標籤一致；「壞點」要標咗壞</li>
+<li>改參數：授權、紀錄、回退——無授權唔改</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>風機切換、壓差、主要設備狀態有監控意圖——巡查建議「先畫面、後現場」。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>無授權唔好改 iBMS／CCMS 程式或 set-point。</p></div>
+  </section>
+
+
+  <section class="sheet" id="s8" aria-labelledby="h-s8">
+    <h2 id="h-s8">8. 保養巡查思維（可執行清單）</h2>
+<div class="tier remember"><span class="label">記住呢句</span><p>巡查係<strong>固定節奏＋異常升級</strong>；唔係等到壞先學問。</p></div>
+
+    <h3 id="s8-1">8.1 每日（或每更）——快、可重複</h3>
+    <ul class="checklist">
+      <li>CCMS／警報面板：火警監管、壓差、AHU／泵、UPS——有新增未清？</li>
+      <li>受控房：<strong>門關</strong>壓差觀感／錶讀（跟場規頻率）；門有無長期打開</li>
+      <li>AHU 房：異響、水跡、焦味、門關好</li>
+      <li>醫氣區警報：正常抑或靜音中</li>
+      <li>走火通道、臨時工程範圍：消防器材受阻？</li>
+    </ul>
+
+    <h3 id="s8-2">8.2 每週——稍深入</h3>
+    <ul class="checklist">
+      <li>過濾差壓趨勢；該換未換</li>
+      <li>Duty／Standby 狀態同上次自動／手動切換紀錄</li>
+      <li>泵區：滲漏、震、壓力</li>
+      <li>消防閥組目視：位置、鎖、標牌；氣壓（pre-action）</li>
+      <li>UPS／電池房：溫度、警報、通道；氣體滅火面板模式（有無留喺 bypass／inhibit）</li>
+      <li>同使用單位／設施短會：有無「間中失壓／間中熱」投訴未立案</li>
+    </ul>
+
+    <h3 id="s8-3">8.3 每季（或按 O&amp;M／合約）——計劃性</h3>
+    <ul class="checklist">
+      <li>聯鎖同切換測試（消防／風機／電源）——合資格人＋PTW</li>
+      <li>HEPA／過濾更換同測試計劃進度</li>
+      <li>水質／水系統保養節點</li>
+      <li>校正：壓差錶、關鍵溫度／濕度傳感器</li>
+      <li>文件：獲批圖修訂、O&amp;M、警報設定有無過期</li>
+      <li>演習：停電／失壓／氣體警報紙面走位（教學同場規）</li>
+    </ul>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><p>每項有「邊個做、紀錄去邊、超標點升級」——無主責＝假清單。</p></div>
+<div class="tier align"><span class="label">教學對位</span><p>改建期同營運期清單側重唔同，但升級紀律一樣。</p></div>
+  </section>
+
+
+  <section class="sheet" id="s9" aria-labelledby="h-s9">
+    <h2 id="h-s9">9. 常見故障聯想（教學推理，非現場定案）</h2>
+<div class="tier remember"><span class="label">記住呢句</span><p>先畫<strong>因果鏈</strong>再動手；見到 A 唔等於只修 A。</p></div>
+
+    <h3 id="s9-1">9.1 空氣／壓差</h3>
+    <div class="abbr-wrap">
+    <table>
+      <thead><tr><th>見到</th><th>先問</th><th>常見方向（教學）</th></tr></thead>
+      <tbody>
+        <tr><td>一間房正壓掉</td><td>門開？穩定器堵？抽風過大？送風不足？相鄰房？</td><td>查門同風量差，唔先拆 HEPA；開門暫態要同門關讀數分開</td></tr>
+        <tr><td>兩間房互相拖</td><td>門同時開？共用走廊洩漏？</td><td>記錄操作模式；cascade 方向可能被大洩漏短路</td></tr>
+        <tr><td>全層風細</td><td>AHU 跳？過濾塞爆？防火閘誤關？</td><td>先機組同聯鎖狀態；濾阻↑沿風機曲線風量↓</td></tr>
+        <tr><td>房溫高但壓差仲喺</td><td>水側／盤管／閥</td><td>唔好靠加大風量「硬搶冷」——會破壞已穩嘅 ΔP</td></tr>
+        <tr><td>切換風機後壓差抖完唔返</td><td>備機真起動？風閥互鎖？</td><td>對 CCMS 同現場狀態燈；暫態過後仍低＝未完成切換</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 id="s9-2">9.2 水側</h3>
+    <div class="abbr-wrap">
+    <table>
+      <thead><tr><th>見到</th><th>先問</th><th>常見方向（教學）</th></tr></thead>
+      <tbody>
+        <tr><td>有機無冷</td><td>泵？閥？冷機警報？盤管氣阻？</td><td>跟水溫 ΔT 同流量；strainer 塞→流量↓係常見源頭</td></tr>
+        <tr><td>天花滴水</td><td>保溫？盤管排水？管道滲？</td><td>分冷凝（保溫破）同眞漏（補水頻密）</td></tr>
+        <tr><td>泵又震又響</td><td>氣蝕？對中？軸承？底座？</td><td>停機檢查屬授權工作；氣蝕常同吸程／過濾塞有關</td></tr>
+        <tr><td>室外機高壓跳</td><td>盤管髒？氣流短路？</td><td>排熱被吸返＝冷凝差；先環境同清潔</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 id="s9-3">9.3 警報／監控</h3>
+    <div class="abbr-wrap">
+    <table>
+      <thead><tr><th>見到</th><th>先問</th><th>常見方向（教學）</th></tr></thead>
+      <tbody>
+        <tr><td>警報風暴</td><td>裝修塵？眞火？電源閃？</td><td>先生命安全，再分類；塵觸煙感係營運中場地常見</td></tr>
+        <tr><td>長期靜音</td><td>邊個消音？根因未除？</td><td>當未解決故障；靜音≠正常</td></tr>
+        <tr><td>畫面正常現場唔正常</td><td>傳感器壞／裝錯位？</td><td>以安全側現場為準並升級；趨勢可證「假正常」</td></tr>
+        <tr><td>UPS 以為有其實無</td><td>面板係咪 Bypass？</td><td>維修後留 bypass＝ride-through 斷咗</td></tr>
+      </tbody>
+    </table>
+    </div>
+<div class="tier align"><span class="label">教學對位</span><p>受控區最痛通常係<strong>失壓／誤水／失電</strong>三條線——任何一條都要短時間內升級到有權決定嘅人。</p></div>
+  </section>
+
+
+  <footer class="closing" id="closing">
+    <p>呢本係 <strong>O&amp;M／原理筆記</strong>；項目數字同文件細節<strong>以獲批圖／O&amp;M 為準</strong>。</p>
+    <p>跟<strong>獲批圖</strong>、場內消防／機電／醫氣規程同合約 O&amp;M。</p>
+  </footer>
+</div>
+<a class="jump" href="#top" aria-label="回到頁頂">↑ Top</a>
+
+<div id="abbr-pop" class="abbr-pop" role="tooltip" hidden></div>
+<div id="abbr-live" class="abbr-live" aria-live="polite"></div>
+<script>
+(function () {
+  'use strict';
+  var TABLE_SEL = null; // resolved below
+  var SKIP_SEL = 'script,style,svg,noscript,#abbr-pop,#abbr-live,.abbr-term,.abbr-pop,.figure .fid,h1,.hero .en,.eyebrow,.topbar';
+  var pop = document.getElementById('abbr-pop');
+  var live = document.getElementById('abbr-live');
+  var openBtn = null;
+  var hoverTimer = null;
+
+  function findGlossaryTable() {
+    // #abbr is the h3; table is the following .abbr-wrap sibling
+    var h = document.getElementById('abbr');
+    if (h) {
+      var n = h.nextElementSibling;
+      while (n) {
+        if (n.matches && n.matches('.abbr-wrap')) {
+          var t = n.querySelector('table');
+          if (t) return t;
+        }
+        if (n.tagName === 'TABLE') return n;
+        if (n.id === 'toc' || (n.tagName === 'H3')) break;
+        n = n.nextElementSibling;
+      }
+    }
+    return [...document.querySelectorAll('table')].find(function (t) {
+      var th = t.querySelector('th');
+      return th && th.textContent.trim() === '縮寫';
+    }) || null;
+  }
+
+  function buildMap() {
+    var map = Object.create(null);
+    var table = findGlossaryTable();
+    if (!table) return map;
+    table.querySelectorAll('tbody tr').forEach(function (tr) {
+      var cells = tr.querySelectorAll('td');
+      if (cells.length < 2) return;
+      var keyRaw = (cells[0].textContent || '').trim();
+      var full = (cells[1].textContent || '').trim();
+      if (!keyRaw || !full) return;
+      // Split compound keys like ΔP／DP
+      var keys = keyRaw.split(/[／/|]/).map(function (k) { return k.trim(); }).filter(Boolean);
+      keys.forEach(function (k) { map[k] = { key: k, full: full, displayKey: keyRaw }; });
+      map[keyRaw] = { key: keyRaw, full: full, displayKey: keyRaw };
+    });
+    return map;
+  }
+
+  function parseFull(full) {
+    // Prefer EN／ZH split; else whole string as EN, empty ZH
+    var parts = full.split('／');
+    if (parts.length >= 2) {
+      return { en: parts[0].trim(), zh: parts.slice(1).join('／').trim() };
+    }
+    return { en: full, zh: '' };
+  }
+
+  function escapeRe(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function buildPattern(keys) {
+    // Longest first so O&M beats O, ΔP before P, etc.
+    keys.sort(function (a, b) { return b.length - a.length; });
+    var alts = keys.map(escapeRe);
+    // Word-ish boundaries: not letter/digit before/after; allow & for O&M
+    return new RegExp('(?<![A-Za-z0-9])(' + alts.join('|') + ')(?![A-Za-z0-9])', 'g');
+  }
+
+  function shouldSkip(node) {
+    var el = node.nodeType === 3 ? node.parentElement : node;
+    while (el && el !== document.body) {
+      if (el.id === 'abbr') {
+        // Skip only the glossary table itself, not the whole #abbr section heading area outside table
+        // Actually #abbr is the h3; the table is inside .abbr-wrap after it.
+      }
+      if (el.matches && el.matches(SKIP_SEL)) return true;
+      if (el.classList && el.classList.contains('abbr-wrap') && el.querySelector('th') &&
+          /縮寫/.test((el.querySelector('th') || {}).textContent || '')) {
+        // Only the glossary abbr card: first abbr-wrap under s0 that has 縮寫 header
+        var th = el.querySelector('th');
+        if (th && th.textContent.indexOf('縮寫') !== -1) return true;
+      }
+      // Skip glossary table by walking: if inside #abbr's following table
+      if (el.tagName === 'TABLE') {
+        var prev = el.closest('.abbr-wrap');
+        if (prev) {
+          var h = null;
+          var p = prev.previousElementSibling;
+          while (p) {
+            if (p.id === 'abbr' || (p.tagName === 'H3' && p.id === 'abbr')) { h = p; break; }
+            p = p.previousElementSibling;
+          }
+          // Also: table whose first th is 縮寫
+          var firstTh = el.querySelector('th');
+          if (firstTh && firstTh.textContent.trim() === '縮寫') return true;
+        }
+      }
+      if (el.getAttribute && el.getAttribute('data-no-abbr') === '1') return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+
+  function wrapTextNode(textNode, re, map) {
+    var text = textNode.nodeValue;
+    if (!text || !re.test(text)) return;
+    re.lastIndex = 0;
+    var frag = document.createDocumentFragment();
+    var last = 0;
+    var m;
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+      var token = m[1];
+      var info = map[token];
+      if (!info) {
+        frag.appendChild(document.createTextNode(token));
+      } else {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'abbr-term';
+        btn.textContent = token;
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', token + '，縮寫，開啟全稱');
+        btn.dataset.abbrKey = token;
+        frag.appendChild(btn);
+      }
+      last = m.index + token.length;
+    }
+    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    textNode.parentNode.replaceChild(frag, textNode);
+  }
+
+  function walk(root, re, map) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        if (shouldSkip(node)) return NodeFilter.FILTER_REJECT;
+        var p = node.parentElement;
+        if (!p) return NodeFilter.FILTER_REJECT;
+        if (p.closest && p.closest('.abbr-term')) return NodeFilter.FILTER_REJECT;
+        // Skip diagram captions? Parent said skip if breaks layout — wrap body OK; captions OK when known abbrs
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (n) { wrapTextNode(n, re, map); });
+  }
+
+  function closePop() {
+    if (openBtn) {
+      openBtn.setAttribute('aria-expanded', 'false');
+      openBtn = null;
+    }
+    pop.hidden = true;
+    pop.innerHTML = '';
+    if (live) live.textContent = '';
+  }
+
+  function positionPop(btn) {
+    var r = btn.getBoundingClientRect();
+    var margin = 12;
+    var maxW = Math.min(280, window.innerWidth - 24);
+    pop.style.maxWidth = maxW + 'px';
+    pop.style.position = 'fixed';
+    // Measure after content
+    pop.hidden = false;
+    var pr = pop.getBoundingClientRect();
+    var top = r.bottom + 8;
+    if (top + pr.height > window.innerHeight - margin) {
+      top = Math.max(margin, r.top - pr.height - 8);
+    }
+    var left = r.left + (r.width / 2) - (pr.width / 2);
+    left = Math.max(margin, Math.min(left, window.innerWidth - pr.width - margin));
+    pop.style.top = top + 'px';
+    pop.style.left = left + 'px';
+  }
+
+  function openPop(btn) {
+    var key = btn.dataset.abbrKey;
+    var info = map[key];
+    if (!info) return;
+    if (openBtn === btn) { closePop(); return; }
+    closePop();
+    var parts = parseFull(info.full);
+    pop.innerHTML = '';
+    var k = document.createElement('span');
+    k.className = 'key';
+    k.textContent = info.displayKey || key;
+    pop.appendChild(k);
+    var en = document.createElement('span');
+    en.className = 'en';
+    en.textContent = parts.en;
+    pop.appendChild(en);
+    if (parts.zh) {
+      var zh = document.createElement('span');
+      zh.className = 'zh';
+      zh.textContent = parts.zh;
+      pop.appendChild(zh);
+    }
+    btn.setAttribute('aria-expanded', 'true');
+    openBtn = btn;
+    positionPop(btn);
+    if (live) live.textContent = key + '：' + info.full;
+  }
+
+  var map = buildMap();
+  var keys = Object.keys(map).filter(function (k) {
+    // Prefer atomic tokens; skip compound display keys that contain ／ if aliases exist
+    return k.indexOf('／') === -1 && k.indexOf('/') === -1;
+  });
+  // Always include compound-free keys; HA is short but in table — keep with word boundary
+  if (!keys.length) return;
+  var re = buildPattern(keys.slice());
+  var root = document.querySelector('.wrap') || document.body;
+  walk(root, re, map);
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('.abbr-term');
+    if (btn) {
+      e.preventDefault();
+      openPop(btn);
+      return;
+    }
+    if (pop.hidden) return;
+    if (pop.contains(e.target)) return;
+    closePop();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closePop(); return; }
+    var btn = e.target.closest && e.target.closest('.abbr-term');
+    if (!btn) return;
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openPop(btn);
+    }
+  });
+
+  // Desktop hover (optional same popover)
+  document.addEventListener('pointerover', function (e) {
+    if (e.pointerType === 'touch') return;
+    var btn = e.target.closest && e.target.closest('.abbr-term');
+    if (!btn) return;
+    clearTimeout(hoverTimer);
+    hoverTimer = setTimeout(function () { openPop(btn); }, 280);
+  });
+  document.addEventListener('pointerout', function (e) {
+    if (e.pointerType === 'touch') return;
+    var btn = e.target.closest && e.target.closest('.abbr-term');
+    if (!btn) return;
+    clearTimeout(hoverTimer);
+    // Don't auto-close on pointerout if user clicked to pin — only hover-open closes when leaving both
+    hoverTimer = setTimeout(function () {
+      if (openBtn === btn && !btn.matches(':focus')) closePop();
+    }, 200);
+  });
+
+  window.addEventListener('scroll', function () {
+    if (openBtn && !pop.hidden) positionPop(openBtn);
+  }, { passive: true });
+  window.addEventListener('resize', closePop);
+
+  // Demo flag for headless shots: ?demo=abbr opens first body abbr (prefer MVAC/HEPA in prose)
+  try {
+    var params = new URLSearchParams(location.search);
+    if (params.get('demo') === 'abbr') {
+      document.documentElement.classList.add('demo-abbr');
+      var prefer = ['MVAC', 'HEPA', 'CAV', 'CCMS', 'UPS'];
+      var target = null;
+      for (var i = 0; i < prefer.length && !target; i++) {
+        var cand = Array.prototype.find.call(
+          document.querySelectorAll('.abbr-term'),
+          function (el) { return el.dataset.abbrKey === prefer[i] && !el.closest('.toc'); }
+        );
+        if (cand) target = cand;
+      }
+      if (!target) target = document.querySelector('.sheet .abbr-term, .hero .abbr-term, .abbr-term');
+      if (target) {
+        target.classList.add('demo-open');
+        target.scrollIntoView({ block: 'center' });
+        openPop(target);
+      }
+    }
+  } catch (err) { /* ignore */ }
+})();
+</script>
+
+</body>
+</html>

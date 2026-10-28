@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 168" role="img" aria-label="D7 醫氣 riser AVSU 終端">
+  <defs>
+    <marker id="a7" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1E2A50"/>
+    </marker>
+  </defs>
+  <rect width="520" height="168" fill="#FFFFFF"/>
+  <rect x="24" y="20" width="130" height="60" rx="5" fill="#EEF1F4" stroke="#1E2A50" stroke-width="2"/>
+  <text x="89" y="46" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">既有 riser</text>
+  <text x="89" y="64" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">幹線</text>
+  <line x1="154" y1="50" x2="186" y2="50" stroke="#1E2A50" stroke-width="2" marker-end="url(#a7)"/>
+  <text x="170" y="38" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">tee-off</text>
+  <rect x="188" y="20" width="130" height="60" rx="5" fill="#F7F4F0" stroke="#1E2A50" stroke-width="2"/>
+  <text x="253" y="46" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">AVSU</text>
+  <text x="253" y="64" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">區域隔離</text>
+  <line x1="318" y1="50" x2="350" y2="50" stroke="#1E2A50" stroke-width="2" marker-end="url(#a7)"/>
+  <rect x="352" y="16" width="144" height="68" rx="5" fill="#FFFFFF" stroke="#1E2A50" stroke-width="2"/>
+  <text x="424" y="42" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">房間終端</text>
+  <text x="424" y="62" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#C45C26">顏色／銷釘防錯接</text>
+  <!-- 區警報 under terminal, clear gap -->
+  <line x1="424" y1="84" x2="424" y2="100" stroke="#C45C26" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <rect x="352" y="100" width="144" height="48" rx="4" fill="#FFF4E5" stroke="#C45C26" stroke-width="1.8"/>
+  <text x="424" y="122" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">區警報</text>
+  <text x="424" y="138" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">早期警告</text>
+</svg>

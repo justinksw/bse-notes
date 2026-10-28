@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" role="img" aria-label="D0e 醫用氣體">
+  <defs>
+    <marker id="a0e" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1E2A50"/>
+    </marker>
+  </defs>
+  <rect width="520" height="220" fill="#FFFFFF"/>
+  <!-- row1 -->
+  <rect x="40" y="16" width="200" height="56" rx="5" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.8"/>
+  <text x="140" y="40" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">總管／riser</text>
+  <text x="140" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">既有幹線</text>
+  <line x1="240" y1="44" x2="276" y2="44" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0e)"/>
+  <rect x="280" y="16" width="200" height="56" rx="5" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.8"/>
+  <text x="380" y="40" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">分接</text>
+  <text x="380" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">tee-off 入套間</text>
+  <!-- down -->
+  <line x1="380" y1="72" x2="380" y2="96" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0e)"/>
+  <!-- row2 -->
+  <rect x="280" y="98" width="200" height="56" rx="5" fill="#F7F4F0" stroke="#1E2A50" stroke-width="1.8"/>
+  <text x="380" y="122" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">AVSU</text>
+  <text x="380" y="140" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">區域隔離</text>
+  <line x1="280" y1="126" x2="244" y2="126" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0e)"/>
+  <rect x="40" y="98" width="200" height="56" rx="5" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.8"/>
+  <text x="140" y="122" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">房間終端</text>
+  <text x="140" y="140" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">出口</text>
+  <!-- 區警報 badge — clear gap under row2, room below -->
+  <rect x="150" y="172" width="220" height="36" rx="5" fill="#FFF4E5" stroke="#C45C26" stroke-width="1.8"/>
+  <text x="260" y="195" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#C45C26">區警報 · 旁加早期警告</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 170" role="img" aria-label="D2 壓差 cascade 穩定器">
+  <defs>
+    <marker id="a2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#C45C26"/>
+    </marker>
+  </defs>
+  <rect width="520" height="170" fill="#FFFFFF"/>
+  <!-- 高要求房 -->
+  <rect x="20" y="28" width="130" height="90" rx="5" fill="#F7F4F0" stroke="#1E2A50" stroke-width="2"/>
+  <text x="85" y="55" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">高要求房</text>
+  <text x="85" y="78" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#C45C26" font-weight="700">最高正壓</text>
+  <text x="85" y="98" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">較乾淨</text>
+  <!-- arrow -->
+  <line x1="150" y1="70" x2="178" y2="70" stroke="#C45C26" stroke-width="3" marker-end="url(#a2)"/>
+  <!-- 緩衝／前室 -->
+  <rect x="180" y="38" width="130" height="80" rx="5" fill="#EEF1F4" stroke="#1E2A50" stroke-width="2"/>
+  <text x="245" y="65" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">緩衝／前室</text>
+  <text x="245" y="88" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#1E2A50" font-weight="700">次之</text>
+  <line x1="310" y1="75" x2="338" y2="75" stroke="#C45C26" stroke-width="3" marker-end="url(#a2)"/>
+  <!-- 走廊 -->
+  <rect x="340" y="48" width="130" height="70" rx="5" fill="#FFFFFF" stroke="#1E2A50" stroke-width="2"/>
+  <text x="405" y="75" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">走廊</text>
+  <text x="405" y="96" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575" font-weight="700">較低</text>
+  <!-- stabilizer note -->
+  <rect x="70" y="132" width="380" height="28" rx="4" fill="#FFF4E5" stroke="#C45C26" stroke-width="1.4"/>
+  <text x="260" y="151" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">壓差穩定器＝受控洩漏（門關時）· 唔係膠條神話</text>
+  <text x="260" y="22" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">氣流：乾淨 → 污糟（無具體 Pa 數）</text>
+</svg>
