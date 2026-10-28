@@ -40,9 +40,10 @@ notes/
 
 ## Public-name ban (Pages + public repo)
 
-Do **not** put any of the following in README, hub/note HTML, meta, preview banners, commit messages, or other public chrome:
+Do **not** put any of the following in README, hub/note HTML, meta, titles, blurbs, preview banners, commit messages, or other public chrome:
 
 - Hospital / institution names
+- Operating theatre / 手術室 (or any wording that makes a **hospital OR project** obvious)
 - Block / floor / room / plant identifiers tied to a real site
 - Customer, project, or workplace names
 - Paths or labels that would identify a real job

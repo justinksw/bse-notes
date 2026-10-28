@@ -12,7 +12,7 @@ See [CONVENTION.md](./CONVENTION.md).
 
 ## Public names
 
-Public Pages and this public repo use **generic titles only**. No hospital, site, block, customer, or project names in README, hub, note pages, or commit messages. See CONVENTION.md.
+Public Pages and this public repo use **generic titles only**. No hospital / OR（手術室）project cues, site, block, customer, or project names in README, hub, note pages, or commit messages. See CONVENTION.md.
 
 ## Status
 
