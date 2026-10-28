@@ -11,4 +11,4 @@ Bans-safe titles only on public Pages. See `CONVENTION.md` and `briefs/brief-hub
 
 ## Status
 
-Hub **preview** from Celine `briefs/brief-hub-v1.md`. Live only after Justin oks. First note `om-knowledge` is Coming soon (not linked until note URL publishes).
+Hub **preview** from Celine `briefs/brief-hub-v1.md`. Live only after Justin oks. Note `om-knowledge` (layout v3.1) is on this preview at `notes/om-knowledge/`; the hub card stays **Coming soon** and is not linked.

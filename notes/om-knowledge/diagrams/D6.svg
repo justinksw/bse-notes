@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 175" role="img" aria-label="D6 電源分層 切換空檔">
+  <defs>
+    <marker id="a6" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1E2A50"/>
+    </marker>
+  </defs>
+  <rect width="520" height="175" fill="#FFFFFF"/>
+  <!-- Normal -->
+  <rect x="20" y="30" width="100" height="50" rx="4" fill="#F7F4F0" stroke="#1E2A50" stroke-width="2"/>
+  <text x="70" y="52" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">Normal</text>
+  <text x="70" y="68" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">市電</text>
+  <!-- gap -->
+  <line x1="120" y1="55" x2="145" y2="55" stroke="#1E2A50" stroke-width="2"/>
+  <rect x="148" y="28" width="110" height="54" rx="4" fill="#FFFFFF" stroke="#C45C26" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="203" y="50" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#C45C26">空檔（ATS）</text>
+  <text x="203" y="66" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="9" fill="#5C6575">發電機起動需時</text>
+  <line x1="258" y1="55" x2="283" y2="55" stroke="#1E2A50" stroke-width="2" marker-end="url(#a6)"/>
+  <!-- Essential -->
+  <rect x="285" y="30" width="100" height="50" rx="4" fill="#EEF1F4" stroke="#1E2A50" stroke-width="2"/>
+  <text x="335" y="52" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">Essential</text>
+  <text x="335" y="68" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">之後持續</text>
+  <!-- UPS bridge -->
+  <rect x="130" y="100" width="250" height="42" rx="4" fill="#FFF4E5" stroke="#C45C26" stroke-width="2"/>
+  <text x="255" y="118" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">UPS 電池＋逆變 · 橋接唔間斷負荷</text>
+  <text x="255" y="134" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#C45C26" font-weight="700">撐過空檔</text>
+  <!-- bypass note -->
+  <text x="260" y="162" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#5C6575">Bypass＝繞過 UPS（保護下降）· 留喺 bypass＝可能無 UPS</text>
+</svg>

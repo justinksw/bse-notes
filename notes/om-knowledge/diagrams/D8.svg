@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" role="img" aria-label="D8 Duty Standby 切換">
+  <defs>
+    <marker id="a8" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#C45C26"/>
+    </marker>
+  </defs>
+  <rect width="520" height="160" fill="#FFFFFF"/>
+  <!-- Duty -->
+  <rect x="40" y="25" width="120" height="70" rx="5" fill="#F7F4F0" stroke="#1E2A50" stroke-width="2.2"/>
+  <circle cx="70" cy="48" r="8" fill="#C45C26"/>
+  <text x="100" y="53" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">Duty</text>
+  <text x="100" y="75" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">運行中</text>
+  <!-- swap arrow -->
+  <line x1="170" y1="55" x2="210" y2="55" stroke="#C45C26" stroke-width="2.5" marker-end="url(#a8)"/>
+  <text x="190" y="42" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#C45C26" font-weight="700">跳脫</text>
+  <!-- Standby -->
+  <rect x="220" y="25" width="120" height="70" rx="5" fill="#EEF1F4" stroke="#1E2A50" stroke-width="2.2"/>
+  <circle cx="250" cy="48" r="8" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.5"/>
+  <text x="280" y="53" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">Standby</text>
+  <text x="280" y="75" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">備機頂上</text>
+  <!-- damper interlock -->
+  <rect x="360" y="30" width="130" height="60" rx="4" fill="#FFF4E5" stroke="#C45C26" stroke-width="1.6"/>
+  <text x="425" y="55" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#1E2A50">風閥互鎖</text>
+  <text x="425" y="72" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">一齊確認</text>
+  <!-- wobble -->
+  <path d="M40,120 Q70,105 100,120 T160,120 T220,120 T280,120" fill="none" stroke="#C45C26" stroke-width="2"/>
+  <text x="300" y="125" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#1E2A50">切換瞬間風量／壓差會抖 · 要回穩</text>
+</svg>
