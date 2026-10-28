@@ -7,6 +7,7 @@
       "created": "2026-10-28",
       "updated": "2026-10-28",
       "status": "published",
+      "layoutVersion": "web-v4",
       "summary": "MVAC 空氣／水側、CAV／VAV 同壓差、消防 pre-action、電力分層、醫用氣體同 CCMS 嘅 O&M 原則同巡查思維——唔寫項目死數、唔標項目類型。",
       "path": "notes/om-knowledge/"
     }

@@ -1,24 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-label="D0b 水側">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 168" role="img" aria-label="D0b 水側 冷凍水與加熱再熱">
   <defs>
     <marker id="a0b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
       <path d="M0,0 L7,3.5 L0,7 Z" fill="#1E2A50"/>
     </marker>
+    <marker id="a0bh" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 Z" fill="#C45C26"/>
+    </marker>
   </defs>
-  <rect width="520" height="140" fill="#FFFFFF"/>
-  <rect x="12" y="40" width="100" height="60" rx="4" fill="#F7F4F0" stroke="#1E2A50" stroke-width="2"/>
-  <text x="62" y="66" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">風冷冷水機</text>
-  <text x="62" y="84" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">製冷</text>
-  <line x1="112" y1="70" x2="140" y2="70" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0b)"/>
-  <rect x="142" y="40" width="88" height="60" rx="4" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.8"/>
-  <text x="186" y="66" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">冷凍水</text>
-  <text x="186" y="84" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">供／回</text>
-  <line x1="230" y1="70" x2="258" y2="70" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0b)"/>
-  <rect x="260" y="40" width="70" height="60" rx="4" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.8"/>
-  <text x="295" y="75" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">水泵</text>
-  <line x1="330" y1="70" x2="358" y2="70" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0b)"/>
-  <rect x="360" y="32" width="100" height="76" rx="4" fill="#FFF4E5" stroke="#C45C26" stroke-width="2"/>
-  <text x="410" y="62" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">AHU 盤管</text>
-  <text x="410" y="82" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#C45C26" font-weight="700">冷量入風</text>
-  <line x1="410" y1="108" x2="410" y2="122" stroke="#1E2A50" stroke-width="1.6"/>
-  <text x="410" y="136" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">→ 回水</text>
+  <rect width="520" height="168" fill="#FFFFFF"/>
+  <!-- CHW path -->
+  <rect x="12" y="28" width="100" height="52" rx="4" fill="#F7F4F0" stroke="#1E2A50" stroke-width="2"/>
+  <text x="62" y="50" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">風冷冷水機</text>
+  <text x="62" y="68" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">製冷</text>
+  <line x1="112" y1="54" x2="140" y2="54" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0b)"/>
+  <rect x="142" y="28" width="88" height="52" rx="4" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.8"/>
+  <text x="186" y="50" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">冷凍水</text>
+  <text x="186" y="68" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">供／回</text>
+  <line x1="230" y1="54" x2="258" y2="54" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0b)"/>
+  <rect x="260" y="28" width="70" height="52" rx="4" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.8"/>
+  <text x="295" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">水泵</text>
+  <line x1="330" y1="54" x2="358" y2="54" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0b)"/>
+  <rect x="360" y="20" width="140" height="68" rx="4" fill="#FFF4E5" stroke="#C45C26" stroke-width="2"/>
+  <text x="430" y="48" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">AHU 盤管</text>
+  <text x="430" y="68" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#C45C26" font-weight="700">冷量入風</text>
+  <!-- Heating / reheat second thin path -->
+  <rect x="12" y="108" width="130" height="40" rx="4" fill="#FFFFFF" stroke="#C45C26" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <text x="77" y="126" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#C45C26">加熱／再熱水</text>
+  <text x="77" y="140" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="9.5" fill="#5C6575">（跟圖；或電熱）</text>
+  <line x1="142" y1="128" x2="358" y2="128" stroke="#C45C26" stroke-width="1.8" stroke-dasharray="5 3" marker-end="url(#a0bh)"/>
+  <text x="250" y="120" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#C45C26">→ 再熱盤管</text>
+  <text x="430" y="156" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">冷靠冷凍水；熱／再熱靠另一路</text>
 </svg>
