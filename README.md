@@ -2,18 +2,13 @@
 
 Learning notes hub for Building Services Engineering (Hong Kong).
 
-- **Preview:** https://justinksw.github.io/bse-notes/
-- **One repo** holds every note — do not create a new repo per note.
-- Separate from [bse-tools](https://github.com/justinksw/bse-tools) (calculators / tools).
-
-## Folder convention
-
-See [CONVENTION.md](./CONVENTION.md).
+- **Preview:** https://justinksw.github.io/bse-notes/ (branch `preview`, PREVIEW badge)
+- One repo for all notes. Separate from [bse-tools](https://github.com/justinksw/bse-tools).
 
 ## Public names
 
-Public Pages and this public repo use **generic titles only**. No hospital / OR（手術室）project cues, site, block, customer, or project names in README, hub, note pages, or commit messages. See CONVENTION.md.
+Bans-safe titles only on public Pages. See `CONVENTION.md` and `briefs/brief-hub-v1.md` §7.
 
 ## Status
 
-Scaffold only. Hub/note design awaits brief; first note substance pending. **PREVIEW** until live is ok’d.
+Hub **preview** from Celine `briefs/brief-hub-v1.md`. Live only after Justin oks. First note `om-knowledge` is Coming soon (not linked until note URL publishes).
