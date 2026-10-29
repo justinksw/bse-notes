@@ -11,7 +11,8 @@
   <text x="140" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">既有幹線</text>
   <line x1="240" y1="44" x2="276" y2="44" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0e)"/>
   <rect x="280" y="16" width="200" height="56" rx="5" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.8"/>
-  <text x="380" y="50" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">分接</text>
+  <text x="380" y="40" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">分接</text>
+  <text x="380" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">tee-off 入套間</text>
   <!-- down -->
   <line x1="380" y1="72" x2="380" y2="96" stroke="#1E2A50" stroke-width="2" marker-end="url(#a0e)"/>
   <!-- row2 -->

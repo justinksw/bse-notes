@@ -1,42 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" role="img" aria-label="D10 排風污側與潔淨送風方向">
-  <defs>
-    <marker id="a10o" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" fill="#C45C26"/>
-    </marker>
-    <marker id="a10n" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1E2A50"/>
-    </marker>
-  </defs>
-  <rect width="520" height="220" fill="#FFFFFF"/>
-  <text x="260" y="22" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#5C6575">潔淨 → 污（方向要識巡；唔假設「有 AHU 就夠」）</text>
-
-  <!-- Left: controlled room -->
-  <rect x="16" y="40" width="150" height="110" rx="6" fill="#FFF4E5" stroke="#C45C26" stroke-width="2.2"/>
-  <text x="91" y="68" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">高要求受控房</text>
-  <text x="91" y="90" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#C45C26">正壓</text>
-  <text x="91" y="112" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">受控送風 AHU</text>
-  <text x="91" y="132" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">送 − 抽差撐方向</text>
-  <!-- outward pressure arrows -->
-  <line x1="166" y1="75" x2="198" y2="75" stroke="#C45C26" stroke-width="2.5" marker-end="url(#a10o)"/>
-  <line x1="166" y1="105" x2="198" y2="105" stroke="#C45C26" stroke-width="2.5" marker-end="url(#a10o)"/>
-
-  <!-- Middle corridor -->
-  <rect x="200" y="55" width="120" height="80" rx="5" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.8"/>
-  <text x="260" y="88" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">走廊</text>
-  <text x="260" y="110" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">較低壓</text>
-  <line x1="320" y1="90" x2="348" y2="90" stroke="#C45C26" stroke-width="2.5" marker-end="url(#a10o)"/>
-
-  <!-- Right: dirty side -->
-  <rect x="350" y="40" width="154" height="110" rx="6" fill="#F7F4F0" stroke="#1E2A50" stroke-width="2"/>
-  <text x="427" y="68" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">污側／氣味源</text>
-  <text x="427" y="92" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#C45C26">專用 EAF</text>
-  <text x="427" y="112" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">排風帶走污氣</text>
-  <text x="427" y="132" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">≠ 受控送風故事</text>
-  <!-- exhaust up -->
-  <line x1="427" y1="40" x2="427" y2="18" stroke="#1E2A50" stroke-width="2.2" marker-end="url(#a10n)"/>
-  <text x="460" y="28" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#1E2A50">排走</text>
-
-  <rect x="40" y="168" width="440" height="40" rx="5" fill="#FFF4E5" stroke="#C45C26" stroke-width="1.4"/>
-  <text x="260" y="186" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">送風鎖潔淨同正壓；專用排風鎖污側</text>
-  <text x="260" y="202" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#5C6575">兩邊都要識巡 · 排風停可令方向 silently 反</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 175" role="img" aria-label="D10 排風／污側方向">
+  <rect width="520" height="175" fill="#FFFFFF"/>
+  <rect x="16" y="40" width="140" height="90" rx="5" fill="#F0F5F8" stroke="#1E2A50" stroke-width="2"/>
+  <text x="86" y="72" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">高要求受控房</text>
+  <text x="86" y="92" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#C45C26" font-weight="700">正壓</text>
+  <text x="86" y="112" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">受控送風 AHU</text>
+  <line x1="156" y1="85" x2="200" y2="85" stroke="#1E2A50" stroke-width="2.5"/>
+  <polygon points="200,78 216,85 200,92" fill="#1E2A50"/>
+  <text x="186" y="72" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#C45C26">潔淨→污</text>
+  <rect x="220" y="50" width="100" height="70" rx="5" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.5"/>
+  <text x="270" y="88" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">走廊</text>
+  <text x="270" y="106" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">較低壓</text>
+  <line x1="320" y1="85" x2="364" y2="85" stroke="#1E2A50" stroke-width="2.5"/>
+  <polygon points="364,78 380,85 364,92" fill="#1E2A50"/>
+  <rect x="384" y="40" width="120" height="90" rx="5" fill="#FFF4E5" stroke="#C45C26" stroke-width="2"/>
+  <text x="444" y="72" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">污側／氣味源</text>
+  <text x="444" y="94" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" fill="#C45C26" font-weight="700">專用排風機(EAF)</text>
+  <line x1="444" y1="40" x2="444" y2="18" stroke="#C45C26" stroke-width="2.5"/>
+  <polygon points="437,22 444,10 451,22" fill="#C45C26"/>
+  <text x="444" y="148" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">排走上／出屋</text>
+  <text x="260" y="168" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#1E2A50">送風鎖潔淨正壓；專用排風鎖污側</text>
 </svg>
