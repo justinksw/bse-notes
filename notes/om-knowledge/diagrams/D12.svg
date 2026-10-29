@@ -1,49 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 210" role="img" aria-label="D12 全日鮮風 vs 混合風">
-  <defs>
-    <marker id="a12" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" fill="#1E2A50"/>
-    </marker>
-    <marker id="a12x" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 Z" fill="#D94A3D"/>
-    </marker>
-  </defs>
-  <rect width="520" height="210" fill="#FFFFFF"/>
-  <text x="260" y="22" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#5C6575">級別唔同＝策略唔同 · 先認機組再套巡查標準</text>
-
-  <!-- LEFT: 全日鮮風 -->
-  <rect x="12" y="36" width="230" height="130" rx="6" fill="#FFF4E5" stroke="#C45C26" stroke-width="2"/>
-  <text x="127" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#C45C26">全日鮮風</text>
-  <rect x="28" y="70" width="70" height="36" rx="3" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.4"/>
-  <text x="63" y="93" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#1E2A50">室外</text>
-  <line x1="98" y1="88" x2="118" y2="88" stroke="#1E2A50" stroke-width="2" marker-end="url(#a12)"/>
-  <rect x="120" y="70" width="55" height="36" rx="3" fill="#F7F4F0" stroke="#1E2A50" stroke-width="1.6"/>
-  <text x="147" y="93" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">AHU</text>
-  <line x1="175" y1="88" x2="195" y2="88" stroke="#1E2A50" stroke-width="2" marker-end="url(#a12)"/>
-  <rect x="197" y="70" width="32" height="36" rx="3" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.4"/>
-  <text x="213" y="93" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#1E2A50">房</text>
-  <!-- return crossed out -->
-  <line x1="213" y1="110" x2="213" y2="128" stroke="#D94A3D" stroke-width="1.6"/>
-  <line x1="213" y1="128" x2="100" y2="128" stroke="#D94A3D" stroke-width="1.6" stroke-dasharray="3 2"/>
-  <line x1="88" y1="122" x2="112" y2="134" stroke="#D94A3D" stroke-width="2"/>
-  <line x1="88" y1="134" x2="112" y2="122" stroke="#D94A3D" stroke-width="2"/>
-  <text x="127" y="154" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#D94A3D">回風：少／無混</text>
-
-  <!-- RIGHT: 混合風 -->
-  <rect x="278" y="36" width="230" height="130" rx="6" fill="#EEF1F4" stroke="#1E2A50" stroke-width="2"/>
-  <text x="393" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="14" font-weight="700" fill="#1E2A50">混合風</text>
-  <rect x="294" y="68" width="55" height="28" rx="3" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.4"/>
-  <text x="321" y="87" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#1E2A50">室外</text>
-  <rect x="294" y="108" width="55" height="28" rx="3" fill="#F7F4F0" stroke="#C45C26" stroke-width="1.4"/>
-  <text x="321" y="127" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#C45C26">回風</text>
-  <line x1="349" y1="82" x2="368" y2="95" stroke="#1E2A50" stroke-width="1.8" marker-end="url(#a12)"/>
-  <line x1="349" y1="122" x2="368" y2="105" stroke="#C45C26" stroke-width="1.8" marker-end="url(#a12)"/>
-  <rect x="370" y="82" width="55" height="36" rx="3" fill="#F7F4F0" stroke="#1E2A50" stroke-width="1.6"/>
-  <text x="397" y="105" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">AHU</text>
-  <line x1="425" y1="100" x2="448" y2="100" stroke="#1E2A50" stroke-width="2" marker-end="url(#a12)"/>
-  <rect x="450" y="82" width="42" height="36" rx="3" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.4"/>
-  <text x="471" y="105" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#1E2A50">房</text>
-  <text x="393" y="154" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#1E2A50">室外＋回風匯入</text>
-
-  <rect x="80" y="178" width="360" height="24" rx="4" fill="#FFF4E5" stroke="#C45C26" stroke-width="1.2"/>
-  <text x="260" y="195" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="12" font-weight="700" fill="#1E2A50">先認機組策略，再套巡查標準</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 175" role="img" aria-label="D12 全日鮮風 vs 混合風">
+  <rect width="520" height="175" fill="#FFFFFF"/>
+  <rect x="12" y="16" width="230" height="142" rx="5" fill="#F7F4F0" stroke="#1E2A50" stroke-width="2"/>
+  <text x="127" y="40" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">全日鮮風</text>
+  <text x="127" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#C45C26" font-weight="700">高要求受控房常用</text>
+  <rect x="28" y="72" width="50" height="28" rx="3" fill="#EEF1F4" stroke="#1E2A50" stroke-width="1.2"/>
+  <text x="53" y="90" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#1E2A50">室外</text>
+  <line x1="78" y1="86" x2="100" y2="86" stroke="#1E2A50" stroke-width="2"/>
+  <polygon points="100,80 114,86 100,92" fill="#1E2A50"/>
+  <rect x="116" y="72" width="50" height="28" rx="3" fill="#FFF4E5" stroke="#C45C26" stroke-width="1.5"/>
+  <text x="141" y="90" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#C45C26">AHU</text>
+  <line x1="166" y1="86" x2="188" y2="86" stroke="#1E2A50" stroke-width="2"/>
+  <polygon points="188,80 202,86 188,92" fill="#1E2A50"/>
+  <rect x="204" y="72" width="26" height="28" rx="3" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.2"/>
+  <text x="217" y="90" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#1E2A50">房</text>
+  <text x="127" y="122" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#5C6575">回風：少／無混 ✕</text>
+  <text x="127" y="144" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#1E2A50">潔淨優先</text>
+  <rect x="278" y="16" width="230" height="142" rx="5" fill="#EEF1F4" stroke="#C45C26" stroke-width="2"/>
+  <text x="393" y="40" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="13" font-weight="700" fill="#1E2A50">混合風</text>
+  <text x="393" y="58" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#C45C26" font-weight="700">較低要求區可能</text>
+  <rect x="294" y="68" width="44" height="24" rx="3" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.2"/>
+  <text x="316" y="84" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="9" fill="#1E2A50">室外</text>
+  <rect x="294" y="100" width="44" height="24" rx="3" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.2"/>
+  <text x="316" y="116" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="9" fill="#1E2A50">回風</text>
+  <line x1="338" y1="80" x2="360" y2="92" stroke="#1E2A50" stroke-width="1.5"/>
+  <line x1="338" y1="112" x2="360" y2="100" stroke="#1E2A50" stroke-width="1.5"/>
+  <rect x="362" y="82" width="50" height="28" rx="3" fill="#FFF4E5" stroke="#C45C26" stroke-width="1.5"/>
+  <text x="387" y="100" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#C45C26">AHU</text>
+  <line x1="412" y1="96" x2="434" y2="96" stroke="#1E2A50" stroke-width="2"/>
+  <polygon points="434,90 448,96 434,102" fill="#1E2A50"/>
+  <rect x="450" y="82" width="40" height="28" rx="3" fill="#FFFFFF" stroke="#1E2A50" stroke-width="1.2"/>
+  <text x="470" y="100" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" fill="#1E2A50">房</text>
+  <text x="393" y="148" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="10" font-weight="700" fill="#1E2A50">慳能 · 策略唔同</text>
+  <text x="260" y="100" text-anchor="middle" font-family="Noto Sans CJK TC,sans-serif" font-size="11" font-weight="700" fill="#C45C26">≠</text>
 </svg>

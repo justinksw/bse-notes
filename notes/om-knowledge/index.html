@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>OM-Knowledge｜屋宇裝備 O&amp;M 原則</title>
+  <title>OM-Knowledge｜屋宇裝備 O&amp;M 原則 (PREVIEW)</title>
+  <meta name="robots" content="noindex,nofollow" />
   <meta name="description" content="MVAC 空氣／水側、CAV／VAV 同壓差、消防 pre-action、電力分層、醫用氣體同 CCMS 嘅 O&amp;M 原則同巡查思維——唔寫項目死數、唔標項目類型。" />
   <meta name="theme-color" content="#EEF1F4" />
   <style>
@@ -134,29 +135,9 @@ table {
 }
 th, td {
   border: 1px solid var(--line); padding: 8px 8px;
-  text-align: left; vertical-align: top;
-  /* CJK: never stack one glyph per line in narrow cells */
-  overflow-wrap: break-word;
-  word-break: keep-all;
-  line-break: strict;
+  text-align: left; vertical-align: top; overflow-wrap: anywhere;
 }
 th { background: var(--canvas); font-weight: 700; }
-/* Short label / index columns stay on one line */
-table.tiers th:nth-child(-n+2),
-table.tiers td:nth-child(-n+2),
-table.figs th:nth-child(1),
-table.figs td:nth-child(1),
-table.figs th:nth-child(3),
-table.figs td:nth-child(3),
-table.abbr-table th:nth-child(1),
-table.abbr-table td:nth-child(1) {
-  white-space: nowrap;
-}
-.table-scroll {
-  overflow-x: auto; -webkit-overflow-scrolling: touch;
-  margin: 0 0 12px;
-}
-.table-scroll table { margin-bottom: 0; }
 .checklist { list-style: none; padding-left: 0; }
 .checklist li {
   position: relative; padding: 6px 8px 6px 28px;
@@ -302,6 +283,7 @@ table.abbr-table td:nth-child(1) {
       <div class="name">BSE Notes</div>
       <div class="sub">屋宇裝備學習筆記</div>
     </div>
+    <span class="badge">PREVIEW</span>
   </header>
 
   <header class="hero">
@@ -309,29 +291,23 @@ table.abbr-table td:nth-child(1) {
     <h1>屋宇裝備 O&amp;M 原則</h1>
     <p class="en">Building services O&amp;M principles</p>
     <p class="blurb">MVAC 空氣／水側、CAV／VAV 同壓差、消防 pre-action、電力分層、醫用氣體同 CCMS 嘅 O&amp;M 原則同巡查思維——唔寫項目死數、唔標項目類型。</p>
-    <div class="meta-row"><span>建立 2026-10-28</span><span>slug · om-knowledge</span><span>web-v4</span></div>
+    <div class="meta-row"><span>建立 2026-10-28</span><span>slug · om-knowledge</span></div>
   </header>
+
 
   <section class="sheet" id="s0" aria-labelledby="h-s0">
     <h2 id="h-s0">0. 點樣用呢本</h2>
 <div class="tier remember"><span class="label">記住呢句</span><p>先識「系統點運作＋壞咗會點樣」，再對獲批圖同 O&amp;M 手冊。</p></div>
-    <div class="table-scroll"><table class="tiers">
-      <thead><tr><th>層</th><th>短標</th><th>你做咩</th></tr></thead>
-      <tbody>
-        <tr><td>1</td><td><strong>讀</strong></td><td>記住呢句＝結論先行</td></tr>
-        <tr><td>2</td><td><strong>對圖</strong></td><td>點解＝原理；對獲批圖／O&amp;M，唔背死數</td></tr>
-        <tr><td>3</td><td><strong>現場</strong></td><td>保養／巡查睇咩＝可執行一眼</td></tr>
-        <tr><td>4</td><td><strong>升級</strong></td><td>Warn＝見到就當紅線；Escalate＝即時交有權人</td></tr>
-      </tbody>
-    </table></div>
-<div class="warn" role="note"><span class="label">Warn</span><p>見到紅線＝停手、護人、跟場規——唔「先試完再講」。</p></div>
-<div class="escalate" role="note"><span class="label">Escalate</span><p>生命安全／失壓／誤水／失電／醫氣異常＝短時間內升級到有權決定嘅人。</p></div>
     <p><strong>點解：</strong>保養／巡查問答多數考<strong>推理</strong>：空氣由邊去邊、點解受控房用 CAV、點解 pre-action、Essential 同 UPS 分別護咩。背死數唔等於識巡查。</p>
-<div class="tier align"><span class="label">教學對位</span><p>以泛用受控／潔淨送風空間為對位：全日鮮風 AHU（亦可能有混合風機組服務較低要求區）、CAV＋壓差穩定器、風冷冷水機、雙連鎖 pre-action（高敏感房常一房一閥組）、UPS 房氣體滅火、Normal／Essential／UPS、醫用氣體終端、CCMS。用嚟對位，唔用嚟代替獲批圖。</p></div>
+    <p><strong>保養／巡查睇咩：</strong>每章四層——記住呢句 → 點解 → 保養／巡查睇咩 → <strong>教學對位</strong>（常見配置對位）。Warn 見到就當紅線。</p>
+<div class="tier align"><span class="label">教學對位</span><p>以泛用受控／潔淨送風空間為對位：全日鮮風 AHU（亦可能有混合風機組服務較低要求區）、定風量箱(CAV)＋壓差穩定器(pressure stabiliser)、風冷冷水機(air-cooled chiller)、雙連鎖(double interlock)預作用系統(pre-action)（高敏感房常一房一閥組）、UPS 房潔淨氣體滅火、Normal／Essential／UPS、醫用氣體終端、CCMS。用嚟對位，<strong>唔代替</strong>獲批圖。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>見到紅線＝停手、護人、跟場規——唔「先試完再講」。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>生命安全／失壓／誤水／失電／醫氣異常＝見到呢啲 → <strong>即刻交有權決定嘅人</strong>，唔自己拖。</p></div>
     <p>項目具體數字<strong>以獲批圖／O&amp;M 為準</strong>。</p>
 
     <h3 id="abbr">縮寫（本筆記）</h3>
-    <div class="abbr-wrap"><table class="abbr-table">
+    <div class="abbr-wrap">
+    <table>
       <thead><tr><th>縮寫</th><th>全稱</th></tr></thead>
       <tbody>
         <tr><td>AHU</td><td>Air Handling Unit／空氣處理機組</td></tr>
@@ -343,7 +319,6 @@ table.abbr-table td:nth-child(1) {
         <tr><td>ACH</td><td>Air Changes per Hour／換氣次數（每小時）</td></tr>
         <tr><td>ΔP／DP</td><td>Differential Pressure／壓差（差壓）</td></tr>
         <tr><td>CHW</td><td>Chilled Water／冷凍水</td></tr>
-        <tr><td>EAF</td><td>Exhaust Air Fan／排風機（專用排風語境）</td></tr>
         <tr><td>MSFD</td><td>Motorised Smoke Fire Damper／電動防煙防火閘</td></tr>
         <tr><td>UPS</td><td>Uninterruptible Power Supply／不間斷電源</td></tr>
         <tr><td>ATS</td><td>Automatic Transfer Switch／自動轉換開關</td></tr>
@@ -352,8 +327,6 @@ table.abbr-table td:nth-child(1) {
         <tr><td>CCMS</td><td>Central Control and Monitoring System／中央監控系統</td></tr>
         <tr><td>PTW</td><td>Permit to Work／准工證／工作許可</td></tr>
         <tr><td>DDC</td><td>Direct Digital Control／直接數位控制</td></tr>
-        <tr><td>VFD</td><td>Variable Frequency Drive／變頻驅動（風機／泵）</td></tr>
-        <tr><td>EC</td><td>Electronically Commutated／電子換向（風機電機類型；跟產品）</td></tr>
         <tr><td>FSD</td><td>Fire Services Department／消防處（規程語境）</td></tr>
         <tr><td>EMSD</td><td>Electrical and Mechanical Services Department／機電工程署（規程語境）</td></tr>
         <tr><td>HA</td><td>HA（規程語境縮寫；唔當項目客戶銘牌）</td></tr>
@@ -361,43 +334,27 @@ table.abbr-table td:nth-child(1) {
         <tr><td>O&amp;M</td><td>Operation and Maintenance／運作與保養</td></tr>
         <tr><td>Novec</td><td>潔淨氣體滅火介質之常用品牌代稱（以獲批圖／產品為準）</td></tr>
       </tbody>
-    </table></div>
+    </table>
+    </div>
     <p style="font-size:0.9rem;color:var(--muted)">正文首見優先補括號；格式：縮寫（English／中文）。正文內英文縮寫可<strong>點／hover</strong>睇 EN＋中文全稱（來源＝本表）。</p>
 
-    <h3 id="fig-index">圖解索引</h3>
-    <div class="table-scroll"><table class="figs">
-      <thead><tr><th>編號</th><th>主題</th><th>節</th></tr></thead>
-      <tbody>
-        <tr><td>D0</td><td>系統總圖（六塊）</td><td>§1</td></tr>
-        <tr><td>D0a–f</td><td>六塊</td><td>§1.1</td></tr>
-        <tr><td>D2</td><td>壓差 cascade＋穩定器</td><td>§2.5</td></tr>
-        <tr><td>D3</td><td>CAV vs VAV</td><td>§2.4</td></tr>
-        <tr><td>D4</td><td>風冷機冷凍循環</td><td>§3.1</td></tr>
-        <tr><td>D5</td><td>Pre-action／雙連鎖</td><td>§4.2</td></tr>
-        <tr><td>D6</td><td>電源分層／切換空檔</td><td>§5.1</td></tr>
-        <tr><td>D7</td><td>醫氣 riser→AVSU→終端</td><td>§6</td></tr>
-        <tr><td>D8</td><td>Duty／Standby</td><td>§2.7</td></tr>
-        <tr><td>D9</td><td>氣體滅火聯鎖</td><td>§4.3</td></tr>
-        <tr><td>D10</td><td>排風／污側同「潔淨→污」</td><td>§2.8</td></tr>
-        <tr><td>D11</td><td>火警風機停機矩陣</td><td>§4.4</td></tr>
-        <tr><td>D12</td><td>全日鮮風 vs 混合風</td><td>§2.0</td></tr>
-      </tbody>
-    </table></div>
-    <p style="font-size:0.9rem;color:var(--muted)">圖解係簡線示意（高對比、大字標籤）；數字同條款以獲批圖／場內規程為準。無 D1（同 D0a 同構，唔復活）。</p>
+    <h3 id="fig-index">圖索引</h3>
+    <p style="font-size:0.9rem;color:var(--muted)">D0 總圖 · D0a–D0f 六塊 · D2 壓差階梯(cascade) · D3 CAV／VAV · D4 風冷冷水機 · D5 預作用／雙連鎖 · D6 電源分層 · D7 醫氣 · D8 主備 · D9 氣體滅火 · D10 排風／污側 · D11 停機矩陣 · D12 鮮風策略。<strong>無 D1</strong>。</p>
 
     <h3 id="toc">目錄</h3>
     <nav class="toc" aria-label="章節目錄">
-      <a href="#s1">1. 系統地圖<span>D0 · D0a–f</span></a>
-      <a href="#s2">2. 空氣側（MVAC）<span>2.0 鮮風 · AHU · HEPA · CAV／VAV · 壓差 · 排風 · D2 D3 D8 D10 D12</span></a>
-      <a href="#s3">3. 水側<span>冷水機 · 加熱／再熱 · 接駁幹管 · D4</span></a>
-      <a href="#s4">4. 消防<span>Pre-action · 雙連鎖 · 氣體 · 停機矩陣 · D5 D9 D11</span></a>
-      <a href="#s5">5. 電力<span>Normal／Essential／UPS · D6</span></a>
+      <a href="#s1">1. 系統地圖<span>D0 · D0a–D0f</span></a>
+      <a href="#s2">2. 空氣側（MVAC）<span>鮮風 · AHU · HEPA · CAV／VAV · 壓差 · 排風 · D2–3 D8 D10 D12</span></a>
+      <a href="#s3">3. 水側<span>冷水機 · 泵 · 盤管 · 加熱／再熱 · D4</span></a>
+      <a href="#s4">4. 消防<span>預作用 · 雙連鎖 · 氣體滅火 · D5 D9 D11</span></a>
+      <a href="#s5">5. 電力<span>過渡供電 · STS／旁路 · D6</span></a>
       <a href="#s6">6. 醫用氣體系統（通用）<span>D7</span></a>
-      <a href="#s7">7. 監控 CCMS<span>點類型 · 警報 · 趨勢</span></a>
+      <a href="#s7">7. 監控 CCMS<span>警報 · 趨勢 · 參數</span></a>
       <a href="#s8">8. 保養巡查思維<span>每日／每週／每季</span></a>
       <a href="#s9">9. 常見故障聯想<span>空氣 · 水側 · 警報</span></a>
     </nav>
   </section>
+
 
   <section class="sheet" id="s1" aria-labelledby="h-s1">
     <h2 id="h-s1">1. 系統地圖（你行場要有張腦圖）</h2>
@@ -405,21 +362,21 @@ table.abbr-table td:nth-child(1) {
 <div class="tier why"><span class="label">點解</span><p>氣流方向靠壓差同風量差；關鍵負荷靠電；滅火方式要配合房間用途同設備；醫用氣體係受規管生命支持；CCMS 係你最早收到警報嘅地方。一環異常會連鎖：例如過濾塞 → 風量跌 → 壓差掉；泵停 → 盤管唔冷 → 有人亂加風量 → 壓差再亂。</p></div>
 <figure class="figure" id="fig-d0">
   <div class="fid">D0｜系統總圖（六塊）</div>
-  <img src="diagrams/D0.svg" alt="D0 系統總圖（六塊）" width="520" height="220" loading="lazy" />
+  <img src="diagrams/D0.svg" alt="D0 系統總圖（六塊）" width="520" height="200" loading="lazy" />
   <figcaption class="cap">六塊一齊先成套；一環壞會拖第二環。</figcaption>
 </figure>
 
     <h3 id="s1-1">1.1 六塊地圖（一口記住）</h3>
     <div class="abbr-wrap">
     <table>
-      <thead><tr><th>塊</th><th>你腦入面要有嘅圖</th><th>壞一截拖邊塊</th></tr></thead>
+      <thead><tr><th>塊</th><th>腦圖</th><th>典型壞徵</th></tr></thead>
       <tbody>
-        <tr><td><strong>空氣側 MVAC</strong></td><td>室外新鮮空氣 → AHU（過濾／冷卻／加熱／風機）→ 風管／風閘／CAV → 房間送風（常有 HEPA）→ 回／抽風 → 排走或處理；另有專用排風服務污側</td><td>濾塞／閘誤關／排風停 → 壓差同氣味方向反；拖消防聯鎖測試同 CCMS 警報</td></tr>
-        <tr><td><strong>水側</strong></td><td>冷水機 → 冷凍水供／回 → 水泵 → AHU 盤管；另路加熱／再熱水（跟圖）</td><td>泵停／閥關／漏 → 房熱或失控；有人亂加風 → 再拖壓差</td></tr>
-        <tr><td><strong>消防</strong></td><td>探測 → 控制 → 滅火介質（水或氣）→ 風機／防火閘聯鎖</td><td>誤報停風／inhibit 未清 → 假保護；拖受控區失壓</td></tr>
-        <tr><td><strong>電力</strong></td><td>市電／發電機路徑 → Essential 分電 → UPS → 重要負載；STS／bypass</td><td>切換失敗／留 bypass → 關鍵負荷裸晒；拖全部</td></tr>
-        <tr><td><strong>醫用氣體</strong></td><td>總管／riser → 分接 → AVSU → 房間終端；區警報</td><td>關錯 AVSU／壓力驟降 → 生命支持風險</td></tr>
-        <tr><td><strong>監控 CCMS</strong></td><td>感應器 → 控制器 → 畫面／趨勢／警報 → 人去現場確認</td><td>假正常／長期 acknowledge → 現場已壞你唔知</td></tr>
+        <tr><td><strong>空氣側 MVAC</strong></td><td>室外新鮮空氣 → AHU（過濾／冷卻／加熱／風機）→ 風管／風閘／CAV → 房間送風（常有 HEPA）→ 回／抽風 → 排走或處理</td><td>壓差掉、嘈、過濾壓差高、房溫離標</td></tr>
+        <tr><td><strong>水側</strong></td><td>冷水機 → 冷凍水供／回 → 水泵 → AHU 盤管 → 回水</td><td>冇冷、盤管結露／滴水、泵異響、水質差</td></tr>
+        <tr><td><strong>消防</strong></td><td>探測 → 控制 → 滅火介質（水或氣）→ 風機／防火閘聯鎖</td><td>誤報、閥位錯、臨時覆蓋缺口</td></tr>
+        <tr><td><strong>電力</strong></td><td>市電／發電機路徑 → Essential 分電 → UPS → 重要負載；靜態轉換開關(STS)／旁路(bypass)</td><td>切換失敗、電池衰、接地／絕緣異常</td></tr>
+        <tr><td><strong>醫用氣體</strong></td><td>總管／立管(riser) → 分接 → 區域隔離閥箱(AVSU) → 房間終端；區警報</td><td>警報、壓力異常、錯接風險</td></tr>
+        <tr><td><strong>監控 CCMS</strong></td><td>感應器 → 控制器 → 畫面／趨勢／警報 → 人去現場確認</td><td>警報風暴、誤改參數、假正常</td></tr>
       </tbody>
     </table>
     </div>
@@ -429,9 +386,9 @@ table.abbr-table td:nth-child(1) {
   <figcaption class="cap">鮮風入房，潔淨同壓差由風量路徑決定。</figcaption>
 </figure>
 <figure class="figure" id="fig-d0b">
-  <div class="fid">D0b｜水側（冷凍水＋加熱／再熱）</div>
-  <img src="diagrams/D0b.svg" alt="D0b 水側" width="520" height="168" loading="lazy" />
-  <figcaption class="cap">冷量靠冷凍水；熱／再熱靠另一路（或電熱）；泵停／閥關＝房失控。</figcaption>
+  <div class="fid">D0b｜水側</div>
+  <img src="diagrams/D0b.svg" alt="D0b 水側" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">冷量靠水運去盤管；另路加熱／再熱（跟圖）；泵停／閥關＝房熱。</figcaption>
 </figure>
 <figure class="figure" id="fig-d0c">
   <div class="fid">D0c｜消防</div>
@@ -453,402 +410,514 @@ table.abbr-table td:nth-child(1) {
   <img src="diagrams/D0f.svg" alt="D0f 監控 CCMS" width="520" height="200" loading="lazy" />
   <figcaption class="cap">畫面係耳目；異常要現場確認。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>行場先問「呢間房靠邊套 AHU／邊條電／邊種滅火／邊路排風」；唔識對位就唔好亂調。</li></ul></div>
-<div class="tier align"><span class="label">教學對位</span><p>受控空間常用全日鮮風 AHU；壓差靠 CAV＋穩定器；冷水嚟自風冷冷水機；高敏感區用雙連鎖 pre-action；UPS／電池房用 Novec 類氣體；有 Essential 同 UPS；醫氣由既有 riser 分接；風機切換同壓差有 CCMS 點。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>行場先問「呢間房靠邊套 AHU／邊條電／邊種滅火」；唔識對位就唔好亂調。</li></ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控空間常用全日鮮風 AHU；壓差靠定風量箱(CAV)＋壓差穩定器(pressure stabiliser)；冷水嚟自風冷冷水機(air-cooled chiller)；高敏感區用雙連鎖(double interlock)預作用系統(pre-action)；UPS／電池房用潔淨氣體滅火(clean agent，例如 Novec 類)；有 Essential 同 UPS；醫氣由既有立管(riser)分接；風機切換同壓差有 CCMS 點。</p></div>
   </section>
+
 
   <section class="sheet" id="s2" aria-labelledby="h-s2">
     <h2 id="h-s2">2. 空氣側（MVAC）</h2>
 
     <h3 id="s2-0">2.0 鮮風策略分級——全日鮮風 vs 混合風</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>高要求受控房多用<strong>全日新鮮空氣</strong> AHU；較低要求區可用<strong>混合風</strong> AHU——O&amp;M <strong>唔好當全部 AHU 同一套</strong>。</p></div>
+<div class="tier remember"><span class="label">記住呢句</span><p>高要求受控房多用<strong>全日新鮮空氣空氣處理機組(AHU)</strong>；低要求區可能係<strong>混合風空氣處理機組(mixed-air AHU)</strong>——巡查<strong>唔好當全部機同一套</strong>。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
 <li><strong>全日鮮風：</strong>潔淨／氣味／廢氣方向優先；幾乎唔混室內回風；能耗同過濾負擔高。</li>
 <li><strong>混合風：</strong>回風慳冷／熱；要識回風路徑、過濾級、正壓會唔會被回風策略拖亂。</li>
-<li>Setback 時有無關鮮風閘、減回風——對控制敘述；<strong>唔用</strong>高要求房嘅 ACH 去判低要求區「失敗」。</li>
+<li>減載模式(setback)時有無關鮮風閘、減回風——對控制敘述；<strong>唔用</strong>高要求房嘅 ACH 去判低要求區「失敗」。</li>
 </ul></div>
 <figure class="figure" id="fig-d12">
   <div class="fid">D12｜全日鮮風 vs 混合風</div>
-  <img src="diagrams/D12.svg" alt="D12 全日鮮風 vs 混合風" width="520" height="210" loading="lazy" />
-  <figcaption class="cap">先認機組策略，再套巡查標準。</figcaption>
+  <img src="diagrams/D12.svg" alt="D12 全日鮮風 vs 混合風" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">先認機組策略，再套巡查標準；級別唔同＝策略唔同。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>邊部機係全鮮、邊部機有回風——對圖同標牌</li><li>回風閘／鮮風閘位置同 setback 邏輯</li><li>唔用「高要求房 ACH」去判混合風區</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>邊部機係全鮮、邊部機有回風——對圖同標牌</li>
+<li>回風閘／鮮風閘位置同 setback 邏輯</li>
+<li>唔用「高要求房 ACH」去判混合風區</li>
+</ul></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>把混合風機當全日鮮風去「追潔淨」——會誤判同亂調。</p></div>
 
-    <h3 id="s2-1">2.1 AHU——核心處理同功能段</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>受控／潔淨送風空間常用<strong>全日新鮮空氣</strong> AHU：過濾 → 冷卻／加熱 → 送風；唔靠大量循環風「慳冷」去換潔淨級。機組入面仲可能有熱回收／UV／加濕／EC 主備等段——<strong>每段有意圖、有壞徵</strong>。</p></div>
+    <h3 id="s2-1">2.1 空氣處理機組(AHU)——全日鮮風嘅核心</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>先記路徑：過濾 → 冷卻／加熱 → 送風。機組入面仲可能有熱回收(heat recovery)／紫外線殺菌段(UV)／加濕／電子換向風機(EC fan)主備——<strong>每段有意圖、有壞徵</strong>。唔靠大量循環風「慳冷」去換潔淨級。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li>室外鮮風先經過濾；再經冷卻盤管——空氣被冷卻，多餘水汽可能凝結排出（去濕）；若要定溫定濕，後面常有再熱／加濕，唔係「凍完就完」。</li>
-<li>全日鮮風＝幾乎唔混室內回風，每次都要重新冷卻／加熱，能耗同過濾負擔都高。</li>
-<li><strong>旁通縫風險：</strong>機組門、濾框墊片、旁通風門關唔實 → 未過濾空氣「偷入」送風側；差壓計可能仲顯示「正常濾阻」。</li>
+<li><strong>空氣處理順序：</strong>室外鮮風先經過濾；再經冷卻盤管——空氣被冷卻，同時相對濕度上升、多餘水汽可能凝結排出（去濕）；若房要定溫定濕，後面常有再熱／加濕步驟。全日鮮風＝幾乎唔混室內回風，所以每次都要重新冷卻／加熱，能耗同過濾負擔都高。</li>
+<li><strong>點解少用大量循環：</strong>工作區要控制微粒、氣味同廢氣方向；循環風會把房間內污染物再送返入工作區。潔淨／氣流方向優先於「慳冷」。</li>
+<li><strong>過濾差壓 vs 風機曲線（定性）：</strong>濾網髒 → 阻力↑ → 同一風機轉速下風量↓。差壓高唔等於「風機壞」，多數係濾阻；但風量跌會直接拖低房間送風，間接令壓差唔穩。</li>
+<li><strong>旁通縫風險：</strong>機組門、濾框墊片、旁通風門若關唔實，未過濾空氣會「偷入」送風側。</li>
 </ul></div>
-    <p><strong>功能段一覽</strong>（定性；死數以獲批圖／O&amp;M 為準）：</p>
-    <div class="abbr-wrap">
-    <table>
-      <thead><tr><th>段</th><th>意圖</th><th>壞徵／風險</th><th>巡查一眼</th></tr></thead>
-      <tbody>
-        <tr><td><strong>過濾（粗／中效）</strong></td><td>護盤管同風機</td><td>差壓高、風量跌、旁通縫</td><td>差壓趨勢、墊片、門封</td></tr>
-        <tr><td><strong>熱回收</strong>（如熱管）</td><td>排／回側同送風側熱交換慳能</td><td>髒／洩＝能耗差＋交叉污染風險</td><td>兩側壓差異常、洩漏徵兆、段間密封</td></tr>
-        <tr><td><strong>冷卻／加熱盤管</strong></td><td>定溫；冷卻兼去濕</td><td>唔冷／唔熱、結露滴水、閥卡</td><td>水閥行程、翅片髒、地面水跡</td></tr>
-        <tr><td><strong>再熱／加濕</strong></td><td>定濕定溫收尾</td><td>過濕發霉、過乾、積水</td><td>加濕水質／積水、再熱閥</td></tr>
-        <tr><td><strong>UV</strong>（若有）</td><td>線上殺菌<strong>輔助</strong>——唔當唯一潔淨手段</td><td>燈失效當「仲有」</td><td>時數／隔離／跟產品同場規</td></tr>
-        <tr><td><strong>風機</strong>（含 EC 主備）</td><td>連續送風</td><td>單點故障、切換抖壓</td><td>見 §2.7；變頻狀態</td></tr>
-      </tbody>
-    </table>
-    </div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>機組門關好、密封條完整；冷凝水盤去水暢通、無積水發霉</li><li>各級過濾差壓／更換紀錄；有無旁通縫</li><li>盤管翅片、冷凍水／熱水閥動作、風機軸承／皮帶／變頻</li><li>凍水／熱水管有無滲漏喺 AHU 房（地面水跡＝紅旗）</li><li>O&amp;M：濾網規格、更換週期、清潔程序——跟手冊，唔估</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>機組門關好、密封條完整；冷凝水盤去水暢通、無積水發霉</li>
+<li>各級過濾差壓／更換紀錄；有無旁通縫</li>
+<li>盤管翅片髒唔髒、冷凍水閥動作、送風機軸承／皮帶／變頻狀態</li>
+<li>凍水／熱水管有無滲漏喺 AHU 房（地面水跡＝紅旗）</li>
+<li>O&amp;M：濾網規格、更換週期、清潔程序——跟手冊，唔估</li>
+</ul></div>
 <div class="tier align"><span class="label">教學對位</span><p>服務受控區嘅 AHU 多屬全日鮮風路線；同場可能另有混合風機組——先認策略再巡。AHU 房可能插入既有機組之間——分清邊部機服務邊區。</p></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>開機門做檢查要停機／上鎖掛牌（跟場規）；運轉中伸手入風機＝嚴重安全事故。</p></div>
 
-    <h3 id="s2-2">2.2 過濾、HEPA、同濾網塞滿／變頻意圖</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>粗／中效保護盤管同風機；<strong>HEPA（High-Efficiency Particulate Air／高效微粒過濾）主要管潔淨</strong>，多數裝喺<strong>末端送／回風口</strong>；<strong>壓差唔係靠 HEPA「塞住」造出嚟</strong>。風機／變頻額定要考慮過濾（含 HEPA）<strong>髒阻上升</strong>——塞滿時風量同房壓會漂。</p></div>
+    <h3 id="s2-2">2.2 過濾同高效微粒過濾(HEPA)</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>粗／中效護盤管風機；<strong>高效微粒過濾(HEPA)</strong>多數喺末端，管潔淨——<strong>壓差唔係靠 HEPA 塞出嚟</strong>。風機／變頻驅動(VFD)要考慮濾阻上升——塞滿時風量同房壓會漂。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li><strong>分層意圖：</strong>機組內粗／中效＝護盤管；末端 HEPA＝護房間潔淨級。兩者唔好混做「一個差壓數代表全部」。</li>
-<li><strong>MPPS（一句）：</strong>HEPA 最難攔嘅粒徑大約喺最易穿透粒徑（MPPS）附近——測試對呢個最弱點，唔係對肉眼塵。</li>
-<li><strong>完整性測試（概念）：</strong>換 HEPA 後要用規定方法查外殼／墊片旁通；<strong>唔係 DIY 拿手電照一下</strong>。合資格人按場內規程做。</li>
-<li><strong>塞滿工況／VFD（Variable Frequency Drive／變頻）：</strong>濾阻↑ → 同一轉速下風量沿風機曲線↓ → ΔP 不穩。設計常預留髒阻工況；管道靜壓控制策略以獲批為準。差壓高唔等於「風機壞」，多數係濾阻——但風量跌會拖房壓。</li>
+<li><strong>分層意圖：</strong>機組內粗／中效＝護盤管同風機葉輪；末端 HEPA＝護房間潔淨級。</li>
+<li><strong>MPPS（一句）：</strong>HEPA 最難攔嘅粒徑大約喺「最易穿透粒徑」（MPPS）附近。</li>
+<li><strong>完整性測試（概念）：</strong>換 HEPA 後要用規定方法查外殼／墊片有無洩漏旁通；唔係 DIY 拿手電照一下。</li>
+<li><strong>ΔP vs 潔淨意圖：</strong>設計意圖係「風量差造壓，過濾造潔淨」，唔係靠濾網當塞子造正壓。</li>
 </ul></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>過濾級順序、墊片、HEPA 旁通／外殼變形、完整性測試<strong>程序</strong></li><li>差壓計／開關合理；「差壓高」＝該換定風量異常，分開想</li><li>過濾差壓<strong>趨勢</strong>、變頻頻率異常頂高、CCMS 風量／壓差聯動警報</li><li>更換時保護下游潔淨——跟潔淨規程同 O&amp;M，唔貪快</li></ul></div>
-<div class="tier align"><span class="label">教學對位</span><p>受控房末端送回風口路線常有 HEPA；分清「機組內過濾」同「末端 HEPA」。教學以<strong>末端送風</strong> HEPA 為主；回風有無 HEPA 跟獲批圖。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>過濾級順序有冇裝錯、有冇漏裝墊片</li>
+<li>HEPA 有無旁通、外殼變形、更換同完整性測試程序</li>
+<li>差壓計／開關係咪合理；「差壓高」＝該換定係風量異常，要分開想</li>
+<li>更換時保護下游潔淨——跟潔淨規程同 O&amp;M，唔貪快</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控房末端送回風口路線常有 HEPA；巡查時分清「機組內過濾」同「末端 HEPA」兩層。教學以<strong>末端送風</strong> HEPA 為主；回風有無 HEPA 跟獲批圖。</p></div>
 <div class="escalate" role="note"><span class="label">Escalate</span><p>未做完整性測試就當「已經 HEPA 合格」——唔可以。</p></div>
 
-    <h3 id="s2-3">2.3 風管、風閘、MSFD</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>風管係氣流嘅路；<strong>調風閘</strong>調風量，<strong>防火／防煙閘（含 MSFD：Motorised Smoke Fire Damper／電動防煙防火閘）</strong>喺火警時切斷蔓延——兩者用途唔好混。</p></div>
-<div class="tier why"><span class="label">點解</span><p>調風閘卡住→房間風量同壓差錯；防火閘誤關或未聯鎖→火災時煙火經風管走，或者日常無故斷風。氣體滅火放電時，風機停同 MSFD 係一條<strong>時間序列</strong>：關得太慢＝氣體流失；亂試聯鎖＝可能誤停送風令受控區失壓。（整區風機停機矩陣見 <strong>§4.4</strong>。）</p></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>軟接有無破裂漏風；保溫完整（冷凝＝漏冷＋發霉風險）</li><li>防火閘：釋放機構、位置指示、聯鎖測試紀錄（跟消防規程／獲批圖／場內程序）</li><li>施工後有無雜物留喺風管；天花開孔補回</li><li>標籤：邊條管去邊間房——對唔到就唔好盲調</li></ul></div>
-<div class="tier align"><span class="label">教學對位</span><p>受控區風管改動多、同既有系統交接；氣體滅火同火警停風聯鎖要識「存在」，唔好現場亂試。</p></div>
+    <h3 id="s2-3">2.3 風管、風閘、電動防煙防火閘(MSFD)</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>風管係氣流嘅路；<strong>調風閘</strong>調風量，防火／防煙閘——包括<strong>電動防煙防火閘(MSFD)</strong>——喺火警時切斷蔓延；同調風閘用途唔好混。</p></div>
+<div class="tier why"><span class="label">點解</span><p>調風閘卡住→房間風量同壓差錯；防火閘誤關或未聯鎖→火災時煙火經風管走，或者日常無故斷風。氣體滅火放電時，風機停同 MSFD 關係一條<strong>時間序列</strong>：關得太慢＝氣體流失；亂試聯鎖＝可能誤停送風令受控區失壓。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>軟接有無破裂漏風；保溫完整（冷凝＝漏冷＋發霉風險）</li>
+<li>防火閘：釋放機構、位置指示、聯鎖測試紀錄</li>
+<li>施工後有無雜物留喺風管；天花開孔補回</li>
+<li>標籤：邊條管去邊間房——對唔到就唔好盲調</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控區風管改動多、同既有系統交接；氣體滅火放電時風機／防火閘要按序列關——識「存在」，唔好現場亂試。</p></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>唔好手動卡住防火閘「方便送風」；火警時係責任問題。</p></div>
 
-    <h3 id="s2-4">2.4 CAV vs VAV——幾時用邊個、邊個穩 ΔP</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p><strong>CAV（Constant Air Volume／定風量）</strong>鎖風量，先鎖氣流方向；<strong>VAV（Variable Air Volume／變風量）</strong>跟負荷變風量，慳能但 ΔP 難穩。<strong>受控／潔淨壓差 cascade 多數用 CAV</strong>——唔係「VAV 高級、CAV 落伍」。</p></div>
-    <div class="abbr-wrap">
-    <table>
-      <thead><tr><th></th><th>CAV</th><th>VAV</th></tr></thead>
-      <tbody>
-        <tr><td>風量</td><td>大致定死</td><td>隨負荷變</td></tr>
-        <tr><td>溫度點樣追</td><td>多用盤管水閥／再熱</td><td>多用加減風量</td></tr>
-        <tr><td>ΔP cascade</td><td><strong>穩得住</strong>（設計意圖）</td><td>房一變風，相鄰 ΔP 易抖</td></tr>
-        <tr><td>典型用途</td><td>受控／潔淨壓差故事</td><td>一般舒適空調慳能</td></tr>
-      </tbody>
-    </table>
-    </div>
+    <h3 id="s2-4">2.4 CAV vs VAV</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>定風量(CAV)</strong>＝送（或抽）風量大致<strong>定死</strong>；<strong>變風量(VAV)</strong>＝風量隨負荷<strong>變</strong>。<strong>受控／潔淨壓差階梯(cascade)多數用定風量(CAV)</strong>——唔係 VAV 高級、CAV 落伍。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li><strong>CAV：</strong>控制器量測風量，驅動風閥／變頻貼近設定。溫度多用盤管水閥或再熱調焓，風量保持穩，壓差先穩得住。</li>
+<li><strong>VAV：</strong>溫感要求多冷／少冷 → 風閥開大／關細 → 風量變。每間房風量一變，相鄰房之間嘅壓差就跟住抖。</li>
+<li><strong>點解 ΔP cascade 偏愛定風量：</strong>壓差靠「每間房送−抽 ≈ 設計洩漏」。風量若隨負荷飄，洩漏同方向都會飄。</li>
+<li>唔係「VAV 高級、CAV 落伍」——係<strong>用途唔同</strong>。</li>
+</ul></div>
 <figure class="figure" id="fig-d3">
   <div class="fid">D3｜CAV vs VAV</div>
   <img src="diagrams/D3.svg" alt="D3 CAV vs VAV" width="520" height="200" loading="lazy" />
-  <figcaption class="cap">受控 cascade 偏愛 CAV：風量定，先鎖氣流方向；溫度多用再熱／水閥。</figcaption>
+  <figcaption class="cap">受控壓差階梯(cascade)偏愛定風量(CAV)：風量定，先鎖氣流方向；溫度多用再熱／水閥。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>對圖確認箱體類型、設定風量、執行器同位置反饋</li><li>CAV：設定值被改過未？風閥有無卡死全開／全關？</li><li>VAV（若周邊有）：最低風量夠唔夠維持通風同壓差意圖？</li><li>Setback／夜間改邊幾個 box——對邏輯表，唔靠記憶</li></ul></div>
-<div class="tier align"><span class="label">教學對位</span><p>受控房壓差故事建喺 <strong>CAV＋壓差穩定器</strong>；識 VAV 係為答「點解唔用」、同理解大樓其他區可能唔同。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>對圖確認箱體類型——定風量箱(CAV box)／變風量箱(VAV box)、設定風量、執行器同位置反饋</li>
+<li>定風量(CAV)：設定值被改過未？風閥有無卡死全開／全關？</li>
+<li>變風量(VAV)（若周邊有）：最低風量設定夠唔夠維持通風同壓差意圖？</li>
+<li>減載模式(setback)／夜間模式改嘅係邊幾個箱——對邏輯表</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控房壓差故事建喺 <strong>定風量箱(CAV)＋壓差穩定器(pressure stabiliser)</strong>；你識變風量(VAV)係為咗答「點解唔用」、同理解大樓其他區可能唔同。</p></div>
 
-    <h3 id="s2-5">2.5 房間壓差同 pressure stabiliser</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p><strong>送風多過離開房間嘅風 → 正壓</strong>；空氣由高壓（較乾淨）流向低壓（較污）。<strong>Pressure stabiliser（壓差穩定器）</strong>喺<strong>門關</strong>時把壓差鎖近設計值。</p></div>
+    <h3 id="s2-5">2.5 房間壓差同壓差穩定器(pressure stabiliser)</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>送風多過離開房間嘅風 → 正壓</strong>；空氣由高壓（較乾淨）流向低壓（較污）。<strong>壓差穩定器(pressure stabiliser)</strong>喺<strong>門關</strong>時把壓差鎖近設計值。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li><strong>質量平衡：</strong>送風 − 抽風 ≈ 洩漏。多出嘅風經門縫、傳遞窗、穩定器離開——路徑阻力決定「幾多風差 → 幾高 Pa」。</li>
-<li><strong>開門暫態：</strong>門一開壓差垮一截；門關上先回。驗收多數以<strong>門關</strong>為準。</li>
-<li><strong>穩定器＝受控洩漏：</strong>設計好嘅洩壓路徑；封住「唔俾嘈」＝改咗設計洩漏，壓差會漂。</li>
-<li><strong>Cascade：</strong>高要求房（最高正壓）→ 緩衝／前室 → 走廊（較低）。具體 Pa 見獲批圖。</li>
+<li><strong>質量平衡：</strong>Qs − Qe ≈ Qleak。多出嚟嘅風經門縫、傳遞窗、穩定器等路徑離開。</li>
+<li><strong>開門暫態：</strong>門一開壓差會垮一截；量度同驗收多數以<strong>門關</strong>為準。</li>
+<li><strong>穩定器＝受控洩漏：</strong>設計好嘅洩壓路徑，唔係「門封膠條神話」。封住穩定器＝改咗設計洩漏。</li>
+<li><strong>壓差階梯(cascade)方向：</strong>高要求房（最高正壓）→ 緩衝／前室 → 走廊（較低）。具體數值見獲批圖。</li>
 </ul></div>
 <figure class="figure" id="fig-d2">
-  <div class="fid">D2｜壓差 cascade＋穩定器</div>
-  <img src="diagrams/D2.svg" alt="D2 壓差 cascade 穩定器" width="520" height="170" loading="lazy" />
-  <figcaption class="cap">送多過抽→正壓；空氣由高流向低；穩定器係受控洩漏，唔係膠條神話。</figcaption>
+  <div class="fid">D2｜壓差階梯(cascade)＋壓差穩定器</div>
+  <img src="diagrams/D2.svg" alt="D2 壓差階梯＋壓差穩定器" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">送多過抽→正壓；空氣由高流向低；壓差穩定器(pressure stabiliser)係受控洩漏，唔係膠條神話。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>門關測壓差；門底縫、傳遞窗、天花開口有無額外大漏</li><li>穩定器裝向、堵塞、有無膠帶封住</li><li>相鄰房同時開門會唔會互相拖——觀察、記錄</li><li>壓差錶／傳感器校正同安裝位置</li></ul></div>
-<div class="escalate" role="note"><span class="label">Escalate</span><p>高要求房門開會唔會拖低相鄰受控房——文件未寫死就要問清楚。</p></div>
-
-    <h3 id="s2-6">2.6 風量模式 ≠ 壓差——Normal／Setback 同選擇性關 CAV</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p><strong>Setback＝慳風／慳能模式</strong>；通常仍要維持<strong>壓差方向同溫濕大致受控</strong>，但<strong>全速 ACH 唔維持</strong>。Setback 唔止整體減風——可能係<strong>某幾個送風箱關、某幾個維持</strong>，同時減走廊抽風，仍鎖壓差方向。</p></div>
-<div class="tier why"><span class="label">點解</span><ul>
-<li><strong>ACH 同 ΔP 係兩件事：</strong>ACH 講換氣；ΔP 講邊間高邊間低。Setback 可以減 ACH，但仍應維持 cascade <strong>方向</strong>，唔可以反轉。</li>
-<li><strong>選擇性關箱：</strong>對控制邏輯表／獲批敘述，唔背 Normal 風量。「關錯箱」＝方向可能反或某房失壓。</li>
-<li><strong>唔好用 Normal 嘅 ACH 去判 setback 失敗</strong>——設計本來就允許低風量。</li>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>門關測壓差；門底縫、傳遞窗、天花開口有無額外大漏</li>
+<li>穩定器裝向、有無堵塞、有無被人膠帶封住</li>
+<li>相鄰房同時開門會唔會互相拖壓差——觀察、記錄</li>
+<li>壓差錶／傳感器校正同安裝位置</li>
 </ul></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>邊啲 CAV／風機喺 setback 關或減——對邏輯表</li><li>Normal↔Setback 轉換警報、溫濕／壓差越限、人手覆寫有冇忘記复回</li><li>邊個 damper 應 Open／Close——現場同畫面一致？</li></ul></div>
-<div class="tier align"><span class="label">教學對位</span><p>受控區有 Normal／Setback 控制意圖；細節風量同邊個 box 關——對 AHU／CAV 附錄同獲批圖。</p></div>
-<div class="warn" role="note"><span class="label">Warn</span><p>人手覆寫 setback 後當「已經日間模式」——常見失壓源。</p></div>
+<div class="tier align"><span class="label">教學對位</span><p>典型 cascade 概念：高要求房最高正壓 → 緩衝／前室次之 → 走廊／污側更低（具體 Pa 數見獲批圖）。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>高要求房門開會唔會拖低相鄰受控房——文件未寫死就要問清楚，唔好自己當冇事。</p></div>
 
-    <h3 id="s2-7">2.7 主備風機（Duty／Standby）切換</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>主機壞／跳脫 → 備機自動或按程序頂上；<strong>切換瞬間風量同壓差會抖</strong>——要識睇警報同恢復，唔係當「轉咗就無事」。</p></div>
+<div class="tier remember" id="a1-redundancy"><span class="label">記住呢句 · A1</span><p>兩套空氣處理機組(AHU)可以一齊服務同一個共用緩衝／準備空間（各供一部分）。<strong>冗餘唔等於「剩一部都當全日正常」</strong>——要知邊啲支管／定風量箱(CAV box)屬邊部機；一部故障或保養時，共用區同相鄰高要求房壓差會唔會越限。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩 · A1</span><ul>
+<li>邊部機服務邊段共用區——對圖</li>
+<li>一部停機時壓差／警報有冇越限</li>
+</ul></div>
+
+    <h3 id="s2-6">2.6 Normal vs 減載模式(setback)——ACH 同 ΔP 係兩件事</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>減載模式(setback)＝慳風／慳能模式</strong>；通常仍要維持<strong>壓差方向同溫濕大致受控</strong>，但<strong>全速換氣次數（ACH）唔維持</strong>。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li>受控區常要連續送風；電控偵測跳脫／風量低 → 起動備機，並互鎖風閥。</li>
-<li>常見故障：備機未真起動；風閥互鎖卡中間；CCMS 顯示已切但現場仍舊機；切換後未回穩就被當完成。</li>
-<li>切換瞬間風量短暫跌 → 壓差抖——屬預期暫態；要睇時限內有冇恢復。</li>
+<li>ACH 講「一小時換幾多次氣」；ΔP 講「邊間高邊間低」。減載模式(setback)可以減 ACH，但仍應維持壓差階梯(cascade) <strong>方向</strong>，唔可以反轉。</li>
+<li>唔好用 Normal 嘅 ACH 去判 setback 失敗——要查方向有冇反、溫濕有冇越限、邊個定風量箱(CAV box)被關錯。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>邊啲定風量箱(CAV)／風機喺 setback 關或減——對控制邏輯；邊個<strong>風閘(damper)</strong>應開／關——現場同畫面一致？</li>
+<li>轉換 Normal↔Setback 有無警報、有無溫濕／壓差越限</li>
+<li>人手覆寫（manual override）有冇人忘記<strong>復</strong>回</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控區有 Normal／Setback 控制意圖；細節風量同邊個 box 關——對 AHU／CAV 附錄同獲批圖。</p></div>
+
+    <h3 id="s2-7">2.7 主備風機(Duty／Standby)切換</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>主風機壞或跳脫 → 備機按程序頂上；<strong>切換嗰下風量同壓差會抖</strong>——要睇警報同有冇返穩，唔好當「轉咗就完」。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>受控區常要連續送風；單風機無備＝單點故障。</li>
+<li>常見故障：備機未真正起動；風閥互鎖卡中間；CCMS 顯示已切但現場仍係舊機；切換後未回穩就被當完成。</li>
+<li>切換瞬間風量短暫跌 → 壓差抖——屬預期暫態；要睇有冇喺時限內恢復。</li>
 </ul></div>
 <figure class="figure" id="fig-d8">
-  <div class="fid">D8｜Duty／Standby 切換</div>
-  <img src="diagrams/D8.svg" alt="D8 Duty Standby" width="520" height="200" loading="lazy" />
+  <div class="fid">D8｜主備(Duty／Standby)切換</div>
+  <img src="diagrams/D8.svg" alt="D8 主備切換" width="520" height="200" loading="lazy" />
   <figcaption class="cap">備機頂上要連風閥互鎖一齊確認；轉咗未回穩唔算完成。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>Duty／Standby 狀態燈同 CCMS 一致</li><li>定期切換測試、卡閥</li><li>切換後過濾差壓、房壓、噪音</li><li>手動強迫切換要有 PTW（Permit to Work／准工證）／場規</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>Duty／Standby 狀態燈同 CCMS 一唔一致</li>
+<li>定期切換測試有無做、有無卡閥</li>
+<li>切換後過濾差壓、房壓、噪音有無異常</li>
+<li>手動強迫切換要有准工證(PTW)／場規</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>相關風機有主備同 CCMS 警報意圖——巡查先睇畫面再入場。</p></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>運轉中亂切、或者關掉唯一運行風機「聽吓靜唔靜」——可以令受控區失壓。</p></div>
 
     <h3 id="s2-8">2.8 專用排風／污側同「潔淨→污」方向</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>正壓受控房靠<strong>送−抽差</strong>撐方向；污側／氣味源靠<strong>專用排風（EAF 等）</strong>帶走——<strong>唔好假設「有 AHU 送風就夠」</strong>。</p></div>
+<div class="tier remember"><span class="label">記住呢句</span><p>正壓受控房靠<strong>送−抽差</strong>撐方向；污側／氣味源靠<strong>專用排風機(EAF)</strong>帶走——<strong>唔好假設「有 AHU 送風就夠」</strong>。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li>Cascade 講「乾淨壓過污糟」；污側走廊、洗滌／污物、電池房等往往另有<strong>專用排風</strong>服務區，同受控送風 AHU 唔係同一條故事。</li>
+<li>壓差階梯(cascade)講「乾淨壓過污糟」；污側走廊、洗滌／污物、電池房等往往另有專用排風服務區，同受控送風 AHU 唔係同一條故事。</li>
 <li>排風停 → 氣味倒灌、方向反、或者受控房為咗追氣味被人亂加抽——再拖 ΔP。</li>
-<li>Transfer／門縫可能係設計洩漏路徑一部分——封錯等同改 cascade。</li>
+<li><strong>傳遞風路徑(transfer)</strong>／門縫可能係設計洩漏路徑一部分——封錯等同改 cascade。</li>
 </ul></div>
 <figure class="figure" id="fig-d10">
   <div class="fid">D10｜排風／污側方向</div>
-  <img src="diagrams/D10.svg" alt="D10 排風污側與潔淨送風方向" width="520" height="220" loading="lazy" />
+  <img src="diagrams/D10.svg" alt="D10 排風／污側方向" width="520" height="200" loading="lazy" />
   <figcaption class="cap">送風鎖潔淨同正壓；專用排風鎖污側——兩邊都要識巡。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>邊區係專用 EAF、邊區接既有排風幹管——對圖</li><li>排風停會唔會令氣味倒灌／方向反</li><li>Transfer／門縫係咪被人封死「慳冷」</li><li>CCMS 有無排風故障／風量低警報</li></ul></div>
-<div class="escalate" role="note"><span class="label">Escalate</span><p>污側排風長期停而受控房仍「看似正常」——方向可能已 silently 反，要升級查。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>邊區係專用 EAF、邊區接既有排風幹管——對圖</li>
+<li>排風停會唔會令氣味倒灌／方向反</li>
+<li>傳遞風路徑(transfer)／門縫係咪被人封死「慳冷」</li>
+<li>CCMS 有無排風故障／風量低警報</li>
+</ul></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>污側排風長期停而受控房仍「看似正常」——方向可能已經<strong>靜靜雞反咗</strong>（畫面仲似正常），要升級查。</p></div>
   </section>
+
 
   <section class="sheet" id="s3" aria-labelledby="h-s3">
     <h2 id="h-s3">3. 水側（冷凍水／加熱水／盤管／泵）</h2>
 
-    <h3 id="s3-1">3.1 風冷冷水機（Air-cooled chiller）</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>風冷機＝室外用風扇帶走冷凝熱，製造冷凍水畀 AHU 盤管；<strong>冇冷卻水塔</strong>，但室外盤管髒同氣流受阻一樣會冇冷。</p></div>
+    <h3 id="s3-1">3.1 風冷冷水機(air-cooled chiller)</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>風冷冷水機(air-cooled chiller)靠室外風扇帶走冷凝熱，整冷凍水畀 AHU 盤管；<strong>冇冷卻水塔</strong>，但室外盤管髒、氣流受阻一樣會冇冷。</p></div>
 <div class="tier why"><span class="label">點解</span><ol>
 <li><strong>壓縮機</strong>把低壓冷媒蒸氣壓成高溫高壓氣；</li>
 <li><strong>冷凝器（室外盤管）</strong>用室外風帶走熱，冷媒冷凝成液；</li>
-<li><strong>膨脹裝置</strong>降壓；</li>
+<li><strong>膨脹裝置</strong>降壓，液冷媒變低溫低壓；</li>
 <li><strong>蒸發器</strong>入面冷凍水把熱傳畀冷媒，水變凍——再入壓縮機。</li>
 </ol>
-<p><strong>氣流短路：</strong>室外排熱被牆／鄰機擋返吸入＝「吸自己嘅熱風」——高壓跳脫風險。盤管髒＝同樣散熱差。</p></div>
+<p><strong>氣流短路：</strong>室外排熱若被牆／鄰機擋返吸入冷凝器，等於「吸自己嘅熱風」——冷凝壓力升、效率跌、甚至高壓跳脫。</p></div>
 <figure class="figure" id="fig-d4">
-  <div class="fid">D4｜風冷冷水機蒸氣壓縮＋冷凍水去盤管</div>
-  <img src="diagrams/D4.svg" alt="D4 風冷冷水機" width="520" height="200" loading="lazy" />
-  <figcaption class="cap">壓縮→冷凝散熱→膨脹→蒸發製冷水；室外盤管要通風同乾淨。</figcaption>
+  <div class="fid">D4｜風冷冷水機蒸氣壓縮＋冷凍水</div>
+  <img src="diagrams/D4.svg" alt="D4 風冷冷水機蒸氣壓縮＋冷凍水" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">壓縮→冷凝散熱→膨脹→蒸發製冷水；水運冷去盤管；室外盤管要通風同乾淨。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>室外盤管清潔、風扇、異響、結霜／除霜異常</li><li>冷凍水供／回 ΔT 是否合理（跟設計意圖同負荷，唔硬背一個數）</li><li>制冷劑壓力／報警歷史（合資格人）；你識「有警報要升級」</li><li>底座、減震、排水、電氣盤受潮</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>室外盤管清潔、風扇運轉、異響、結霜／結冰異常</li>
+<li>冷凍水供／回水溫差是否合理（跟設計意圖同當下負荷）</li>
+<li>制冷劑壓力／報警歷史（合資格人）；你主要識「有警報要升級」</li>
+<li>底座、減震、排水、電氣盤受潮</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>風冷冷水機服務本區冷凍需求；接既有冷凍水總管／header——施工期 tee-off 同日常洩漏都要盯。</p></div>
 <div class="escalate" role="note"><span class="label">Escalate</span><p>制冷劑操作屬受規管工種——唔識唔做。</p></div>
 
     <h3 id="s3-2">3.2 冷凍水回路、水泵、AHU 盤管</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>冷量係「水運」去盤管；順序記：<strong>泵提供流量 → 閥調節 → 盤管換熱</strong>。有冷機但泵停／閥關＝房一樣熱。</p></div>
+<div class="tier remember"><span class="label">記住呢句</span><p>冷量係「水運」去盤管；<strong>泵提供流量，閥調節</strong>，盤管先換到熱——有冷機但泵停／閥關＝房一樣熱。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li><strong>容量 ≈ 流量 × ΔT × 常數</strong>（概念）。流量不足或 ΔT 異常＝換唔到設計冷量。</li>
-<li><strong>常見故障鏈：</strong>strainer 塞 → 流量↓ → 盤管唔冷 → 房溫高 → 有人狂開 CAV「補救」→ 壓差亂。源头喺水側。</li>
-<li><strong>盤管氣阻／閥旁通：</strong>入氣佔水路、閥卡關、旁通常開——機喺轉唔等於有冷。</li>
+<li>容量 ≈ 流量 × ΔT × 常數。流量不足或 ΔT 異常＝盤管換唔到設計冷量。</li>
+<li>常見故障鏈：Y 型過濾器(Y-strainer)塞 → 流量↓ → 盤管唔冷 → 房溫高 → 有人狂開定風量(CAV)風量「補救」→ 壓差亂。<strong>源頭</strong>喺水側。</li>
+<li>盤管氣阻：水系統入氣會佔住水路；要按程序排氣。</li>
+<li>閥同旁通：控制閥卡關／旁通常開 → 水唔經盤管或短路回流。</li>
 </ul></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>泵：聲、震、軸封滲漏、壓力錶、變頻故障碼</li><li>Y-strainer 前後壓差；排污有無做</li><li>盤管：進出水溫、水閥行程、排氣、冷凝水排水</li><li>閥門標籤同開關狀態；旁通閥有無人常開</li><li>保溫破損→結露滴水→天花霉同電氣風險</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>泵：聲、震、軸封滲漏、壓力錶、变频器故障碼</li>
+<li>過濾器(strainer)／Y 型過濾器(Y-strainer)前後壓差；排污有無做</li>
+<li>盤管：進出水溫、水閥行程、盤管氣阻、冷凝水排水</li>
+<li>閥門標籤同開關狀態；旁通閥有無人常開</li>
+<li>保溫破損→結露滴水→天花霉同電氣風險</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>AHU 靠冷凍水盤管造冷；水側異常會直接反映喺受控房溫濕同「為咗追溫度亂調風」。</p></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>帶壓系統排污／拆法蘭要跟程序；燙／凍水都可以傷人。</p></div>
 
     <h3 id="s3-3">3.3 防凍、洩漏、水質</h3>
 <div class="tier remember"><span class="label">記住呢句</span><p>冬天盤管凍裂同日常滲漏一樣可以停晒受控區服務；<strong>水質差→結垢／腐蝕→流量同換熱雙輸</strong>。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li><strong>凍裂：</strong>盤管內水過冷→結冰脹裂。防凍靠控制邏輯、介質策略（跟設計），同唔好喺極低水溫仲強抽風吹乾盤管。</li>
-<li><strong>洩漏早期：</strong>補水頻率異常、盤面／接頭水跡、天花水漬。</li>
-<li><strong>水質：</strong>結垢加熱阻、鏽渣塞 strainer——又回到流量不足鏈。</li>
+<li>凍裂：盤管內水溫過低 → 水結冰體積脹 → 銅管／接頭裂。</li>
+<li>洩漏早期徵兆：補水頻率異常、盤面／接頭水跡、天花水漬。</li>
+<li>水質：結垢加熱阻、腐蝕出鏽渣再塞過濾器(strainer)。</li>
 </ul></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>低溫警報同防凍設定有無人亂改</li><li>補水頻率異常＝可能洩漏</li><li>水質化驗／加藥紀錄（跟場內水務／O&amp;M）</li><li>接駁／改管後：焊口、法蘭、支架——特別係天花板上（見 §3.5）</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>低溫警報同防凍設定有無人亂改</li>
+<li>水系統補水頻率異常＝可能洩漏</li>
+<li>水質化驗／加藥紀錄（跟場內水務／O&amp;M）</li>
+<li>施工 tee-off／熱燙接後：焊口、法蘭、支架——特別係天花板上</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>有冷凍水接駁同可能嘅管道凍結保護措施意圖——對獲批圖同方法陳述，唔靠猜想。</p></div>
 
     <h3 id="s3-4">3.4 加熱水／再熱盤管回路</h3>
 <div class="tier remember"><span class="label">記住呢句</span><p>定溫定濕唔止冷凍水——<strong>加熱／再熱盤管</strong>同熱水回路（或電熱——跟圖）壞咗一樣令房失控。冷＝冷凍水；熱／再熱＝<strong>另一路</strong>；兩路閥都要識巡。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
 <li>再熱常用喺「先冷卻去濕再加返適量熱」——冇熱路＝濕度／溫度追唔到，有人就去扭風。</li>
 <li>熱水管滲漏、閥卡、接駁既有熱水幹管後嘅焊口／保溫——同冷凍水一樣係紅旗。</li>
+<li>有冷冇熱一樣投訴——<strong>再熱／加熱係另一路</strong>，兩路閥都要巡。</li>
 </ul></div>
-    <p style="font-size:0.9rem;color:var(--muted)">圖：見 <a href="#fig-d0b">D0b</a>（加熱／再熱第二細箭）；唔另畫同構全頁水側圖。</p>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>再熱／加熱閥行程同盤管進出</li><li>熱水管滲漏、保溫、AHU 房地面水跡（分清凍水定熱水）</li><li>電熱（若有）：過熱保護、隔離——合資格人</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>再熱／加熱閥行程同盤管進出</li>
+<li>熱水管滲漏、保溫、AHU 房地面水跡（分清凍水定熱水）</li>
+<li>電熱（若有）：過熱保護、隔離——合資格人</li>
+</ul></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>唔好假設「有冷就有舒適」——缺再熱一樣投訴湧現。</p></div>
 
     <h3 id="s3-5">3.5 接駁既有幹管／共用系統——唔拖死其他區</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>新支管接入<strong>運作中</strong>冷凍水／熱水／風管幹管時，O&amp;M／BSI 要識問：<strong>其他區冷量／風會唔會斷？</strong> 唔可以假設「新區完工＝舊區無感」。</p></div>
+<div class="tier remember"><span class="label">記住呢句</span><p>新支管接入<strong>運作中</strong>冷凍水／熱水／風管幹管時，要識問：<strong>其他區冷量／風會唔會斷？</strong>唔可以假設「新區完工＝舊區無感」。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
 <li>常用手法陳述包括凍結接管、熱燙接、週末切換等——具體方法跟獲批同持證要求；你溫習嘅係<strong>風險同回退</strong>，唔係教你親手做。</li>
 <li>接完要查漏、沖洗／平衡（跟系統）、確認未服務區同<strong>仍在服務區</strong>都回到預期溫度／壓力／風量。</li>
-<li>PTW、臨時隔離範圍、通知使用單位——同電力切換同一級紀律。</li>
+<li>准工證(PTW)、臨時隔離範圍、通知使用單位——同電力切換同一級紀律。</li>
 </ul></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>有無 PTW、隔離範圍圖、回退步驟</li><li>復原後：壓力／溫度／投訴；相鄰區有無「突然熱／失壓」</li><li>臨時旁通／關閉有冇清走</li><li>風管改接同樣問：其他區送／排會唔會被切斷或短路</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>有無 PTW、隔離範圍圖、回退步驟</li>
+<li>復原後：壓力／溫度／投訴；相鄰區有無「突然熱／失壓」</li>
+<li>臨時旁通／關閉有冇清走</li>
+<li>風管改接同樣問：其他區送／排會唔會被切斷或短路</li>
+</ul></div>
 <div class="escalate" role="note"><span class="label">Escalate</span><p>接駁中或接駁後他區服務中斷而未升級——當營運事故鏈，唔當「施工順便」。</p></div>
   </section>
+
 
   <section class="sheet" id="s4" aria-labelledby="h-s4">
     <h2 id="h-s4">4. 消防</h2>
 
-    <h3 id="s4-1">4.1 濕式花灑 vs Pre-action</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p><strong>濕式</strong>＝管內長期有水，熱玻璃膽爆就出水；<strong>Pre-action</strong>＝平時管內多數係氣／乾，要滿足啟動條件先入水／出水——減少<strong>誤射水</strong>摧毀受控空間同設備。</p></div>
+    <h3 id="s4-1">4.1 濕式花灑系統 vs 預作用系統(pre-action)</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>濕式花灑系統(wet pipe sprinkler)</strong>＝管內長期有水，熱玻璃膽爆就出水；<strong>預作用系統(pre-action)</strong>＝平時管內多數乾／有氣，條件齊先入水——減少<strong>誤射水</strong>摧毀受控空間同設備。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li>濕式反應快，但誤開／凍裂／撞擊都可能出水。Pre-action 用「多一步」換誤射風險下降；氣壓監管、電磁閥、探測都要健康。</li>
-<li>低氣壓警報＝系統可能已唔喺設計狀態，要當大事。</li>
-<li><strong>支援區</strong>可能仍係濕式＋喉轆／視聽警報——巡查唔好只盯高敏感閥組房。</li>
+<li>濕式＝水已喺管到噴頭底下，反應快但誤開／凍裂／撞擊都可能出水。</li>
+<li>預作用系統(pre-action)＝平時乾或監管氣壓，要探測／聯鎖先開閥入水——用「多一步」換誤射風險下降。</li>
+<li>代價：氣壓監管、電磁閥、探測、信號都要健康；低氣壓警報＝大事。</li>
 </ul></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>閥組位置、鎖固、標牌、旁通狀態</li><li>氣壓／監管信號；探測器污染（裝修塵）→誤報風險</li><li>週期測試同排水——跟消防規程／場內程序同合資格承辦</li><li>支援區：喉轆通道、噴頭被遮、複示／區域警報同主盤一致</li></ul></div>
-<div class="tier align"><span class="label">教學對位</span><p>高敏感受控區走 pre-action；支援區可能仍係濕式——分區唔好當全部一樣。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>閥組位置、鎖固、標牌、旁通狀態</li>
+<li>氣壓／監管信號正常；低氣壓警報要當大事</li>
+<li>探測器污染（裝修塵）→誤報風險</li>
+<li>週期測試同排水——跟消防規程／場內程序同合資格承辦</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>高敏感受控區走預作用系統(pre-action)路線；支援區可能仍係濕式——分區唔好當全部一樣。</p></div>
 
-    <h3 id="s4-2">4.2 Double interlock（雙連鎖）同一房一閥組</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p><strong>Double interlock</strong>＝要<strong>兩類獨立條件齊</strong>（例如探測＋另一聯鎖信號／釋放步驟，以獲批圖同產品說明為準）先進入出水序列——邏輯上係 <strong>AND，唔係 OR</strong>。多間高敏感房時，設計常係<strong>每房獨立雙連鎖閥組</strong>——隔離維修同誤射範圍可控。</p></div>
+<div class="tier check" id="a4-support"><span class="label">保養／巡查睇咩 · A4</span><ul>
+<li>高敏感區走預作用系統(pre-action)；走廊／辦公等<strong>支援區</strong>可能仍係濕式花灑系統、喉轆、視聽／複示警報——巡查<strong>唔好只盯閥組房</strong></li>
+<li>查：喉轆通道、噴頭被遮、複示／區域警報同主盤一致</li>
+</ul></div>
+
+    <h3 id="s4-2">4.2 雙連鎖(double interlock)・一房一閥組</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>雙連鎖(double interlock)</strong>＝要<strong>兩類獨立條件齊</strong>（AND 唔係 OR；例如探測＋另一聯鎖信號／釋放步驟，以獲批圖同產品說明為準）先進入出水序列。多間高敏感房時常<strong>每房獨立閥組</strong>，隔離同誤射範圍先可控。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li>單連鎖已比濕式嚴；雙連鎖兩條獨立腿都真——減少「單一誤報就入水」。</li>
-<li>誤調／短接其中一條 → 畫面可能仲顯示「有保護」。Temporary inhibit 未清＝假保護。</li>
-<li><strong>一房一閥組：</strong>可單房隔離；共用閥組＝加大誤射／停用範圍。標牌對房、測試唔好誤觸相鄰房。</li>
+<li>單連鎖已經比濕式嚴；雙連鎖要求<strong>兩條獨立腿</strong>都真——邏輯上係 AND，唔係 OR。</li>
+<li>風險：誤調／短接其中一條輸入 → 畫面可能仲顯示「有保護」，實際未成連鎖。</li>
 </ul></div>
 <figure class="figure" id="fig-d5">
-  <div class="fid">D5｜Pre-action／雙連鎖</div>
-  <img src="diagrams/D5.svg" alt="D5 Pre-action 雙連鎖" width="520" height="210" loading="lazy" />
-  <figcaption class="cap">雙連鎖＝兩獨立條件齊；獨立閥組＝可單房隔離。</figcaption>
+  <div class="fid">D5｜預作用系統(pre-action)／雙連鎖(double interlock)</div>
+  <img src="diagrams/D5.svg" alt="D5 預作用／雙連鎖" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">高敏感區用預作用＋雙連鎖：多一步確認，減誤射水；兩腿都要真；常一房一閥組。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>啟動序列寫喺邊、有無修訂</li><li>測試時兩條腿都真係要；唔好為「方便」短接</li><li>施工後：臨時短接／inhibit 有冇清走</li><li>閥組標牌對邊間房；臨時 inhibit 範圍係一房定一片</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>啟動序列寫喺邊、有無修訂</li>
+<li>測試時確認兩條腿都真係要；唔好為「方便」短接信號</li>
+<li>施工後恢復：臨時短接／暫時抑制(inhibit)有冇清走</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>設計意圖常係雙連鎖(double interlock)預作用系統(pre-action)——常考「點解唔用普通花灑」。</p></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>禁止為趕工期永久短接消防信號。</p></div>
-<div class="escalate" role="note"><span class="label">Escalate</span><p>發現短接／inhibit 範圍大過標稱——即時升級，唔自行「當臨時」。</p></div>
 
-    <h3 id="s4-3">4.3 氣體滅火（Novec 類）</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>電氣房／UPS 房常用<strong>潔淨氣體</strong>滅火（例如 Novec 類）——<strong>唔靠浸水</strong>；放電前要走人、關風機／防火閘，避免氣體流失同人員危險。</p></div>
+    <h3 id="s4-3">4.3 潔淨氣體滅火(clean agent，例如 Novec 類)</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>電氣房／UPS 房常用<strong>潔淨氣體滅火(clean agent，例如 Novec 類)</strong>——<strong>唔靠浸水</strong>；放電前要走人、關風機／防火閘，避免氣體流失同人員危險。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
 <li>水會毀電池同電力電子；潔淨氣體靠降低氧／吸熱（視介質）滅火。</li>
-<li><strong>Hold time</strong> 同圍封完整性：門縫大、風管未關、洩壓口錯 → 氣體走光＝滅火失敗。</li>
-<li><strong>序列（概念）：</strong>警報 → 疏散延時 → 停相關送／排風 → 關防火閘 → 放氣。跟場內規程／獲批圖，唔引用假條款號。</li>
+<li><strong>維持時間(hold time)</strong>同圍封完整性：門縫大、風管未關、洩壓口錯 → 氣體走光＝滅火失敗。</li>
+<li>序列概念：警報 → 疏散延時 → 停相關送／排風 → 關防火閘 → 放氣。</li>
 </ul></div>
 <figure class="figure" id="fig-d9">
-  <div class="fid">D9｜氣體滅火聯鎖概念</div>
+  <div class="fid">D9｜氣體滅火聯鎖</div>
   <img src="diagrams/D9.svg" alt="D9 氣體滅火聯鎖" width="520" height="200" loading="lazy" />
-  <figcaption class="cap">放電前停風關閘，氣體先留得住；亂序＝hold time 唔夠。</figcaption>
+  <figcaption class="cap">放電前停風關閘，氣體先留得住；亂序＝維持時間(hold time)唔夠。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>鋼瓶壓力／重量檢查紀錄、噴嘴、管路</li><li>手動／自動模式、inhibit／isolation 清晰</li><li>門密封、洩壓口、聯鎖風機同 MSFD</li><li>人員警報、延時、疏散路線——識程序，唔現場試放</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>鋼瓶壓力／重量檢查紀錄、噴嘴無堵塞、管路完整</li>
+<li>手動／自動模式、暫時抑制(inhibit)／isolation 狀態要清晰</li>
+<li>門密封、洩壓口、聯鎖風機同電動防煙防火閘(MSFD)</li>
+<li>人員警報、延時、疏散路線——識程序，唔現場試放</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>UPS／電池房走氣體滅火意圖；同受控區花灑系分家——唔好當成同一套閥。</p></div>
 <div class="escalate" role="note"><span class="label">Escalate</span><p>任何「試放／洩放」只可以由授權人按程序做。</p></div>
 
-    <h3 id="s4-4">4.4 火警風機停機矩陣同施工期臨時消防</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p>防煙防火唔止關閘——常見策略係探測觸發後<strong>停相關送／排風機</strong>，避免風管送煙；氣體滅火房另有「停風＋關閘保 hold time」（§4.3）。聯鎖係一條鏈；施工期主系統暫停就要有<strong>臨時探測＋看守＋PTW</strong>。</p></div>
-<div class="tier why"><span class="label">點解</span><ul>
-<li><strong>停機矩陣：</strong>邊個探測／分區 → 邊啲送風機／排風機／閘——對獲批聯鎖表，唔靠記憶。</li>
-<li>誤報／裝修塵 → 可能整區停風 → 受控區失壓；恢復後有冇漏 <strong>inhibit</strong>。</li>
-<li>臨時措施唔係可有可無；恢復時漏撤 inhibit＝長期假保護。</li>
-</ul></div>
+    <h3 id="s4-4">4.4 電動防煙防火閘(MSFD)／煙感聯鎖同施工期臨時消防</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p>火警時：<strong>停相關風機、關防火閘、放氣體或啟動水系統</strong>——聯鎖係一條鏈，保<strong>維持時間(hold time)</strong>；施工期主系統暫停就要有<strong>臨時探測＋看守＋准工證(PTW)</strong>。</p></div>
+<div class="tier why"><span class="label">點解</span><p>裝修塵觸發煙感、切斷消防幹管、封路——營運中場地最怕「空窗」。臨時措施唔係可有可無；恢復時若漏撤暫時抑制(inhibit)，等於長期假保護。</p></div>
 <figure class="figure" id="fig-d11">
   <div class="fid">D11｜火警風機停機矩陣</div>
-  <img src="diagrams/D11.svg" alt="D11 火警風機停機矩陣" width="520" height="230" loading="lazy" />
-  <figcaption class="cap">探測可令整區風停；對矩陣，恢復後清 inhibit。</figcaption>
+  <img src="diagrams/D11.svg" alt="D11 火警風機停機矩陣" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">探測／分區 → 送／排風機停／電動防煙防火閘(MSFD)關——對獲批聯鎖表，唔靠記憶。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>聯鎖矩陣：邊個探測觸發邊啲閘／風機</li><li>誤報後：風機有冇按程序復歸；inhibit 清未</li><li>臨時煙感電池、覆蓋範圍、值班紀錄</li><li>恢復清單、主系統复位測試</li><li>通道、消火栓、滅火筒受阻？</li></ul></div>
-<div class="escalate" role="note"><span class="label">Escalate</span><p>聯鎖被短接／長期 inhibit——假保護，即時升級。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>聯鎖矩陣：邊個探測觸發邊啲閘／風機</li>
+<li>臨時煙感電池、覆蓋範圍、值班紀錄</li>
+<li>恢復時：臨時措施撤銷清單、主系統复位測試</li>
+<li>通道、消火栓、滅火筒受阻？</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>營運中場地改建——噪音塵同消防暫停都要同設施管理協調；溫習時要識問「而家靠臨時定主系統」。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>聯鎖被短接／長期暫時抑制(inhibit)——假保護，即時升級。</p></div>
   </section>
+
 
   <section class="sheet" id="s5" aria-labelledby="h-s5">
     <h2 id="h-s5">5. 電力</h2>
 
-    <h3 id="s5-1">5.1 Normal／Essential／UPS 分層——Ride-through</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p><strong>Normal</strong>＝市電日常；<strong>Essential</strong>＝市電失電後由發電機等<strong>應急路徑</strong>撐嘅重要負荷；<strong>UPS</strong>＝切換空檔都唔俾斷嘅「唔間斷」段（電池＋逆變）。Essential ≠ UPS bypass。</p></div>
+    <h3 id="s5-1">5.1 Normal／Essential／UPS 分層——過渡供電(ride-through)</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>Normal</strong>＝市電日常；<strong>Essential</strong>＝市電失電後由發電機等<strong>應急路徑</strong>撐嘅重要負荷；<strong>UPS</strong>＝切換空檔都唔俾斷嘅「<strong>唔間斷</strong>」段（電池＋逆變）。Essential ≠ UPS 旁路(bypass)。</p></div>
 <div class="tier why"><span class="label">點解</span><ol>
-<li>正常：市電（Normal）；</li>
-<li>市電失電：ATS／發電機起動需時（秒級空檔）；</li>
-<li>UPS 橋接：電池經逆變即時頂住唔可以斷嘅負荷；</li>
-<li>之後：Essential 就緒持續供電；UPS 電池再充電。</li>
+<li>正常：負荷由市電（Normal）供；</li>
+<li>市電失電：ATS（Automatic Transfer Switch／自動轉換開關）／發電機起動需要時間——Essential 路徑可能仲未到；</li>
+<li>UPS 橋接：電池經逆變器即時頂住「唔可以斷」嘅負荷；</li>
+<li>之後：發電機／Essential 就緒後持續供電；UPS 電池再充電待命。</li>
 </ol>
-<p>電池自主時間：有時限、要測、會老化——實際分鐘數跟獲批圖／O&amp;M，唔背假數。</p></div>
+<p>電池自主時間：設計會訂「撐幾耐」——實際分鐘數跟獲批圖／O&amp;M，唔背假數。</p></div>
 <figure class="figure" id="fig-d6">
   <div class="fid">D6｜電源分層同切換空檔</div>
-  <img src="diagrams/D6.svg" alt="D6 電源分層" width="520" height="200" loading="lazy" />
+  <img src="diagrams/D6.svg" alt="D6 電源分層同切換空檔" width="520" height="200" loading="lazy" />
   <figcaption class="cap">UPS 撐切換空檔；Essential 之後持續；留喺 bypass＝可能無 UPS。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>單線圖：邊啲負荷掛 Normal／Essential／UPS——標籤同現實一致？</li><li>電池：室溫、端子、警報、自主測試紀錄（合資格人）</li><li>發電機同 ATS 測試紀錄（場級）</li><li>插座同回路有冇被人私自改掛「當 UPS」</li></ul></div>
-<div class="warn" role="note"><span class="label">Warn</span><p>營運中場地帶電操作要 PTW；唔好當「只係睇吓」就開電蓋。</p></div>
-
-    <h3 id="s5-2">5.2 STS／Bypass 概念</h3>
-<div class="tier remember"><span class="label">記住呢句</span><p><strong>STS（Static Transfer Switch）</strong>＝兩路電源之間快速自動切；<strong>Bypass</strong>＝維修時讓負荷暫時繞過 UPS 電子路徑——方便維修，但期間保護等級可能下降。<strong>Bypass／旁路只喺呢個 UPS 維修語境用</strong>——唔好同 Essential「應急路徑」撈亂。</p></div>
-<div class="tier why"><span class="label">點解</span><ul>
-<li>STS 要求兩邊電源質素／相位條件符合——唔係「隨便兩插座」。</li>
-<li>維修後<strong>留喺 bypass「貪方便」</strong>＝以為有 UPS 其實冇——市電閃斷就裸晒。</li>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>單線圖：邊啲負荷掛 Normal／Essential／UPS——標籤同現實一致？</li>
+<li>電池：室溫、端子、警報、自主測試紀錄（合資格人）</li>
+<li>發電機測試同 ATS／轉換開關紀錄（場級）</li>
+<li>插座同回路有冇被人私自改掛「當 UPS」</li>
 </ul></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>面板：Normal／Battery／Bypass／Fault</li><li>維修後有冇退出 bypass</li><li>警報有冇塞靜音後唔跟進</li></ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>受控區有 Essential 同 UPS 分層意圖；容量同斷路器額定以獲批圖同相關文件為準。</p></div>
+<div class="warn" role="note"><span class="label">Warn</span><p>營運中場地帶電操作要准工證(PTW)；唔好當「只係睇吓」就開電蓋。</p></div>
+
+<div class="tier remember" id="a2-dx"><span class="label">記住呢句 · A2</span><p>UPS／電池等<strong>關鍵電氣房</strong>可能另有<strong>主備直膨機(DX, direct expansion)</strong>，唔靠大區冷凍水 AHU。失冷＝電池壽命同跳機風險；主備狀態、冷凝水、同氣體滅火圍封要一齊想（亂加開孔會破壞維持時間(hold time)／圍封）。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩 · A2</span><ul>
+<li>主備直膨機(DX)狀態</li>
+<li>冷凝水跡</li>
+<li>圍封／開孔同 §4.3 聯想</li>
+</ul></div>
+
+    <h3 id="s5-2">5.2 靜態轉換開關(STS)／旁路(bypass)概念</h3>
+<div class="tier remember"><span class="label">記住呢句</span><p><strong>靜態轉換開關(STS)</strong>＝兩路電源之間快速自動切；<strong>旁路(bypass)</strong>＝維修時讓負荷暫時繞過 UPS 電子路徑——方便維修，但期間保護等級可能下降。</p></div>
+<div class="tier why"><span class="label">點解</span><ul>
+<li>STS：兩路之間以靜態開關極快切換；要求兩邊電源質素／相位條件符合。</li>
+<li>維修旁路(bypass)風險：若有人做完<strong>留喺旁路「貪方便」</strong>＝以為有 UPS 其實冇。面板指示 Normal／Battery／Bypass／Fault 要當巡查必睇項。</li>
+</ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>面板指示：Normal／Battery／Bypass／Fault</li>
+<li>維修後有冇退出 bypass</li>
+<li>雙電源相位／同步條件（概念上要知「唔係隨便兩插座」）</li>
+<li>警報有冇塞靜音後唔跟進</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>UPS 系統維修同切換要按 O&amp;M；溫習識名同風險，實作交合資格電工。</p></div>
 
     <h3 id="s5-3">5.3 巡查與切換（PTW／營運中場地）</h3>
 <div class="tier remember"><span class="label">記住呢句</span><p>任何影響受控區電力嘅切換＝<strong>計劃工作</strong>：時段、通知、後備、回退、誰可以喊停。</p></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>工作前：負荷清單、受影響房、通訊方式</li><li>工作中：有人盯關鍵警報同使用單位聯絡</li><li>工作後：負荷回正確來源、bypass 清除、紀錄完整</li></ul></div>
+<div class="tier why"><span class="label">點解</span><p>冇協調嘅「試跳」可以停關鍵服務。紙面 PTW 同真正溝通缺一不可。回退計劃＝「切唔成點返原狀」。</p></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>工作前：負荷清單、受影響房、通訊方式</li>
+<li>工作中：有人盯關鍵警報同使用單位聯絡</li>
+<li>工作後：確認負荷回正確來源、bypass 清除、紀錄完整</li>
+</ul></div>
   </section>
+
 
   <section class="sheet" id="s6" aria-labelledby="h-s6">
     <h2 id="h-s6">6. 醫用氣體系統（通用）</h2>
-<div class="tier remember"><span class="label">記住呢句</span><p>醫用氣體係<strong>受規管生命支持系統</strong>：總管分接 → <strong>AVSU</strong> → 房間終端；<strong>區警報</strong>係早期警告——<strong>唔教你親手焊／亂關閥</strong>。常見品種包括氧氣（O2）、真空（Vacuum）、醫療空氣（如 MA4）等——以獲批圖為準。</p></div>
+<div class="tier remember"><span class="label">記住呢句</span><p>醫用氣體係<strong>受規管生命支持系統</strong>：總管分接 → <strong>區域隔離閥箱(AVSU)</strong> → 房間終端；<strong>區警報</strong>係你嘅早期警告——<strong>唔教你親手焊／亂關閥</strong>。常見氣體品種包括氧氣（O2）、真空（Vacuum）、醫療空氣（如 MA4）等——以獲批圖為準。工程文件可能用唔同氣體簡稱——<strong>名唔一致 → 升級問清，唔現場猜</strong>；終端同測試範圍只跟最新獲批圖／註冊承辦範圍。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li><strong>身份防錯接：</strong>銷釘指數／顏色／形狀編碼。</li>
-<li><strong>AVSU＝區域隔離：</strong>關錯服務中受控區嘅 AVSU＝緊急事態——標籤、狀態、通道暢通係巡查重點，而唔係「試吓關」。</li>
-<li><strong>警報：</strong>消音只係暫時靜音，根因未除＝故障仍在。</li>
+<li><strong>身份防錯接：</strong>終端用銷釘指數（pin index）／顏色／形狀編碼。</li>
+<li><strong>AVSU＝區域隔離：</strong>一區有事可以關該區閥，唔使即斷全棟。關錯服務中受控區嘅 AVSU＝緊急事態。</li>
+<li><strong>警報層級：</strong>區警報／總警報分層提示壓力異常；消音只係暫時靜音。</li>
 </ul></div>
 <figure class="figure" id="fig-d7">
-  <div class="fid">D7｜醫氣邊界：riser→AVSU→終端</div>
-  <img src="diagrams/D7.svg" alt="D7 醫用氣體" width="520" height="200" loading="lazy" />
-  <figcaption class="cap">分接→AVSU 隔離→終端；警報係早期警告；操作屬合資格承辦。</figcaption>
+  <div class="fid">D7｜醫氣邊界：立管(riser)→區域隔離閥箱(AVSU)→終端</div>
+  <img src="diagrams/D7.svg" alt="D7 醫氣邊界：立管→AVSU→終端" width="520" height="200" loading="lazy" />
+  <figcaption class="cap">分接→區域隔離閥箱(AVSU)隔離→終端；警報係早期警告；操作屬合資格承辦。</figcaption>
 </figure>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>AVSU：標籤、開關狀態、通道、玻璃／鎖</li><li>區警報：消音後有冇跟進、測試紀錄</li><li>終端：防錯接、漏氣聲、保護膠蓋</li><li>工程改動後：壓力／純度／交叉連接等測試鏈——概念上知有；執行屬合資格承辦</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>區域隔離閥箱(AVSU)：標籤、開關狀態、通道唔阻塞、玻璃／鎖完好</li>
+<li>區警報：面板位置、消音後有冇跟進、測試紀錄</li>
+<li>終端：顏色／形狀防錯接、有無漏氣聲、保護膠蓋</li>
+<li>AVSU／區警報氣體名同獲批一致（A3）</li>
+<li>工程改動後：邊類測試要做（壓力、純度、交叉連接等）——概念上知有測試鏈</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>由既有立管(riser) <strong>tee-off</strong> 入受控區；氣體品種同終端以獲批圖為準。</p></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>唔准當普通壓縮空氣管路去「試噴」；唔准私下關閉服務中受控區嘅 AVSU。</p></div>
-<div class="escalate" role="note"><span class="label">Escalate</span><p>氣味／壓力驟降／警報 → 即時按場內應急同工程程序。</p></div>
+<div class="escalate" role="note"><span class="label">Escalate</span><p>任何氣味／壓力驟降／警報 → 即時按場內應急同工程程序，唔自行診斷完先報。</p></div>
   </section>
 
+
   <section class="sheet" id="s7" aria-labelledby="h-s7">
-    <h2 id="h-s7">7. 監控 CCMS——點類型同耳目紀律</h2>
-<div class="tier remember"><span class="label">記住呢句</span><p>CCMS 係<strong>耳目</strong>：警報、狀態、趨勢；<strong>唔係</strong>俾你隨便當遊戲改控制參數。巡查要識<strong>點類型</strong>——唔止「有畫面」。</p></div>
-    <p><strong>點類型</strong>（教學分類；實際點表以場為準）：</p>
-    <div class="abbr-wrap">
-    <table>
-      <thead><tr><th>類</th><th>例子（概念）</th><th>你用嚟做咩</th></tr></thead>
-      <tbody>
-        <tr><td><strong>設備狀態／故障</strong></td><td>AHU／EAF 運行、泵、冷機、風機跳脫</td><td>先畫面後現場；對 Duty／Standby</td></tr>
-        <tr><td><strong>環境／程序</strong></td><td>房溫濕、壓差、過濾差壓</td><td>趨勢睇「慢慢漂」</td></tr>
-        <tr><td><strong>消防介面</strong></td><td>Pre-action 監管、氣體、聯鎖／inhibit</td><td>同生命安全優先級；分開普通設備故障</td></tr>
-        <tr><td><strong>電力／UPS</strong></td><td>UPS 模式、電池健康、ATS</td><td>查 bypass／Fault</td></tr>
-        <tr><td><strong>能源／排程</strong>（若有）</td><td>電能、照明排程</td><td>營運節能耳目；細節跟場同規程</td></tr>
-      </tbody>
-    </table>
-    </div>
+    <h2 id="h-s7">7. 監控 CCMS（Central Control and Monitoring System／中央監控系統）</h2>
+<div class="tier remember"><span class="label">記住呢句</span><p>CCMS 係<strong>耳目</strong>：警報、狀態、趨勢；<strong>唔係遊戲機</strong>，無授權唔好改控制參數。</p></div>
 <div class="tier why"><span class="label">點解</span><ul>
-<li>鏈路：傳感器 → DDC → 畫面＋警報優先級 → 人去現場。任何一截壞都會「畫面正常、現場唔正常」或相反。</li>
-<li>趨勢 vs 即時快照：過濾差壓、房壓、泵電流——突變往往先於電話投訴。</li>
+<li>鏈路：傳感器 → 控制器／DDC（Direct Digital Control／直接數位控制）→ 畫面＋警報 → 人去現場確認。</li>
+<li>趨勢 vs 即時快照：單一即時值容易被暫態騙；趨勢圖先睇得出「慢慢漂」定「突然垮」。</li>
 <li>改 set-point＝改設計意圖——要授權、紀錄、可回退。</li>
-<li>長期 acknowledge、點名錯、設備故障同消防介面優先級撈亂——假正常溫床。</li>
 </ul></div>
-<div class="tier check"><span class="label">保養／巡查睇咩</span><ul><li>每日：優先級警報清唔清、有冇長期 acknowledge 未修</li><li>趨勢：房溫／壓差／差壓</li><li>點位名同現場標籤一致；「壞點」要標咗壞</li><li>改參數：授權、紀錄、回退——無授權唔改</li><li>消防／氣體／UPS 介面有無分開優先級處理</li></ul></div>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><ul>
+<li>每日：優先級警報清唔清、有冇長期 acknowledg 未修</li>
+<li>趨勢：房溫／壓差／差壓——突變先於投訴</li>
+<li>點位名同現場標籤一致；「壞點」要標咗壞</li>
+<li>改參數：授權、紀錄、回退——無授權唔改</li>
+</ul></div>
+<div class="tier align"><span class="label">教學對位</span><p>風機切換、壓差、主要設備狀態有監控意圖——巡查建議「先畫面、後現場」。</p></div>
 <div class="warn" role="note"><span class="label">Warn</span><p>無授權唔好改 iBMS／CCMS 程式或 set-point。</p></div>
   </section>
 
+
   <section class="sheet" id="s8" aria-labelledby="h-s8">
     <h2 id="h-s8">8. 保養巡查思維（可執行清單）</h2>
-<div class="tier remember"><span class="label">記住呢句</span><p>巡查係<strong>固定節奏＋異常升級</strong>；唔係等到壞先學問。每條動詞開頭。</p></div>
+<div class="tier remember"><span class="label">記住呢句</span><p>巡查係<strong>固定節奏＋異常升級</strong>；唔係等到壞先學問。</p></div>
 
     <h3 id="s8-1">8.1 每日（或每更）——快、可重複</h3>
     <ul class="checklist">
-      <li><strong>查</strong> CCMS／警報面板：火警監管、壓差、AHU／EAF／泵、UPS——有新增未清？</li>
-      <li><strong>記</strong> 受控房：<strong>門關</strong>壓差觀感／錶讀（跟場規頻率）；門有無長期打開</li>
-      <li><strong>查</strong> AHU 房：異響、水跡、焦味、門關好</li>
-      <li><strong>查</strong> 醫氣區警報：正常抑或靜音中</li>
-      <li><strong>查</strong> 走火通道、臨時工程範圍：消防器材受阻？</li>
-      <li><strong>對</strong> 排風／污側：有無新排風故障警報（若 CCMS 有）</li>
+      <li>CCMS／警報面板：火警監管、壓差、AHU／泵、UPS——有新增未清？</li>
+      <li>受控房：<strong>門關</strong>壓差觀感／錶讀（跟場規頻率）；門有無長期打開</li>
+      <li>AHU 房：異響、水跡、焦味、門關好</li>
+      <li>醫氣區警報：正常抑或靜音中</li>
+      <li>走火通道、臨時工程範圍：消防器材受阻？</li>
     </ul>
 
     <h3 id="s8-2">8.2 每週——稍深入</h3>
     <ul class="checklist">
-      <li><strong>記</strong> 過濾差壓趨勢；該換未換；變頻有無頂高異常</li>
-      <li><strong>對</strong> Duty／Standby 狀態同上次切換紀錄</li>
-      <li><strong>查</strong> 泵區同加熱／再熱管路：滲漏、震、壓力</li>
-      <li><strong>查</strong> 消防閥組目視：位置、鎖、標牌；氣壓（pre-action）；標牌對房（一房一閥）</li>
-      <li><strong>查</strong> UPS／電池房：溫度、警報、通道；氣體滅火面板模式（有無留喺 bypass／inhibit）</li>
-      <li><strong>對</strong> Normal／Setback：有無人手覆寫未复；邊個 CAV 應關應開</li>
-      <li><strong>問</strong> 使用單位／設施：有無「間中失壓／間中熱／氣味倒灌」未立案</li>
+      <li>過濾差壓趨勢；該換未換</li>
+      <li>Duty／Standby 狀態同上次自動／手動切換紀錄</li>
+      <li>泵區：滲漏、震、壓力</li>
+      <li>消防閥組目視：位置、鎖、標牌；氣壓（預作用系統 pre-action）</li>
+      <li><strong>查</strong> 支援區：喉轆通道、噴頭遮擋、複示／區域警報同主盤一致</li>
+      <li>UPS／電池房：溫度、警報、通道；氣體滅火面板模式（有無留喺旁路(bypass)／暫時抑制(inhibit)）</li>
+      <li>同使用單位／設施短會：有無「間中失壓／間中熱」投訴未立案</li>
     </ul>
 
     <h3 id="s8-3">8.3 每季（或按 O&amp;M／合約）——計劃性</h3>
     <ul class="checklist">
-      <li><strong>做</strong> 聯鎖同切換測試（消防風機停機矩陣／電源）——合資格人＋PTW</li>
-      <li><strong>跟</strong> HEPA／過濾更換同完整性測試計劃進度</li>
-      <li><strong>跟</strong> 水質／水系統／加熱水保養節點</li>
-      <li><strong>校</strong> 壓差錶、關鍵溫度／濕度傳感器</li>
-      <li><strong>對</strong> 文件：獲批圖修訂、O&amp;M、警報設定、聯鎖矩陣有無過期</li>
-      <li><strong>走</strong> 演習：停電／失壓／氣體警報紙面走位（教學同場規）</li>
-      <li><strong>查</strong> 若有近期幹管接駁：他區復原同投訴結案未</li>
-      <li>每項有「邊個做、紀錄去邊、超標點升級」——無主責＝假清單。</li>
+      <li>聯鎖同切換測試（消防／風機／電源）——合資格人＋PTW</li>
+      <li>HEPA／過濾更換同測試計劃進度</li>
+      <li>水質／水系統保養節點</li>
+      <li>校正：壓差錶、關鍵溫度／濕度傳感器</li>
+      <li>文件：獲批圖修訂、O&amp;M、警報設定有無過期</li>
+      <li>演習：停電／失壓／氣體警報紙面走位（教學同場規）</li>
     </ul>
+<div class="tier check"><span class="label">保養／巡查睇咩</span><p>每項有「邊個做、紀錄去邊、超標點升級」——無主責＝假清單。</p></div>
+<div class="tier align"><span class="label">教學對位</span><p>改建期同營運期清單側重唔同，但升級紀律一樣。</p></div>
   </section>
+
 
   <section class="sheet" id="s9" aria-labelledby="h-s9">
     <h2 id="h-s9">9. 常見故障聯想（教學推理，非現場定案）</h2>
-<div class="tier remember"><span class="label">記住呢句</span><p>先畫<strong>因果鏈</strong>再動手；見到 A 唔等於只修 A。每條：<strong>可能原因 → 先排除 → 升級</strong>。</p></div>
+<div class="tier remember"><span class="label">記住呢句</span><p>先畫<strong>因果鏈</strong>再動手；見到 A 唔等於只修 A。</p></div>
 
-    <h3 id="s9-1">9.1 空氣／壓差／排風</h3>
+    <h3 id="s9-1">9.1 空氣／壓差</h3>
     <div class="abbr-wrap">
     <table>
-      <thead><tr><th>見到</th><th>可能原因 → 先排除</th><th>升級若</th></tr></thead>
+      <thead><tr><th>見到</th><th>先問</th><th>常見方向（教學）</th></tr></thead>
       <tbody>
-        <tr><td>一間房正壓掉</td><td>門開？穩定器堵？抽風過大？送風不足？相鄰房？→ 先門同風量差，唔先拆 HEPA</td><td>門關仍低同多房一齊——升 AHU／聯鎖</td></tr>
-        <tr><td>兩間房互相拖</td><td>門同時開？共用走廊大洩漏？→ 記錄操作模式</td><td>cascade 方向疑似被短路</td></tr>
-        <tr><td>全層風細</td><td>AHU 跳？過濾塞爆？防火閘誤關？火警停機未复？→ 先機組同聯鎖／inhibit</td><td>濾阻＋VFD 頂高仍不足</td></tr>
-        <tr><td>房溫高但壓差仲喺</td><td>水側／盤管／閥／再熱失效 → 唔好加大風量硬搶冷</td><td>水側授權工作</td></tr>
-        <tr><td>切換風機後壓差抖完唔返</td><td>備機真起動？風閥互鎖？→ 對 CCMS 同現場燈</td><td>暫態過後仍低＝未完成切換</td></tr>
-        <tr><td>氣味倒灌／方向疑似反</td><td>專用排風停？污側閘關？transfer 封死？→ 先排風同污側</td><td>排風長期停而受控房「看似正常」</td></tr>
-        <tr><td>Setback 後某房失壓</td><td>關錯 CAV？走廊抽風減太多？覆寫未复？→ 對邏輯表</td><td>方向反轉跡象</td></tr>
+        <tr><td>一間房正壓掉</td><td>門開？穩定器堵？抽風過大？送風不足？相鄰房？</td><td>查門同風量差，唔先拆 HEPA；開門暫態要同門關讀數分開</td></tr>
+        <tr><td>兩間房互相拖</td><td>門同時開？共用走廊洩漏？</td><td>記錄操作模式；cascade 方向可能被大洩漏短路</td></tr>
+        <tr><td>全層風細</td><td>AHU 跳？過濾塞爆？防火閘誤關？</td><td>先機組同聯鎖狀態；濾阻↑沿風機曲線風量↓</td></tr>
+        <tr><td>房溫高但壓差仲喺</td><td>水側／盤管／閥</td><td>唔好靠加大風量「硬搶冷」——會破壞已穩嘅 ΔP</td></tr>
+        <tr><td>切換風機後壓差抖完唔返</td><td>備機真起動？風閥互鎖？</td><td>對 CCMS 同現場狀態燈；暫態過後仍低＝未完成切換</td></tr>
+        <tr><td>共用緩衝區壓差異常／一部 AHU 停</td><td>邊啲定風量箱(CAV)／支管屬邊部機？另一部頂唔頂到？→ 對圖同主備狀態</td><td>相鄰高要求房一齊越限</td></tr>
+        <tr><td>氣味倒灌／方向疑似反</td><td>專用排風機(EAF)停？污側閘關？傳遞風路徑(transfer)封死？→ 先排風同污側</td><td>排風長期停而受控房「看似正常」——可能靜靜雞反咗</td></tr>
       </tbody>
     </table>
     </div>
@@ -856,47 +925,42 @@ table.abbr-table td:nth-child(1) {
     <h3 id="s9-2">9.2 水側</h3>
     <div class="abbr-wrap">
     <table>
-      <thead><tr><th>見到</th><th>可能原因 → 先排除</th><th>升級若</th></tr></thead>
+      <thead><tr><th>見到</th><th>先問</th><th>常見方向（教學）</th></tr></thead>
       <tbody>
-        <tr><td>有機無冷</td><td>泵？閥？冷機警報？盤管氣阻？strainer？→ 跟 ΔT 同流量</td><td>制冷劑／高壓跳</td></tr>
-        <tr><td>有冷但仍投訴「唔舒服」</td><td>再熱／加濕失效？→ 查熱路同濕度</td><td>閥卡／電熱故障</td></tr>
-        <tr><td>天花滴水</td><td>保溫破（冷凝）定眞漏（補水頻密）→ 分開</td><td>帶壓漏要授權停</td></tr>
-        <tr><td>泵又震又響</td><td>氣蝕／對中／軸承／底座 → 停機檢查屬授權</td><td>吸程／過濾塞相關</td></tr>
-        <tr><td>室外機高壓跳</td><td>盤管髒？氣流短路？→ 先環境同清潔</td><td>唔先怪壓縮機</td></tr>
-        <tr><td>接駁後他區熱／失壓</td><td>隔離未复？平衡未做？旁通留住？→ 查 PTW 範圍同復原</td><td>當營運中斷鏈</td></tr>
+        <tr><td>有機無冷</td><td>泵？閥？冷機警報？盤管氣阻？過濾器(strainer)？</td><td>跟水溫 ΔT 同流量；過濾器(strainer)塞→流量↓係常見源頭</td></tr>
+        <tr><td>天花滴水</td><td>保溫？盤管排水？管道滲？</td><td>分冷凝（保溫破）同眞漏（補水頻密）</td></tr>
+        <tr><td>泵又震又響</td><td>氣蝕？對中？軸承？底座？</td><td>停機檢查屬授權工作；氣蝕常同吸程／過濾塞有關</td></tr>
+        <tr><td>室外機高壓跳</td><td>盤管髒？氣流短路？</td><td>排熱被吸返＝冷凝差；先環境同清潔</td></tr>
       </tbody>
     </table>
     </div>
 
-    <h3 id="s9-3">9.3 警報／監控／消防聯鎖</h3>
+    <h3 id="s9-3">9.3 警報／監控</h3>
     <div class="abbr-wrap">
     <table>
-      <thead><tr><th>見到</th><th>可能原因 → 先排除</th><th>升級若</th></tr></thead>
+      <thead><tr><th>見到</th><th>先問</th><th>常見方向（教學）</th></tr></thead>
       <tbody>
-        <tr><td>警報風暴</td><td>裝修塵？眞火？電源閃？→ 先生命安全，再分類</td><td>塵觸煙感致整區停風</td></tr>
-        <tr><td>長期靜音／acknowledge</td><td>邊個消音？根因未除？→ 當未解決故障</td><td>消防／氣體／UPS 介面</td></tr>
-        <tr><td>畫面正常現場唔正常</td><td>傳感器壞／裝錯位／點名錯？→ 以安全側現場為準</td><td>趨勢證「假正常」</td></tr>
-        <tr><td>UPS 以為有其實無</td><td>面板係咪 Bypass？→ 維修後清 bypass</td><td>ride-through 斷咗</td></tr>
-        <tr><td>火警後風唔返</td><td>停機矩陣未复？inhibit 留住？→ 對矩陣同復歸程序</td><td>假保護／長期失壓</td></tr>
+        <tr><td>警報風暴</td><td>裝修塵？眞火？電源閃？</td><td>先生命安全，再分類；塵觸煙感係營運中場地常見</td></tr>
+        <tr><td>長期靜音</td><td>邊個消音？根因未除？</td><td>當未解決故障；靜音≠正常</td></tr>
+        <tr><td>畫面正常現場唔正常</td><td>傳感器壞／裝錯位？</td><td>以安全側現場為準並升級；趨勢可證「假正常」</td></tr>
+        <tr><td>UPS 以為有其實無</td><td>面板係咪旁路(bypass)？</td><td>維修後留旁路＝過渡供電(ride-through)斷咗</td></tr>
       </tbody>
     </table>
     </div>
 <div class="tier align"><span class="label">教學對位</span><p>受控區最痛通常係<strong>失壓／誤水／失電</strong>三條線——加埋<strong>排風停致方向反</strong>同<strong>聯鎖假保護</strong>——任何一條都要短時間內升級到有權決定嘅人。</p></div>
   </section>
 
-  <div class="closing" id="closing">
-    <p>呢本係 <strong>O&amp;M／原理筆記</strong>；項目數字同文件細節以<strong>獲批圖／O&amp;M</strong>為準。</p>
+
+  <footer class="closing" id="closing">
+    <p>呢本係 <strong>O&amp;M／原理筆記</strong>；項目數字同文件細節<strong>以獲批圖／O&amp;M 為準</strong>。</p>
     <p>跟<strong>獲批圖</strong>、場內消防／機電／醫氣規程同合約 O&amp;M。</p>
-  </div>
-
-  <a class="jump" href="#top" aria-label="回到頂部">↑ Top</a>
+  </footer>
 </div>
+<a class="jump" href="#top" aria-label="回到頁頂">↑ Top</a>
 
-<div id="abbr-live" class="abbr-live" aria-live="polite"></div>
 <div id="abbr-pop" class="abbr-pop" role="tooltip" hidden></div>
-
+<div id="abbr-live" class="abbr-live" aria-live="polite"></div>
 <script>
-
 (function () {
   'use strict';
   var TABLE_SEL = null; // resolved below
@@ -1184,7 +1248,6 @@ table.abbr-table td:nth-child(1) {
     }
   } catch (err) { /* ignore */ }
 })();
-
 </script>
 
 </body>
